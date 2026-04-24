@@ -700,44 +700,79 @@
 
     .nav-mobile-ctas .btn { flex: 1; justify-content: center; }
 
+    @media (max-width: 900px) {
+      .demo-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .browser-mockup { max-width: 560px; margin: 0 auto; }
+    }
+
     @media (max-width: 768px) {
+      nav { padding: 0 5%; }
       .nav-links { display: none; }
       .nav-actions .btn-outline,
       .nav-actions .btn-primary { display: none; }
       .nav-mobile-toggle { display: flex; }
 
-      .demo-inner { grid-template-columns: 1fr; gap: 3rem; }
+      section { padding: 64px 5%; }
 
-      .hero-stats { gap: 1.5rem; }
-      .hero-stats { flex-wrap: wrap; }
-      .hero-stat { min-width: 100px; }
+      .hero-title { letter-spacing: -1px; }
+      .hero-sub { font-size: 1rem; }
+      .hero-stats { gap: 1.5rem; justify-content: space-around; }
+      .hero-stat { min-width: 80px; }
 
-      .features-grid { grid-template-columns: 1fr; }
-      .feature-card { padding: 1.8rem; }
+      .features-grid {
+        grid-template-columns: 1fr !important;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        gap: 1rem;
+      }
+      .feature-card {
+        padding: 1.5rem;
+        border-radius: var(--r-lg);
+        border: 1px solid var(--border);
+      }
 
-      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+      }
 
       .contact-cards { flex-direction: column; }
-      .contact-card { min-width: unset; }
+      .contact-card { min-width: unset; width: 100%; }
 
-      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-inner { flex-direction: column; text-align: center; align-items: center; }
       .footer-links { justify-content: center; }
-
-      nav { padding: 0 4%; }
-      section { padding: 70px 4%; }
 
       .mock-stats { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 480px) {
-      .btn-lg { padding: 13px 22px; font-size: 0.95rem; }
-      .hero-ctas { flex-direction: column; align-items: center; }
-      .hero-ctas .btn { width: 100%; max-width: 320px; justify-content: center; }
-      .hero-stats { gap: 1.2rem; }
-      .hero-stat-num { font-size: 1.6rem; }
+      section { padding: 56px 4%; }
+
+      .hero-title { font-size: clamp(2rem, 10vw, 2.8rem); letter-spacing: -0.5px; }
+      .hero-sub { font-size: 0.95rem; }
+      .hero-badge { font-size: 0.72rem; }
+
+      .hero-ctas { flex-direction: column; align-items: stretch; padding: 0 1rem; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+
+      .hero-stats { gap: 0.8rem; }
+      .hero-stat-num { font-size: 1.4rem; }
+      .hero-stat-label { font-size: 0.7rem; }
+
       .mock-stats { grid-template-columns: 1fr 1fr; }
       .mock-stat:last-child { display: none; }
+      .mock-table th:nth-child(2),
+      .mock-table td:nth-child(2) { display: none; }
+
+      .btn-lg { padding: 13px 20px; font-size: 0.9rem; }
+
+      .section-title { font-size: 1.8rem; letter-spacing: -0.5px; }
+
       .pricing-grid { max-width: 100%; }
+
+      .footer-links { gap: 1rem; }
     }
 
     /* ── DIVIDER ── */
@@ -991,7 +1026,7 @@
     <div class="pricing-card featured reveal reveal-delay-1">
       <div class="pricing-tag">Más popular</div>
       <div class="pricing-name">Pro</div>
-      <div class="pricing-price">RD$1,500<span>/mes</span></div>
+      <div class="pricing-price">RD$990<span>/mes</span></div>
       <div class="pricing-desc">Para negocios que necesitan todo bajo control.</div>
       <ul class="pricing-features">
         <li>Facturación NCF ilimitada</li>
