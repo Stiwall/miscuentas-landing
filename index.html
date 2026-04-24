@@ -7,7 +7,7 @@
   <meta name="description" content="La plataforma contable diseñada para empresas dominicanas. Facturación NCF, inventario, reportes y más." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -25,8 +25,8 @@
       --text-muted: #7A8FAF;
       --text-dim: #4A5A74;
       --green: #22C55E;
-      --font-display: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
+      --font-display: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
       --r: 12px;
       --r-lg: 20px;
     }
@@ -73,7 +73,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 0 5%;
+      padding: 0 24px;
       height: 68px;
       display: flex;
       align-items: center;
@@ -178,7 +178,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 120px 5% 80px;
+      padding: 120px 24px 80px;
       overflow: hidden;
       z-index: 1;
     }
@@ -273,7 +273,7 @@
     section {
       position: relative;
       z-index: 1;
-      padding: 100px 5%;
+      padding: 100px 24px;
     }
 
     .section-label {
@@ -304,7 +304,7 @@
     /* ── FEATURES ── */
     #features { background: var(--bg-base); }
 
-    .features-header { text-align: center; margin-bottom: 4rem; }
+    .features-header { text-align: center; margin-bottom: 4rem; max-width: 1100px; margin-left: auto; margin-right: auto; }
     .features-header .section-sub { margin: 0 auto; }
 
     .features-grid {
@@ -356,8 +356,8 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 5rem;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
       align-items: center;
     }
 
@@ -471,7 +471,7 @@
 
     /* ── PRICING ── */
     #precios { background: var(--bg-base); }
-    .pricing-header { text-align: center; margin-bottom: 4rem; }
+    .pricing-header { text-align: center; margin-bottom: 4rem; max-width: 980px; margin-left: auto; margin-right: auto; }
     .pricing-header .section-sub { margin: 0 auto; }
 
     .pricing-grid {
@@ -617,7 +617,7 @@
     footer {
       background: var(--bg-base);
       border-top: 1px solid var(--border);
-      padding: 3rem 5%;
+      padding: 3rem 24px;
       position: relative;
       z-index: 1;
     }
@@ -706,13 +706,13 @@
     }
 
     @media (max-width: 768px) {
-      nav { padding: 0 5%; }
+      nav { padding: 0 20px; }
       .nav-links { display: none; }
       .nav-actions .btn-outline,
       .nav-actions .btn-primary { display: none; }
       .nav-mobile-toggle { display: flex; }
 
-      section { padding: 64px 5%; }
+      section { padding: 64px 20px; }
 
       .hero-title { letter-spacing: -1px; }
       .hero-sub { font-size: 1rem; }
@@ -748,7 +748,7 @@
     }
 
     @media (max-width: 480px) {
-      section { padding: 56px 4%; }
+      section { padding: 56px 16px; }
 
       .hero-title { font-size: clamp(2rem, 10vw, 2.8rem); letter-spacing: -0.5px; }
       .hero-sub { font-size: 0.95rem; }
