@@ -5,6 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MisCuentas Contable — Contabilidad Dominicana Inteligente</title>
   <meta name="description" content="La plataforma contable diseñada para empresas dominicanas. Facturación NCF, inventario, reportes y más." />
+
+  <!-- Indexación -->
+  <link rel="canonical" href="https://miscuentasrd.com" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://miscuentasrd.com" />
+  <meta property="og:title" content="MisCuentas Contable — Contabilidad Dominicana Inteligente" />
+  <meta property="og:description" content="La plataforma contable diseñada para empresas dominicanas. Facturación NCF, inventario, reportes y más." />
+  <meta property="og:image" content="https://miscuentasrd.com/logo.png" />
+  <meta property="og:locale" content="es_DO" />
+  <meta property="og:site_name" content="MisCuentas Contable" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MisCuentas Contable — Contabilidad Dominicana Inteligente" />
+  <meta name="twitter:description" content="La plataforma contable diseñada para empresas dominicanas. Facturación NCF, inventario, reportes y más." />
+  <meta name="twitter:image" content="https://miscuentasrd.com/logo.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "MisCuentas Contable",
+        "url": "https://miscuentasrd.com",
+        "description": "La plataforma contable diseñada para empresas dominicanas. Facturación NCF, inventario, reportes y más.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "es",
+        "offers": [
+          { "@type": "Offer", "name": "Gratis", "price": "0", "priceCurrency": "DOP" },
+          { "@type": "Offer", "name": "Pro", "price": "990", "priceCurrency": "DOP" }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "MisCuentas Contable",
+        "url": "https://miscuentasrd.com",
+        "logo": "https://miscuentasrd.com/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "info@miscuentasrd.com",
+          "availableLanguage": "Spanish"
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -342,7 +400,7 @@
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="logo">
-    <div class="logo-img"><img src="logo.png" alt="MisCuentas" /></div>
+    <div class="logo-img"><img src="logo.png" alt="MisCuentas Contable" /></div>
     MisCuentas
   </a>
   <ul class="nav-links">
@@ -354,7 +412,7 @@
   <div class="nav-r">
     <a href="https://app.miscuentasrd.com" class="btn btn-ghost">Iniciar Sesión</a>
     <a href="https://app.miscuentasrd.com" class="btn btn-cta">Registrarse</a>
-    <button class="nav-tog" id="togBtn" aria-label="Menú">
+    <button class="nav-tog" id="togBtn" aria-label="Abrir menú de navegación">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
@@ -504,18 +562,10 @@
       </div>
       <div class="app-l">
         <div class="app-sb">
-          <div class="sico act">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-          </div>
-          <div class="sico">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          </div>
-          <div class="sico">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/></svg>
-          </div>
-          <div class="sico">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
+          <div class="sico act"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
+          <div class="sico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div class="sico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/></svg></div>
+          <div class="sico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
         </div>
         <div class="app-c">
           <div class="app-tb">
@@ -555,38 +605,17 @@
     <div class="tc rv">
       <div class="tq">"</div>
       <p class="tt">Antes usaba Excel y siempre terminaba con errores. Con MisCuentas genero los NCF al instante y los reportes para mi contador están listos en segundos.</p>
-      <div class="ta">
-        <div class="av av1">JG</div>
-        <div>
-          <div class="an">Juan García</div>
-          <div class="ab">Ferretería García e Hijos — Santiago</div>
-          <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        </div>
-      </div>
+      <div class="ta"><div class="av av1">JG</div><div><div class="an">Juan García</div><div class="ab">Ferretería García e Hijos — Santiago</div><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div></div></div>
     </div>
     <div class="tc rv d1">
       <div class="tq">"</div>
       <p class="tt">El bot de Telegram es increíble. Desde el móvil registro los pagos de los pacientes y consulto el saldo sin abrir la computadora.</p>
-      <div class="ta">
-        <div class="av av2">MR</div>
-        <div>
-          <div class="an">María Rodríguez</div>
-          <div class="ab">Clínica Dental Sonrisa — Santo Domingo</div>
-          <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        </div>
-      </div>
+      <div class="ta"><div class="av av2">MR</div><div><div class="an">María Rodríguez</div><div class="ab">Clínica Dental Sonrisa — Santo Domingo</div><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div></div></div>
     </div>
     <div class="tc rv d2">
       <div class="tq">"</div>
       <p class="tt">Llevo el inventario del colmado en tiempo real. Cuando un producto baja del mínimo me avisa al Telegram. Ya no se me agota nada.</p>
-      <div class="ta">
-        <div class="av av3">CM</div>
-        <div>
-          <div class="an">Carlos Mena</div>
-          <div class="ab">Colmado El Buen Precio — La Vega</div>
-          <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
-        </div>
-      </div>
+      <div class="ta"><div class="av av3">CM</div><div><div class="an">Carlos Mena</div><div class="ab">Colmado El Buen Precio — La Vega</div><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div></div></div>
     </div>
   </div>
 </section>
@@ -657,16 +686,12 @@
     <p class="ssub rv d2" style="margin:0 auto">Estamos aquí para ayudarte. Responderemos en menos de 24 horas.</p>
     <div class="con-cards">
       <a href="mailto:info@miscuentasrd.com?subject=Consulta%20MisCuentas" class="con-c rv d2">
-        <div class="cicon ci-o">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
+        <div class="cicon ci-o"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <div><div class="clbl">Correo</div><div class="cval">info@miscuentasrd.com</div></div>
         <div class="ccta">Enviar correo →</div>
       </a>
       <a href="https://wa.me/18294432019?text=Hola%2C%20me%20interesa%20MisCuentas%20Contable" class="con-c wa rv d3" target="_blank" rel="noopener">
-        <div class="cicon ci-g">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#10B981"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.012 22l4.975-1.306A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.962 7.962 0 01-4.069-1.117l-.292-.173-3.015.792.806-2.937-.19-.301A7.947 7.947 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg>
-        </div>
+        <div class="cicon ci-g"><svg width="20" height="20" viewBox="0 0 24 24" fill="#10B981"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.012 22l4.975-1.306A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.962 7.962 0 01-4.069-1.117l-.292-.173-3.015.792.806-2.937-.19-.301A7.947 7.947 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/></svg></div>
         <div><div class="clbl">WhatsApp</div><div class="cval">+1 (829) 443-2019</div></div>
         <div class="ccta" style="color:var(--green)">Abrir WhatsApp →</div>
       </a>
@@ -679,7 +704,7 @@
   <div class="f-main">
     <div>
       <a href="#" class="f-logo">
-        <div class="logo-img" style="width:28px;height:28px"><img src="logo.png" alt="MisCuentas" /></div>
+        <div class="logo-img" style="width:28px;height:28px"><img src="logo.png" alt="MisCuentas Contable" /></div>
         MisCuentas
       </a>
       <p class="f-desc">La plataforma contable diseñada para la realidad empresarial de República Dominicana. Facturación NCF, inventario y más.</p>
@@ -717,18 +742,15 @@
 </footer>
 
 <script>
-  // Reveal on scroll
   const ro = new IntersectionObserver(es => {
     es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); }});
   }, {threshold:.08});
   document.querySelectorAll('.rv').forEach(el => ro.observe(el));
   document.querySelectorAll('#hero .rv').forEach(el => el.classList.add('in'));
 
-  // Sticky nav
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('stuck', scrollY > 40), {passive:true});
 
-  // Mobile menu
   const togBtn = document.getElementById('togBtn');
   const mMenu = document.getElementById('mMenu');
   togBtn.addEventListener('click', () => mMenu.classList.toggle('open'));
