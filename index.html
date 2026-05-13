@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MisCuentas Contable — Contabilidad Dominicana Inteligente</title>
-  <meta name="description" content="La plataforma contable diseñada para empresas dominicanas. Facturación NCF, inventario, reportes y más." />
+  <title>MisCuentas Contable — ¿Sabes si tu negocio está ganando dinero?</title>
+  <meta name="description" content="Registra ventas, gastos e inventario. MisCuentas te dice si vas bien o mal, en tiempo real. Gratis para empezar — hecho para negocios dominicanos." />
 
   <!-- Indexación -->
   <link rel="canonical" href="https://miscuentasrd.com" />
@@ -18,8 +18,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://miscuentasrd.com" />
-  <meta property="og:title" content="MisCuentas Contable — Contabilidad Dominicana Inteligente" />
-  <meta property="og:description" content="La plataforma contable diseñada para empresas dominicanas. Facturación NCF, inventario, reportes y más." />
+  <meta property="og:title" content="MisCuentas Contable — ¿Sabes si tu negocio está ganando dinero?" />
+  <meta property="og:description" content="Registra ventas, gastos e inventario. MisCuentas te dice si vas bien o mal, en tiempo real. Gratis para empezar." />
   <meta property="og:image" content="https://miscuentasrd.com/logo.png" />
   <meta property="og:image:width" content="192" />
   <meta property="og:image:height" content="192" />
@@ -28,8 +28,8 @@
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MisCuentas Contable — Contabilidad Dominicana Inteligente" />
-  <meta name="twitter:description" content="La plataforma contable diseñada para empresas dominicanas. Facturación NCF, inventario, reportes y más." />
+  <meta name="twitter:title" content="MisCuentas Contable — ¿Sabes si tu negocio está ganando dinero?" />
+  <meta name="twitter:description" content="Registra ventas, gastos e inventario. MisCuentas te dice si vas bien o mal, en tiempo real. Gratis para empezar." />
   <meta name="twitter:image" content="https://miscuentasrd.com/logo.png" />
 
   <!-- JSON-LD Structured Data -->
@@ -46,8 +46,10 @@
         "operatingSystem": "Web",
         "inLanguage": "es",
         "offers": [
-          { "@type": "Offer", "name": "Gratis", "price": "0", "priceCurrency": "DOP" },
-          { "@type": "Offer", "name": "Pro", "price": "990", "priceCurrency": "DOP" }
+          { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "DOP" },
+          { "@type": "Offer", "name": "Starter", "price": "299", "priceCurrency": "DOP" },
+          { "@type": "Offer", "name": "Negocio", "price": "600", "priceCurrency": "DOP" },
+          { "@type": "Offer", "name": "Contador", "price": "1200", "priceCurrency": "DOP" }
         ]
       },
       {
@@ -389,7 +391,25 @@
       .f-main{grid-template-columns:1fr}
       .f-bot{flex-direction:column;text-align:center;align-items:center}
       .testi-h .ssub,.como-h .ssub,.ph .ssub,.fh .ssub,.pricing-header .ssub{max-width:100%}
+      .cnt-grid{grid-template-columns:1fr}
+      .cnt-feats{grid-template-columns:1fr 1fr}
     }
+
+    /* CONTADOR SECTION */
+    #contadores{background:linear-gradient(135deg,var(--bg1) 0%,rgba(249,115,22,.06) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .cnt-w{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .cnt-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+    .cnt-card{background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:var(--r);padding:1rem 1.25rem}
+    .cnt-card-n{font-size:.8rem;font-weight:700;color:var(--t);margin-bottom:.25rem}
+    .cnt-card-d{font-size:.75rem;color:var(--t3);line-height:1.5}
+    .cnt-right{background:var(--bcard);border:1px solid var(--bo);border-radius:var(--rx);padding:2.5rem;position:relative;overflow:hidden}
+    .cnt-right::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,var(--o-dim),transparent 60%);pointer-events:none}
+    .cnt-tag{display:inline-block;background:var(--o-dim);border:1px solid var(--bo);color:var(--o);font-size:.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:1rem}
+    .cnt-price-big{font-family:var(--fd);font-size:3rem;font-weight:800;color:var(--o);line-height:1}
+    .cnt-price-sub{font-size:.85rem;color:var(--t2);margin-top:.3rem;margin-bottom:1.5rem}
+    .cnt-feats{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.75rem}
+    .cnt-feat{display:flex;align-items:flex-start;gap:.4rem;font-size:.8rem;color:var(--t2)}
+    .cnt-feat::before{content:'✓';color:var(--o);font-weight:700;flex-shrink:0;margin-top:1px}
   </style>
 </head>
 <body>
@@ -438,26 +458,26 @@
   <div class="hero-in">
     <div class="h-badge rv">
       <span class="bdot"></span>
-      Hecho para empresas dominicanas
+      Gratis para empezar · Sin tarjeta de crédito
     </div>
     <h1 class="h-title rv d1">
-      Contabilidad que<br><em>entiende tu negocio</em>
+      ¿Sabes si tu negocio<br><em>está ganando dinero?</em>
     </h1>
     <p class="h-sub rv d2">
-      Facturación con NCF, inventario, reportes y cierre contable — todo en una plataforma diseñada para la realidad empresarial de República Dominicana.
+      Registra tus ventas, gastos e inventario. MisCuentas calcula si vas bien o mal — en tiempo real. Sin aprender contabilidad.
     </p>
     <div class="h-ctas rv d3">
       <a href="https://app.miscuentasrd.com" class="btn btn-cta btn-lg">
-        Comenzar Gratis
+        Empezar gratis — 5 minutos
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <a href="https://app.miscuentasrd.com" class="btn btn-ghost btn-lg">Iniciar Sesión</a>
+      <a href="#precios" class="btn btn-ghost btn-lg">Ver planes</a>
     </div>
     <div class="h-stats rv d4">
-      <div class="hstat"><span class="hstat-n">NCF</span><span class="hstat-l">Comprobantes fiscales</span></div>
-      <div class="hstat"><span class="hstat-n">PWA</span><span class="hstat-l">Funciona en móvil</span></div>
-      <div class="hstat"><span class="hstat-n">24/7</span><span class="hstat-l">Acceso en la nube</span></div>
-      <div class="hstat"><span class="hstat-n">Bot</span><span class="hstat-l">Telegram integrado</span></div>
+      <div class="hstat"><span class="hstat-n">RD$0</span><span class="hstat-l">Para empezar</span></div>
+      <div class="hstat"><span class="hstat-n">5 min</span><span class="hstat-l">Para configurar</span></div>
+      <div class="hstat"><span class="hstat-n">NCF</span><span class="hstat-l">Automático DGII</span></div>
+      <div class="hstat"><span class="hstat-n">RD</span><span class="hstat-l">Hecho en RD 🇩🇴</span></div>
     </div>
   </div>
   <div class="scroll-hint" aria-hidden="true">
@@ -466,49 +486,49 @@
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- FEATURES / PAIN POINTS -->
 <section id="features">
   <div class="fh">
-    <span class="slabel rv">Características</span>
-    <h2 class="stitle rv d1">Todo lo que tu empresa necesita</h2>
-    <p class="ssub rv d2">Una solución completa para gestionar la contabilidad de tu negocio dominicano sin complicaciones.</p>
+    <span class="slabel rv">Por qué MisCuentas</span>
+    <h2 class="stitle rv d1">Los dolores que te quitamos</h2>
+    <p class="ssub rv d2">Cada pregunta que te quita el sueño tiene una respuesta en el dashboard.</p>
   </div>
   <div class="fg">
     <div class="fc rv">
       <span class="fc-n">01</span>
-      <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-      <div class="ft">Facturación con NCF</div>
-      <div class="fd2">Emite comprobantes fiscales B01, B02 y B15 automáticamente. Cumple con las exigencias de la DGII sin esfuerzo adicional.</div>
+      <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div class="ft">"¿Cuánto tengo en caja ahora mismo?"</div>
+      <div class="fd2">Tu saldo en efectivo y banco aparece en el dashboard al abrir la app. Sin calcular, sin esperar.</div>
     </div>
     <div class="fc rv d1">
       <span class="fc-n">02</span>
       <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
-      <div class="ft">Control de Inventario</div>
-      <div class="fd2">Entradas, salidas y producción en tiempo real. Controla tu stock con alertas de mínimos y valoración automática.</div>
+      <div class="ft">"¿Qué se me está yendo del inventario?"</div>
+      <div class="fd2">Stock en tiempo real con alertas de mínimos. Sabe qué producto se acabó antes de que te lo diga un cliente.</div>
     </div>
     <div class="fc rv d2">
       <span class="fc-n">03</span>
-      <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-      <div class="ft">Cuentas por Cobrar/Pagar</div>
-      <div class="fd2">Registra clientes y proveedores, controla vencimientos y aplica pagos parciales con asientos automáticos.</div>
+      <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="ft">"¿Cuánto me deben mis clientes?"</div>
+      <div class="fd2">Cuentas por cobrar con fechas de vencimiento. Un vistazo y sabes a quién llamar hoy.</div>
     </div>
     <div class="fc rv">
       <span class="fc-n">04</span>
-      <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-      <div class="ft">Reportes Contables</div>
-      <div class="fd2">Balance general, estado de resultados y libro diario exportables en PDF y Excel. Siempre actualizados.</div>
+      <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <div class="ft">"¿Tengo todo listo para el contador?"</div>
+      <div class="fd2">Balance general y estado de resultados listos en PDF con un clic. Tu contador no te llama más a pedir papeles.</div>
     </div>
     <div class="fc rv d1">
       <span class="fc-n">05</span>
-      <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-      <div class="ft">Bot de Telegram</div>
-      <div class="fd2">Consulta saldos, registra ingresos y recibe alertas directamente en tu Telegram. Tu contabilidad en el bolsillo.</div>
+      <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div class="ft">"¿Mis NCF están bien?"</div>
+      <div class="fd2">Facturación con comprobantes B01, B02 y B15 generados automáticamente. Cumple DGII sin esfuerzo extra.</div>
     </div>
     <div class="fc rv d2">
       <span class="fc-n">06</span>
-      <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-      <div class="ft">Cierre Contable</div>
-      <div class="fd2">Cierre mensual y anual automatizado. Los asientos de cierre se generan solos y los balances se resetean correctamente.</div>
+      <div class="fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <div class="ft">"¿Gané o perdí este mes?"</div>
+      <div class="fd2">Estado de resultados automático. Sabe tu utilidad neta sin esperar a que llegue fin de mes.</div>
     </div>
   </div>
 </section>
@@ -625,60 +645,122 @@
 
 <div class="hr"></div>
 
+<!-- CONTADORES -->
+<section id="contadores">
+  <div class="cnt-w">
+    <div>
+      <span class="slabel rv">Para contadores</span>
+      <h2 class="stitle rv d1">Un plan — todas tus empresas</h2>
+      <p class="ssub rv d2">1 contador con 10 clientes = 10 empresas gestionadas desde un solo panel. La herramienta que multiplica tu capacidad sin multiplicar tus horas.</p>
+      <div class="cnt-grid rv d3">
+        <div class="cnt-card">
+          <div class="cnt-card-n">Panel multi-empresa</div>
+          <div class="cnt-card-d">Cambia entre empresas sin cerrar sesión. Vista unificada de todas tus carteras.</div>
+        </div>
+        <div class="cnt-card">
+          <div class="cnt-card-n">Reportes por cliente</div>
+          <div class="cnt-card-d">Balance, resultados y libro diario de cada empresa en PDF con un clic.</div>
+        </div>
+        <div class="cnt-card">
+          <div class="cnt-card-n">Usuarios ilimitados</div>
+          <div class="cnt-card-d">Agrega a tus asistentes o al dueño del negocio sin costo extra.</div>
+        </div>
+        <div class="cnt-card">
+          <div class="cnt-card-n">DGII 606/607</div>
+          <div class="cnt-card-d">Genera los reportes fiscales de cada empresa en segundos. (add-on RD$300/mes)</div>
+        </div>
+      </div>
+    </div>
+    <div class="cnt-right rv d2">
+      <div class="cnt-tag">Plan Contador</div>
+      <div class="cnt-price-big">RD$1,200</div>
+      <div class="cnt-price-sub">/mes · hasta 10 empresas</div>
+      <div class="cnt-feats">
+        <div class="cnt-feat">Hasta 10 empresas</div>
+        <div class="cnt-feat">Usuarios ilimitados</div>
+        <div class="cnt-feat">Panel multi-empresa</div>
+        <div class="cnt-feat">Inventario completo</div>
+        <div class="cnt-feat">Reportes PDF/Excel</div>
+        <div class="cnt-feat">Módulos add-on</div>
+        <div class="cnt-feat">Cierre mensual/anual</div>
+        <div class="cnt-feat">Soporte prioritario</div>
+      </div>
+      <a href="https://wa.me/18294432019?text=Hola%2C%20soy%20contador%20y%20me%20interesa%20el%20plan%20Contador%20de%20MisCuentas" class="btn btn-cta btn-full" target="_blank" rel="noopener">
+        Hablar con ventas →
+      </a>
+      <p style="font-size:.72rem;color:var(--t3);text-align:center;margin-top:.75rem">Activación manual por WhatsApp · Sin contrato</p>
+    </div>
+  </div>
+</section>
+
+<div class="hr"></div>
+
 <!-- PRICING -->
 <section id="precios">
   <div class="ph">
     <span class="slabel rv">Precios</span>
     <h2 class="stitle rv d1">Simple y transparente</h2>
-    <p class="ssub rv d2">Sin sorpresas. Elige el plan que mejor se adapte a tu negocio dominicano.</p>
+    <p class="ssub rv d2">Sin sorpresas. Elige el plan para tu negocio. Activación por WhatsApp.</p>
   </div>
-  <div class="pgrid">
+  <div class="pgrid" style="grid-template-columns:repeat(4,1fr);max-width:1100px">
     <div class="pc rv">
-      <div class="pname">Gratis</div>
+      <div class="pname">Free</div>
       <div class="pamount">RD$0</div>
       <div class="pper">/mes, para siempre</div>
-      <div class="pdesc">Para empezar a ordenar tus cuentas sin costo.</div>
+      <div class="pdesc">Para empezar sin comprometerte.</div>
       <ul class="pfeats">
-        <li>Facturación básica</li>
-        <li>Hasta 50 facturas/mes</li>
-        <li>Control de inventario</li>
+        <li>1 empresa</li>
+        <li>50 transacciones/mes</li>
+        <li>Ingresos y gastos</li>
+        <li>1 usuario</li>
+      </ul>
+      <a href="https://app.miscuentasrd.com" class="btn btn-ghost btn-full">Empezar gratis</a>
+    </div>
+    <div class="pc rv d1">
+      <div class="pname">Starter</div>
+      <div class="pamount">RD$299</div>
+      <div class="pper">/mes por empresa</div>
+      <div class="pdesc">Para micro-negocios y emprendedores.</div>
+      <ul class="pfeats">
+        <li>1 empresa</li>
+        <li>Transacciones ilimitadas</li>
+        <li>Ingresos, gastos y caja</li>
         <li>Reportes básicos</li>
         <li>1 usuario</li>
       </ul>
-      <a href="https://app.miscuentasrd.com" class="btn btn-ghost btn-full">Comenzar gratis</a>
+      <a href="https://wa.me/18294432019?text=Hola%2C%20quiero%20adquirir%20el%20plan%20Starter%20de%20MisCuentas" class="btn btn-ghost btn-full" target="_blank" rel="noopener">Adquirir por WhatsApp</a>
     </div>
-    <div class="pc feat rv d1">
+    <div class="pc feat rv d2">
       <div class="ptag">Más popular</div>
-      <div class="pname">Pro</div>
-      <div class="pamount">RD$990</div>
+      <div class="pname">Negocio</div>
+      <div class="pamount">RD$600</div>
       <div class="pper">/mes por empresa</div>
-      <div class="pdesc">Para negocios que necesitan todo bajo control, con NCF ilimitado.</div>
+      <div class="pdesc">Para PYMEs con inventario y equipo.</div>
       <ul class="pfeats">
-        <li>Facturación NCF ilimitada</li>
-        <li>Inventario avanzado + producción</li>
-        <li>CxC y CxP completo</li>
-        <li>Bot de Telegram</li>
-        <li>Reportes PDF/Excel</li>
-        <li>Cierre mensual y anual</li>
-        <li>Hasta 5 usuarios</li>
+        <li>1 empresa</li>
+        <li>Inventario completo</li>
+        <li>Hasta 3 usuarios</li>
+        <li>Reportes avanzados</li>
+        <li>Módulos add-on</li>
       </ul>
-      <a href="https://app.miscuentasrd.com" class="btn btn-cta btn-full">Empezar ahora</a>
+      <a href="https://wa.me/18294432019?text=Hola%2C%20quiero%20adquirir%20el%20plan%20Negocio%20de%20MisCuentas" class="btn btn-cta btn-full" target="_blank" rel="noopener">Adquirir por WhatsApp</a>
     </div>
-    <div class="pc rv d2">
-      <div class="pname">Empresarial</div>
-      <div class="pamount custom">A la medida</div>
-      <div class="pper">Contactar para cotización</div>
-      <div class="pdesc">Solución personalizada para empresas con necesidades específicas.</div>
+    <div class="pc rv d3">
+      <div class="pname">Contador</div>
+      <div class="pamount">RD$1,200</div>
+      <div class="pper">/mes · hasta 10 empresas</div>
+      <div class="pdesc">Para contadores con múltiples clientes.</div>
       <ul class="pfeats">
-        <li>Todo lo del plan Pro</li>
+        <li>Hasta 10 empresas</li>
+        <li>Panel multi-empresa</li>
         <li>Usuarios ilimitados</li>
-        <li>Integraciones personalizadas</li>
-        <li>Soporte prioritario</li>
-        <li>Capacitación incluida</li>
+        <li>Reportes avanzados</li>
+        <li>Módulos add-on</li>
       </ul>
-      <a href="https://wa.me/18294432019?text=Hola%2C%20me%20interesa%20el%20plan%20Empresarial%20de%20MisCuentas" class="btn btn-ghost btn-full">Contactar ventas</a>
+      <a href="https://wa.me/18294432019?text=Hola%2C%20quiero%20adquirir%20el%20plan%20Contador%20de%20MisCuentas" class="btn btn-ghost btn-full" target="_blank" rel="noopener">Adquirir por WhatsApp</a>
     </div>
   </div>
+  <p style="text-align:center;color:var(--t3);font-size:.8rem;margin-top:2rem">Módulos add-on disponibles: Nómina (RD$400) · DGII 606/607 (RD$300) · e-CF (RD$500) · Backup (RD$200)</p>
 </section>
 
 <!-- CONTACT -->
