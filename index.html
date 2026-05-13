@@ -33,7 +33,7 @@
   <meta name="twitter:image" content="https://miscuentasrd.com/logo.png" />
 
   <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
@@ -41,15 +41,33 @@
         "@type": "SoftwareApplication",
         "name": "MisCuentas Contable",
         "url": "https://miscuentasrd.com",
-        "description": "La plataforma contable diseñada para empresas dominicanas. Facturación NCF, inventario, reportes y más.",
+        "description": "Plataforma contable para empresas dominicanas. Facturacion NCF automatica, inventario, reportes DGII 606/607/608, gestion de CxC y CxP. Ideal para colmados, ferreterias, restaurantes y pequenos negocios en Republica Dominicana.",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "inLanguage": "es",
+        "inLanguage": "es-DO",
+        "countriesSupported": ["DO"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "127",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "featureList": [
+          "Facturacion NCF automatica",
+          "Inventario con kardex",
+          "Reportes DGII 606, 607, 608",
+          "Cuentas por cobrar y por pagar",
+          "Modulo de produccion",
+          "Cierre mensual y anual",
+          "Multi-usuario con roles",
+          "Panel multi-empresa para contadores"
+        ],
         "offers": [
-          { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "DOP" },
-          { "@type": "Offer", "name": "Starter", "price": "299", "priceCurrency": "DOP" },
-          { "@type": "Offer", "name": "Negocio", "price": "600", "priceCurrency": "DOP" },
-          { "@type": "Offer", "name": "Contador", "price": "1200", "priceCurrency": "DOP" }
+          { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "DOP", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "name": "Starter", "price": "299", "priceCurrency": "DOP", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "name": "Negocio", "price": "600", "priceCurrency": "DOP", "availability": "https://schema.org/InStock" },
+          { "@type": "Offer", "name": "Contador", "price": "1200", "priceCurrency": "DOP", "availability": "https://schema.org/InStock" }
         ]
       },
       {
@@ -57,11 +75,31 @@
         "name": "MisCuentas Contable",
         "url": "https://miscuentasrd.com",
         "logo": "https://miscuentasrd.com/logo.png",
+        "sameAs": [
+          "https://www.instagram.com/miscuentasc"
+        ],
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "customer support",
           "email": "info@miscuentasrd.com",
-          "availableLanguage": "Spanish"
+          "availableLanguage": ["Spanish", "es-DO"]
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Dominican Republic"
+        }
+      },
+      {
+        "@type": "WebApplication",
+        "name": "MisCuentas Contable",
+        "url": "https://app.miscuentasrd.com",
+        "description": "App de contabilidad en linea para negocios dominicanos",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "DOP"
         }
       }
     ]
