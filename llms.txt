@@ -1,49 +1,29 @@
-# MisCuentas Landing — Documentation
+# MisCuentas Landing - Documentation
 
 ## Site Overview
-- **URL:** https://miscuentasrd.com
-- **Purpose:** Landing page para MisCuentas Contable — app de contabilidad para negocios dominicanos
-- **Language:** Spanish (es-DO)
-- **Repo:** github.com/Stiwall/miscuentas-landing
+- URL: https://miscuentasrd.com
+- Purpose: Landing page para MisCuentas Contable
+- Language: Spanish (es-DO)
+- Repo: github.com/Stiwall/miscuentas-landing
 
 ## Pages
-- [/index.html](index.html) — Landing page completa
+- index.html - Landing page completa
 
 ## Sections
-- **Hero:** "¿Sabes si tu negocio está ganando dinero?"
-- **Features:** Facturación NCF, Inventario, Reportes, DGII 606/607, Multi-usuario, Dashboard en tiempo real
-- **Pricing:** Free (RD$0), Starter (RD$299/mes), Negocio (RD$600/mes), Contador (RD$1,200/mes)
-- **Contadores:** Sección dedicada para contadores independientes
-- **Testimoniales:** Casos de uso reales (colmados, restaurantes, ferreterías)
-- **FAQ:** Preguntas frecuentes
-- **CTA:** Registro gratis + prueba de 7 días
+- Hero: "Sabes si tu negocio esta ganando dinero?"
+- Features: Facturacion NCF, Inventario, Reportes, DGII 606/607
+- Pricing: Free (RD$0), Starter (RD$299/mes), Negocio (RD$600/mes), Contador (RD$1,200/mes)
+- Contadores: Seccion dedicada para contadores independientes
+- FAQ: Preguntas frecuentes
 
 ## SEO
-- Canonical: https://miscuentasrd.com
-- Robots: index, follow
+- JSON-LD: SoftwareApplication + Organization
 - Sitemap: /sitemap.xml
-- OG tags: og:type website, og:locale es_DO
-- JSON-LD: SoftwareApplication + Organization (en index.html)
+- Canonical: https://miscuentasrd.com
 
 ## Technical Stack
-- **Hosting:** GitHub Pages ( Cloudflare CDN)
-- **Stack:** Vanilla HTML/CSS/JS (sin framework)
-- **Fonts:** Outfit (Google Fonts)
-- **Domain:** miscuentasrd.com via Cloudflare
+- Hosting: GitHub Pages (Cloudflare CDN)
+- Stack: Vanilla HTML/CSS/JS
+- Domain: miscuentasrd.com via Cloudflare
 
-## Pricing Details
-| Plan | Price | Features |
-|------|-------|---------|
-| Free | RD$0 | 1 empresa, 50 transacciones/mes, sin inventario |
-| Starter | RD$299/mes | 1 empresa, ilimitado transacciones, reportes básicos |
-| Negocio | RD$600/mes | Inventario completo, hasta 3 usuarios, reportes avanzados |
-| Contador | RD$1,200/mes | Hasta 10 empresas, panel multi-empresa, usuarios ilimitados |
-
-## Key Differentiators (RD-specific)
-- Facturación NCF automática
-- Soporte DGII 606/607/608
-- Reportes en RD$ (pesos dominicanos)
-- Contenido y soporte en español cubano/dominicano
-
-## Last Updated
-2026-05-13
+## Last Updated: 2026-05-13
