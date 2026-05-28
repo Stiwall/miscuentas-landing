@@ -137,6 +137,8 @@
       --rx: 22px;
       --fd: 'Outfit', sans-serif;
       --fb: 'Outfit', sans-serif;
+      --ease-out:cubic-bezier(.23,1,.32,1);
+      --ease-in-out:cubic-bezier(.77,0,.175,1);
     }
 
     html{scroll-behavior:smooth}
@@ -173,11 +175,12 @@
 
     .nav-r{display:flex;gap:10px;align-items:center}
 
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 20px;border-radius:var(--r);font-family:var(--fb);font-size:.875rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all .22s;white-space:nowrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 20px;border-radius:var(--r);font-family:var(--fb);font-size:.875rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:background-color .15s var(--ease-out),border-color .15s var(--ease-out),color .15s var(--ease-out),box-shadow .15s var(--ease-out),transform .1s var(--ease-out);white-space:nowrap}
+    .btn:not(:disabled):active{transform:scale(.97)}
     .btn-ghost{background:transparent;border:1px solid var(--border2);color:var(--t2)}
     .btn-ghost:hover{border-color:var(--o);color:var(--o)}
     .btn-cta{background:var(--o);color:#fff;box-shadow:0 0 20px var(--o-glow),inset 0 1px 0 rgba(255,255,255,.14)}
-    .btn-cta:hover{background:#F05F00;box-shadow:0 0 36px var(--o-glow2);transform:translateY(-1px)}
+    .btn-cta:hover{background:#F05F00;box-shadow:0 0 36px var(--o-glow2)}
     .btn-lg{padding:13px 28px;font-size:.95rem;border-radius:var(--rl)}
     .btn-full{width:100%}
 
@@ -278,7 +281,7 @@
 
     .app-l{display:grid;grid-template-columns:52px 1fr;min-height:340px}
     .app-sb{background:#060B14;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:16px 0;gap:14px}
-    .sico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--t3);cursor:pointer;transition:all .2s}
+    .sico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--t3);cursor:pointer;transition:background-color .15s var(--ease-out),color .15s var(--ease-out),border-color .15s var(--ease-out)}
     .sico.act{background:var(--o-dim);border:1px solid var(--bo);color:var(--o)}
     .sico:not(.act):hover{background:rgba(255,255,255,.05);color:var(--t2)}
 
@@ -311,8 +314,8 @@
     .testi-h{text-align:center;margin-bottom:4rem}
     .testi-h .ssub{margin:0 auto}
     .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}
-    .tc{background:var(--bcard2);border:1px solid var(--border);border-radius:var(--rx);padding:2rem;transition:border-color .3s,transform .3s,box-shadow .3s}
-    .tc:hover{border-color:var(--bo);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+    .tc{background:var(--bcard2);border:1px solid var(--border);border-radius:var(--rx);padding:2rem;transition:border-color .25s var(--ease-out),box-shadow .25s var(--ease-out),transform .2s var(--ease-out)}
+    .tc:hover{border-color:var(--bo);box-shadow:0 20px 40px rgba(0,0,0,.3)}
     .tq{font-family:var(--fd);font-size:3rem;line-height:.8;color:var(--o);opacity:.35;margin-bottom:1rem}
     .tt{font-size:.875rem;line-height:1.78;color:var(--t2);margin-bottom:1.5rem;font-style:italic}
     .ta{display:flex;align-items:center;gap:12px}
@@ -331,10 +334,10 @@
     .ph .ssub{margin:0 auto}
 
     .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1000px;margin:0 auto;align-items:start}
-    .pc{background:var(--bcard2);border:1px solid var(--border);border-radius:var(--rx);padding:2.5rem;transition:transform .3s,box-shadow .3s}
-    .pc:hover{transform:translateY(-4px);box-shadow:0 24px 48px rgba(0,0,0,.35)}
+    .pc{background:var(--bcard2);border:1px solid var(--border);border-radius:var(--rx);padding:2.5rem;transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}
+    .pc:hover{box-shadow:0 24px 48px rgba(0,0,0,.35)}
     .pc.feat{border-color:var(--o);background:linear-gradient(145deg,#121B2E,#1A2540);transform:translateY(-8px);box-shadow:0 0 60px rgba(249,115,22,.14),0 0 0 1px rgba(249,115,22,.28);position:relative;overflow:hidden}
-    .pc.feat:hover{transform:translateY(-12px)}
+    .pc.feat:hover{}
     .pc.feat::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(105deg,transparent 40%,rgba(249,115,22,.07) 50%,transparent 60%);animation:shim 3s ease-in-out infinite}
     @keyframes shim{0%{left:-100%}100%{left:100%}}
 
@@ -352,8 +355,8 @@
     #contacto{background:var(--bg0)}
     .con-w{max-width:700px;margin:0 auto;text-align:center}
     .con-cards{display:flex;gap:1.5rem;margin-top:3rem;flex-wrap:wrap;justify-content:center}
-    .con-c{flex:1;min-width:260px;background:var(--bcard2);border:1px solid var(--border);border-radius:var(--rx);padding:2rem;text-align:left;text-decoration:none;color:inherit;transition:all .25s;display:flex;flex-direction:column;gap:1rem}
-    .con-c:hover{border-color:var(--bo);transform:translateY(-4px);box-shadow:0 20px 40px rgba(249,115,22,.09)}
+    .con-c{flex:1;min-width:260px;background:var(--bcard2);border:1px solid var(--border);border-radius:var(--rx);padding:2rem;text-align:left;text-decoration:none;color:inherit;transition:border-color .2s var(--ease-out),box-shadow .2s var(--ease-out),transform .15s var(--ease-out);display:flex;flex-direction:column;gap:1rem}
+    .con-c:hover{border-color:var(--bo);box-shadow:0 20px 40px rgba(249,115,22,.09)}
     .con-c.wa:hover{border-color:rgba(16,185,129,.4);box-shadow:0 20px 40px rgba(16,185,129,.07)}
     .cicon{width:44px;height:44px;border-radius:var(--r);display:flex;align-items:center;justify-content:center}
     .ci-o{background:var(--o-dim);border:1px solid var(--bo)}
@@ -448,6 +451,14 @@
     .cnt-feats{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.75rem}
     .cnt-feat{display:flex;align-items:flex-start;gap:.4rem;font-size:.8rem;color:var(--t2)}
     .cnt-feat::before{content:'✓';color:var(--o);font-weight:700;flex-shrink:0;margin-top:1px}
+
+    @media(hover:hover) and (pointer:fine){
+      .btn-cta:hover{transform:translateY(-1px)}
+      .tc:hover{transform:translateY(-4px)}
+      .pc:hover{transform:translateY(-4px)}
+      .pc.feat:hover{transform:translateY(-12px)}
+      .con-c:hover{transform:translateY(-4px)}
+    }
   </style>
 </head>
 <body>
@@ -577,8 +588,7 @@
 <section id="como">
   <div class="como-in">
     <div class="como-h">
-      <span class="slabel rv">Proceso</span>
-      <h2 class="stitle rv d1">Empieza en minutos</h2>
+      <h2 class="stitle rv">Empieza en minutos</h2>
       <p class="ssub rv d2">Sin instalaciones. Sin configuraciones complicadas. Solo regístrate y empieza a facturar hoy mismo.</p>
     </div>
     <div class="steps">
@@ -607,12 +617,10 @@
 <section id="demo">
   <div class="demo-w">
     <div>
-      <span class="slabel rv">Plataforma</span>
-      <h2 class="stitle rv d1">Mira cómo funciona</h2>
+      <h2 class="stitle rv">Mira cómo funciona</h2>
       <p class="ssub rv d2" style="margin-bottom:2rem">Una interfaz limpia pensada para empresarios, no solo contadores. Accede desde cualquier dispositivo.</p>
       <a href="https://app.miscuentasrd.com" class="btn btn-cta rv d3">
-        Probar ahora — es gratis
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        Ver el dashboard →
       </a>
     </div>
     <div class="browser rv d2">
@@ -658,8 +666,7 @@
 <!-- TESTIMONIALS -->
 <section id="testi">
   <div class="testi-h">
-    <span class="slabel rv">Testimonios</span>
-    <h2 class="stitle rv d1">Lo que dicen nuestros clientes</h2>
+    <h2 class="stitle rv">Lo que dicen nuestros clientes</h2>
     <p class="ssub rv d2">Empresas dominicanas que ya llevan sus cuentas con MisCuentas.</p>
   </div>
   <div class="tg">
@@ -736,8 +743,7 @@
 <!-- PRICING -->
 <section id="precios">
   <div class="ph">
-    <span class="slabel rv">Precios</span>
-    <h2 class="stitle rv d1">Simple y transparente</h2>
+    <h2 class="stitle rv">Simple y transparente</h2>
     <p class="ssub rv d2">Sin sorpresas. Elige el plan para tu negocio. Activación por WhatsApp.</p>
   </div>
   <div class="pgrid" style="grid-template-columns:repeat(4,1fr);max-width:1100px">
@@ -804,8 +810,7 @@
 <!-- CONTACT -->
 <section id="contacto">
   <div class="con-w">
-    <span class="slabel rv">Contacto</span>
-    <h2 class="stitle rv d1">¿Tienes dudas?<br>Escríbenos</h2>
+    <h2 class="stitle rv">¿Tienes dudas?<br>Escríbenos</h2>
     <p class="ssub rv d2" style="margin:0 auto">Estamos aquí para ayudarte. Responderemos en menos de 24 horas.</p>
     <div class="con-cards">
       <a href="mailto:info@miscuentasrd.com?subject=Consulta%20MisCuentas" class="con-c rv d2">
