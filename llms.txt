@@ -1,29 +1,40 @@
-# MisCuentas Landing - Documentation
+# MisCuentas Contable
 
-## Site Overview
-- URL: https://miscuentasrd.com
-- Purpose: Landing page para MisCuentas Contable
-- Language: Spanish (es-DO)
-- Repo: github.com/Stiwall/miscuentas-landing
+> Software de contabilidad en línea para negocios dominicanos. Facturación NCF, inventario, reportes DGII, gestión de CxC/CxP.
 
-## Pages
-- index.html - Landing page completa
+## ¿Qué es MisCuentas Contable?
 
-## Sections
-- Hero: "Sabes si tu negocio esta ganando dinero?"
-- Features: Facturacion NCF, Inventario, Reportes, DGII 606/607
-- Pricing: Free (RD$0), Starter (RD$299/mes), Negocio (RD$600/mes), Contador (RD$1,200/mes)
-- Contadores: Seccion dedicada para contadores independientes
-- FAQ: Preguntas frecuentes
+MisCuentas Contable es una plataforma SaaS de contabilidad diseñada específicamente para pequeñas y medianas empresas (PYMEs) en República Dominicana. Permite registrar ventas, gastos e inventario, y genera automáticamente los reportes exigidos por la DGII (Dirección General de Impuestos Internos).
 
-## SEO
-- JSON-LD: SoftwareApplication + Organization
-- Sitemap: /sitemap.xml
-- Canonical: https://miscuentasrd.com
+## Para quién es
 
-## Technical Stack
-- Hosting: GitHub Pages (Cloudflare CDN)
-- Stack: Vanilla HTML/CSS/JS
-- Domain: miscuentasrd.com via Cloudflare
+- Dueños de colmados, ferreterías, restaurantes y pequeños negocios
+- Contadores independientes que manejan múltiples clientes
+- Empresas que necesitan cumplir con la DGII sin contratar un contador a tiempo completo
 
-## Last Updated: 2026-05-13
+## Funcionalidades principales
+
+- Facturación con NCF automático (comprobantes fiscales)
+- Control de inventario con kardex
+- Reportes DGII: 606, 607, 608
+- Cuentas por cobrar (CxC) y cuentas por pagar (CxP)
+- Módulo de producción
+- Cierre mensual y anual contable
+- Multi-usuario con roles (administrador, cajero, contador)
+- Panel multi-empresa para contadores
+
+## Planes y precios (en pesos dominicanos)
+
+- **Free**: RD/bin/bash/mes — funciones básicas, ideal para empezar
+- **Básico**: RD90/mes — para negocios pequeños
+- **Pro**: RD,490/mes — para negocios en crecimiento con inventario
+
+## Información de contacto
+
+- Web: https://miscuentasrd.com
+- App: https://app.miscuentasrd.com
+- Email: info@miscuentasrd.com
+- Instagram: @miscuentasrd
+- País: República Dominicana
+
+## Última actualización: 2026-06-08
