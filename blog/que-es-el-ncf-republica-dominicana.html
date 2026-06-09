@@ -337,6 +337,19 @@
     @media(max-width:480px) {
       .f-main { grid-template-columns: 1fr; }
     }
+
+    /* LEAD MAGNET INLINE */
+    .lm-block{display:flex;gap:20px;align-items:flex-start;background:linear-gradient(135deg,rgba(249,115,22,.10) 0%,rgba(249,115,22,.04) 100%);border:1px solid var(--bo);border-radius:var(--rl);padding:24px 28px;margin:40px 0;}
+    .lm-icon{font-size:2rem;flex-shrink:0;line-height:1;}
+    .lm-title{font-weight:700;font-size:1.05rem;color:var(--t);margin-bottom:6px;}
+    .lm-desc{color:var(--t2);font-size:.9rem;margin-bottom:14px;}
+    .lm-form{display:flex;gap:8px;flex-wrap:wrap;}
+    .lm-input{flex:1;min-width:180px;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:8px;color:var(--t);font-family:var(--fd);font-size:.9rem;outline:none;}
+    .lm-input:focus{border-color:var(--o);}
+    .lm-btn{padding:10px 18px;background:var(--o);color:#fff;border:none;border-radius:8px;font-family:var(--fd);font-size:.9rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+    .lm-btn:hover{background:var(--o2);}
+    .lm-note{font-size:.82rem;margin-top:8px;margin-bottom:0;}
+    @media(max-width:500px){.lm-block{flex-direction:column;gap:12px;}.lm-form{flex-direction:column;}}
   </style>
 </head>
 <body>
@@ -522,6 +535,22 @@
     Estos reportes deben presentarse antes del día 15 del mes siguiente. El no presentarlos a tiempo genera multas adicionales.
   </p>
 
+
+  <!-- LEAD MAGNET -->
+  <div class="lm-block">
+    <div class="lm-icon">📅</div>
+    <div style="flex:1;">
+      <div class="lm-title">Descarga el Calendario Fiscal DGII 2026 — gratis</div>
+      <div class="lm-desc">Todas las fechas de vencimiento del año en tu correo. Sin spam.</div>
+      <form class="lm-form" onsubmit="submitLM(event,this)">
+        <input type="email" placeholder="tu@correo.com" required class="lm-input">
+        <button type="submit" class="lm-btn">Descargar gratis →</button>
+      </form>
+      <p class="lm-note" style="display:none;color:var(--green);"></p>
+    </div>
+  </div>
+
+
   <!-- INLINE CTA -->
   <div class="art-cta">
     <h3>¿Cansado de manejar el NCF en Excel?</h3>
@@ -615,6 +644,41 @@
     <span class="f-copy">© 2026 MisCuentas Contable. Todos los derechos reservados.</span>
   </div>
 </footer>
+
+
+<script>
+async function submitLM(e, form) {
+  e.preventDefault();
+  const input = form.querySelector('.lm-input');
+  const btn = form.querySelector('.lm-btn');
+  const note = form.nextElementSibling;
+  const email = input.value.trim();
+  btn.disabled = true; btn.textContent = 'Enviando...';
+  try {
+    const r = await fetch('https://app.miscuentasrd.com/api/lead-magnet', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ email, resource:'calendario' })
+    });
+    const d = await r.json();
+    if (d.ok) {
+      form.style.display = 'none';
+      note.style.display = 'block';
+      note.style.color = 'var(--green)';
+      note.textContent = '✅ Revisa tu correo — el calendario está en camino.';
+    } else {
+      note.style.display = 'block';
+      note.style.color = '#EF4444';
+      note.textContent = d.error || 'Algo salió mal. Intenta de nuevo.';
+      btn.disabled = false; btn.textContent = 'Descargar gratis →';
+    }
+  } catch {
+    note.style.display = 'block';
+    note.style.color = '#EF4444';
+    note.textContent = 'Error de conexión. Intenta de nuevo.';
+    btn.disabled = false; btn.textContent = 'Descargar gratis →';
+  }
+}
+</script>
 
 </body>
 </html>
