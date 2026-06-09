@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calendario Fiscal DGII 2026 — MisCuentas</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --o:#F97316;--bg0:#04080F;--bcard:#111827;--bo:rgba(249,115,22,.28);
+      --t:#F1F5FF;--t2:#94A3C0;--t3:#4A5872;--green:#10B981;--fd:'Outfit',sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:var(--fd);background:var(--bg0);color:var(--t);line-height:1.6;}
+
+    /* SCREEN STYLES */
+    .wrap{max-width:820px;margin:0 auto;padding:40px 24px 80px;}
+    .logo-row{display:flex;align-items:center;gap:10px;margin-bottom:40px;}
+    .logo-row img{height:32px;}
+    .logo-row span{font-weight:700;font-size:1.1rem;}
+    h1{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;margin-bottom:8px;}
+    h1 span{color:var(--o);}
+    .sub{color:var(--t2);margin-bottom:36px;font-size:1rem;}
+    .print-btn{display:inline-flex;align-items:center;gap:8px;background:var(--o);color:#fff;border:none;padding:12px 28px;border-radius:10px;font-family:var(--fd);font-size:.95rem;font-weight:600;cursor:pointer;text-decoration:none;margin-bottom:40px;}
+    .print-btn:hover{background:#FB923C;}
+    .print-note{color:var(--t3);font-size:.82rem;margin-left:12px;}
+
+    .cal-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .month{background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;}
+    .month-header{background:rgba(249,115,22,.12);border-bottom:1px solid var(--bo);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;}
+    .month-name{font-weight:700;font-size:.95rem;color:var(--t);}
+    .month-badge{font-size:.75rem;color:var(--o);font-weight:600;}
+    .month-body{padding:12px 16px;}
+    .deadline{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);}
+    .deadline:last-child{border-bottom:none;}
+    .d-date{flex-shrink:0;width:44px;font-weight:700;color:var(--o);font-size:.88rem;}
+    .d-text{color:var(--t2);font-size:.85rem;line-height:1.4;}
+    .d-text strong{color:var(--t);display:block;font-size:.87rem;}
+
+    .footer-note{margin-top:40px;padding:16px 20px;background:var(--bcard);border-radius:10px;border-left:3px solid var(--o);}
+    .footer-note p{color:var(--t2);font-size:.85rem;}
+    .footer-note a{color:var(--o);}
+
+    @media(max-width:600px){.cal-grid{grid-template-columns:1fr;}}
+
+    /* PRINT STYLES */
+    @media print {
+      body{background:#fff;color:#111;font-family:Arial,sans-serif;}
+      .logo-row span,.print-btn,.print-note{color:#111;}
+      .print-btn{display:none;}
+      h1{color:#111;font-size:22pt;}
+      h1 span{color:#e65c00;}
+      .sub{color:#555;}
+      .cal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12pt;}
+      .month{border:1pt solid #ddd;border-radius:0;break-inside:avoid;}
+      .month-header{background:#fff3e0;border-bottom:1pt solid #e65c00;padding:8pt 10pt;}
+      .month-name{color:#111;font-weight:bold;}
+      .month-badge{color:#e65c00;}
+      .deadline{border-bottom:0.5pt solid #eee;}
+      .d-date{color:#e65c00;}
+      .d-text{color:#333;}
+      .d-text strong{color:#111;}
+      .footer-note{background:#fff8f0;border-left:3pt solid #e65c00;}
+      .footer-note p,.footer-note a{color:#333;}
+      @page{margin:1.5cm;size:A4;}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="logo-row">
+    <img src="../logo.png" alt="MisCuentas">
+    <span>MisCuentas Contable</span>
+  </div>
+
+  <h1>Calendario Fiscal <span>DGII 2026</span></h1>
+  <p class="sub">Todas las fechas límite del año en un solo lugar. Imprime este calendario y ponlo en tu oficina.</p>
+
+  <button class="print-btn" onclick="window.print()">
+    🖨️ Imprimir / Guardar como PDF
+  </button>
+  <span class="print-note">En tu navegador: Archivo → Imprimir → Guardar como PDF</span>
+
+  <div class="cal-grid">
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Enero 2026</span>
+        <span class="month-badge">3 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados dic.</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS dic.</div></div>
+        <div class="deadline"><div class="d-date">Día 31</div><div class="d-text"><strong>IR-3 Personas Físicas</strong>Declaración anual ISR 2025</div></div>
+      </div>
+    </div>
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Febrero 2026</span>
+        <span class="month-badge">3 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados ene.</div></div>
+        <div class="deadline"><div class="d-date">Día 15</div><div class="d-text"><strong>606 / 607</strong>Reportes informativos enero</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS ene.</div></div>
+      </div>
+    </div>
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Marzo 2026</span>
+        <span class="month-badge">4 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados feb.</div></div>
+        <div class="deadline"><div class="d-date">Día 15</div><div class="d-text"><strong>606 / 607</strong>Reportes informativos febrero</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS feb.</div></div>
+        <div class="deadline"><div class="d-date">Día 31</div><div class="d-text"><strong>IR-2 Sociedades</strong>Declaración ISR cierres 31 dic.</div></div>
+      </div>
+    </div>
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Abril 2026</span>
+        <span class="month-badge">3 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados mar.</div></div>
+        <div class="deadline"><div class="d-date">Día 15</div><div class="d-text"><strong>606 / 607</strong>Reportes informativos marzo</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS mar.</div></div>
+      </div>
+    </div>
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Mayo 2026</span>
+        <span class="month-badge">3 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados abr.</div></div>
+        <div class="deadline"><div class="d-date">Día 15</div><div class="d-text"><strong>606 / 607</strong>Reportes informativos abril</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS abr.</div></div>
+      </div>
+    </div>
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Junio 2026</span>
+        <span class="month-badge">3 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados may.</div></div>
+        <div class="deadline"><div class="d-date">Día 15</div><div class="d-text"><strong>606 / 607</strong>Reportes informativos mayo</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS may.</div></div>
+      </div>
+    </div>
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Julio 2026</span>
+        <span class="month-badge">3 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados jun.</div></div>
+        <div class="deadline"><div class="d-date">Día 15</div><div class="d-text"><strong>606 / 607</strong>Reportes informativos junio</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS jun.</div></div>
+      </div>
+    </div>
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Agosto 2026</span>
+        <span class="month-badge">3 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados jul.</div></div>
+        <div class="deadline"><div class="d-date">Día 15</div><div class="d-text"><strong>606 / 607</strong>Reportes informativos julio</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS jul.</div></div>
+      </div>
+    </div>
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Septiembre 2026</span>
+        <span class="month-badge">3 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados ago.</div></div>
+        <div class="deadline"><div class="d-date">Día 15</div><div class="d-text"><strong>606 / 607</strong>Reportes informativos agosto</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS ago.</div></div>
+      </div>
+    </div>
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Octubre 2026</span>
+        <span class="month-badge">3 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados sep.</div></div>
+        <div class="deadline"><div class="d-date">Día 15</div><div class="d-text"><strong>606 / 607</strong>Reportes informativos septiembre</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS sep.</div></div>
+      </div>
+    </div>
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Noviembre 2026</span>
+        <span class="month-badge">3 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados oct.</div></div>
+        <div class="deadline"><div class="d-date">Día 15</div><div class="d-text"><strong>606 / 607</strong>Reportes informativos octubre</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS oct.</div></div>
+      </div>
+    </div>
+
+    <div class="month">
+      <div class="month-header">
+        <span class="month-name">Diciembre 2026</span>
+        <span class="month-badge">3 vencimientos</span>
+      </div>
+      <div class="month-body">
+        <div class="deadline"><div class="d-date">Día 10</div><div class="d-text"><strong>Retenciones ISR</strong>Pago retenciones empleados nov.</div></div>
+        <div class="deadline"><div class="d-date">Día 15</div><div class="d-text"><strong>606 / 607</strong>Reportes informativos noviembre</div></div>
+        <div class="deadline"><div class="d-date">Día 20</div><div class="d-text"><strong>IT-1 (ITBIS)</strong>Declaración y pago ITBIS nov.</div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-note">
+    <p>📌 Las fechas pueden variar si caen en fin de semana o feriado. Verifica siempre en <a href="https://dgii.gov.do" target="_blank">dgii.gov.do</a>.<br>
+    Generado por <a href="https://miscuentasrd.com">MisCuentas Contable</a> — la plataforma contable para negocios dominicanos.</p>
+  </div>
+
+</div>
+</body>
+</html>
