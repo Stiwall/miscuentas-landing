@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MisCuentas vs Excel: cuándo la hoja de cálculo ya no alcanza | MisCuentas</title>
+  <meta name="description" content="¿Sigues llevando la contabilidad de tu negocio en Excel? Descubre en qué punto Excel se convierte en un obstáculo y por qué un software diseñado para la DGII cambia todo.">
+  <meta name="keywords" content="MisCuentas vs Excel, contabilidad Excel negocios RD, dejar Excel software contable, Excel DGII problemas">
+  <meta property="og:title" content="MisCuentas vs Excel: cuándo la hoja de cálculo ya no alcanza">
+  <meta property="og:description" content="Excel funciona al principio. Pero hay un punto donde se convierte en el mayor riesgo de tu negocio. Esto es lo que cambia cuando usas software real.">
+  <meta property="og:url" content="https://miscuentasrd.com/blog/miscuentas-vs-excel">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://miscuentasrd.com/blog/miscuentas-vs-excel">
+  <link rel="icon" href="../favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "MisCuentas vs Excel: cuándo la hoja de cálculo ya no alcanza para tu negocio",
+    "description": "Excel funciona al principio, pero hay un punto donde se convierte en el mayor riesgo de tu negocio. Comparativa honesta entre Excel y MisCuentas para negocios dominicanos.",
+    "author": { "@type": "Organization", "name": "MisCuentas Contable", "url": "https://miscuentasrd.com" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MisCuentas Contable",
+      "logo": { "@type": "ImageObject", "url": "https://miscuentasrd.com/logo.png" }
+    },
+    "datePublished": "2026-06-09",
+    "dateModified": "2026-06-09",
+    "url": "https://miscuentasrd.com/blog/miscuentas-vs-excel",
+    "mainEntityOfPage": "https://miscuentasrd.com/blog/miscuentas-vs-excel",
+    "inLanguage": "es-DO",
+    "keywords": "MisCuentas vs Excel, contabilidad Excel RD, software contable dominicano"
+  }
+  </script>
+
+  <style>
+    :root {
+      --o:#F97316;--o2:#FB923C;--o-dim:rgba(249,115,22,.10);--o-glow:rgba(249,115,22,.22);
+      --bg0:#04080F;--bg1:#080D18;--bg2:#0C1320;--bcard:#111827;--bcard2:#0E1520;
+      --bo:rgba(249,115,22,.28);--t:#F1F5FF;--t2:#94A3C0;--t3:#4A5872;
+      --green:#10B981;--gdim:rgba(16,185,129,.12);
+      --red:#EF4444;--rdim:rgba(239,68,68,.10);
+      --r:10px;--rl:16px;--rx:22px;--fd:'Outfit',sans-serif;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--fd);background:var(--bg0);color:var(--t);line-height:1.7;font-size:16px;}
+    nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;background:rgba(4,8,15,.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(249,115,22,.12);}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.1rem;color:var(--t);text-decoration:none;}
+    .logo img{height:30px;width:30px;object-fit:contain;}
+    .nav-links{display:flex;gap:28px;list-style:none;}
+    .nav-links a{color:var(--t2);text-decoration:none;font-size:.9rem;transition:color .2s;}
+    .nav-links a:hover{color:var(--t);}
+    .btn{padding:8px 18px;border-radius:var(--r);font-family:var(--fd);font-size:.875rem;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s;}
+    .btn-ghost{border:1px solid var(--bo);color:var(--t2);background:transparent;}
+    .btn-ghost:hover{border-color:var(--o);color:var(--t);}
+    .btn-cta{background:var(--o);color:#fff;border:none;}
+    .btn-cta:hover{background:var(--o2);transform:translateY(-1px);}
+    .nav-r{display:flex;gap:10px;align-items:center;}
+    @media(max-width:768px){.nav-links{display:none;}}
+
+    .art-hero{max-width:780px;margin:0 auto;padding:60px 24px 40px;}
+    .art-breadcrumb{font-size:.8rem;color:var(--t3);margin-bottom:16px;}
+    .art-breadcrumb a{color:var(--o);text-decoration:none;}
+    .art-breadcrumb a:hover{text-decoration:underline;}
+    .art-tag{display:inline-block;background:var(--o-dim);color:var(--o);border:1px solid var(--bo);border-radius:20px;padding:4px 14px;font-size:.78rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:18px;}
+    .art-hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.25;color:var(--t);margin-bottom:18px;}
+    .art-hero h1 span{color:var(--o);}
+    .art-meta{display:flex;align-items:center;gap:16px;font-size:.85rem;color:var(--t3);margin-bottom:32px;flex-wrap:wrap;}
+
+    .art-body{max-width:780px;margin:0 auto;padding:0 24px 80px;}
+    .art-body p{color:var(--t2);margin-bottom:20px;font-size:1.05rem;}
+    .art-body h2{font-size:1.5rem;font-weight:700;color:var(--t);margin:44px 0 16px;padding-left:16px;border-left:3px solid var(--o);}
+    .art-body h3{font-size:1.15rem;font-weight:600;color:var(--t);margin:28px 0 12px;}
+    .art-body ul,.art-body ol{padding-left:22px;margin-bottom:20px;color:var(--t2);}
+    .art-body li{margin-bottom:8px;font-size:1.05rem;}
+    .art-body strong{color:var(--t);font-weight:600;}
+    .art-body a{color:var(--o);text-decoration:none;}
+    .art-cta a,.art-cta .btn-cta{color:#fff !important;}
+    .art-body a:hover{text-decoration:underline;}
+
+    .callout{background:var(--bcard);border:1px solid var(--bo);border-radius:var(--rl);padding:20px 24px;margin:28px 0;}
+    .callout.green{border-color:rgba(16,185,129,.3);background:rgba(16,185,129,.06);}
+    .callout.red{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.06);}
+    .callout-title{font-weight:700;font-size:.9rem;color:var(--o);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
+    .callout.green .callout-title{color:var(--green);}
+    .callout.red .callout-title{color:var(--red);}
+    .callout p{margin-bottom:0;font-size:.97rem;}
+
+    /* STORY CARD */
+    .story{background:linear-gradient(135deg,#0e1a10 0%,#0e1520 100%);border:1px solid rgba(16,185,129,.25);border-radius:var(--rx);padding:28px 32px;margin:32px 0;}
+    .story-label{font-size:.75rem;color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;}
+    .story p{color:var(--t2);font-style:italic;font-size:1.02rem;margin-bottom:12px;}
+    .story p:last-child{margin-bottom:0;}
+    .story strong{color:var(--t);}
+
+    /* MOMENT CARDS - cuándo ya no alcanza */
+    .moments{display:flex;flex-direction:column;gap:14px;margin:24px 0;}
+    .moment{display:flex;gap:16px;background:var(--bcard);border:1px solid rgba(239,68,68,.2);border-radius:var(--rl);padding:18px 20px;}
+    .moment-num{flex-shrink:0;width:32px;height:32px;border-radius:8px;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);color:var(--red);font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;}
+    .moment-body strong{color:var(--t);font-size:.95rem;display:block;margin-bottom:4px;}
+    .moment-body p{color:var(--t2);font-size:.88rem;margin:0;}
+
+    /* HEAD-TO-HEAD ROWS */
+    .h2h{display:flex;flex-direction:column;gap:0;margin:24px 0;border:1px solid rgba(255,255,255,.07);border-radius:var(--rl);overflow:hidden;}
+    .h2h-header{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--bcard2);}
+    .h2h-header div{padding:12px 16px;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.5px;}
+    .h2h-header .col-topic{color:var(--t3);}
+    .h2h-header .col-excel{color:#86EFAC;border-left:1px solid rgba(255,255,255,.07);}
+    .h2h-header .col-mc{color:var(--o);border-left:1px solid rgba(255,255,255,.07);}
+    .h2h-row{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid rgba(255,255,255,.05);}
+    .h2h-row:hover{background:rgba(255,255,255,.02);}
+    .h2h-row div{padding:13px 16px;font-size:.9rem;vertical-align:middle;}
+    .h2h-row .col-topic{color:var(--t);font-weight:600;}
+    .h2h-row .col-excel{color:var(--t2);border-left:1px solid rgba(255,255,255,.05);background:rgba(134,239,172,.03);}
+    .h2h-row .col-mc{color:var(--t2);border-left:1px solid rgba(255,255,255,.05);background:rgba(249,115,22,.03);}
+    .h2h-row .col-mc.win{color:var(--green);}
+    .h2h-row .col-excel.win{color:#86EFAC;}
+    @media(max-width:560px){
+      .h2h-header,.h2h-row{grid-template-columns:1.2fr 1fr 1fr;font-size:.8rem;}
+      .h2h-header div,.h2h-row div{padding:10px 10px;}
+    }
+
+    /* COST CALCULATOR */
+    .cost-box{background:var(--bcard2);border:1px solid var(--bo);border-radius:var(--rx);padding:28px;margin:32px 0;}
+    .cost-box h3{color:var(--o);font-size:1rem;font-weight:700;margin-bottom:20px;}
+    .cost-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+    .cost-row:last-child{border-bottom:none;padding-top:14px;}
+    .cost-label{color:var(--t2);font-size:.92rem;}
+    .cost-val{font-weight:700;font-size:.95rem;}
+    .cost-val.red{color:var(--red);}
+    .cost-val.green{color:var(--green);}
+    .cost-val.orange{color:var(--o);}
+    .cost-total{font-size:1.1rem;font-weight:800;}
+
+    /* CTA */
+    .art-cta{background:linear-gradient(135deg,var(--bcard) 0%,#141e2e 100%);border:1px solid var(--bo);border-radius:var(--rx);padding:36px 32px;margin:48px 0 0;text-align:center;}
+    .art-cta h3{font-size:1.35rem;font-weight:700;color:var(--t);margin-bottom:12px;}
+    .art-cta p{color:var(--t2);margin-bottom:24px;font-size:1rem;}
+    .art-cta .btn-cta{display:inline-block;padding:13px 32px;font-size:1rem;}
+    .art-cta .trial-note{font-size:.82rem;color:var(--t3);margin-top:12px;margin-bottom:0;}
+
+    .related{max-width:780px;margin:0 auto;padding:0 24px 80px;}
+    .related h2{font-size:1.2rem;font-weight:700;color:var(--t);margin-bottom:20px;}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
+    .related-card{background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:var(--rl);padding:18px;text-decoration:none;transition:border-color .2s,transform .2s;}
+    .related-card:hover{border-color:var(--bo);transform:translateY(-2px);}
+    .related-card .rc-tag{font-size:.75rem;color:var(--o);font-weight:600;text-transform:uppercase;margin-bottom:8px;}
+    .related-card h3{font-size:.95rem;color:var(--t);font-weight:600;line-height:1.4;}
+
+    footer{background:var(--bg1);border-top:1px solid rgba(255,255,255,.06);padding:48px 5% 24px;}
+    .f-main{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;max-width:1100px;margin:0 auto 32px;}
+    .f-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;color:var(--t);text-decoration:none;margin-bottom:12px;}
+    .f-logo img{height:28px;width:28px;object-fit:contain;}
+    .f-desc{color:var(--t3);font-size:.85rem;line-height:1.6;}
+    .f-col h4{color:var(--t);font-size:.9rem;font-weight:600;margin-bottom:14px;}
+    .f-col ul{list-style:none;}
+    .f-col li{margin-bottom:8px;}
+    .f-col a{color:var(--t3);text-decoration:none;font-size:.85rem;transition:color .2s;}
+    .f-col a:hover{color:var(--o);}
+    .f-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;text-align:center;max-width:1100px;margin:0 auto;}
+    .f-copy{color:var(--t3);font-size:.82rem;}
+    @media(max-width:768px){.f-main{grid-template-columns:1fr 1fr;}}
+    @media(max-width:480px){.f-main{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo">
+    <img src="../logo.png" alt="MisCuentas logo">
+    MisCuentas
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#features">Características</a></li>
+    <li><a href="../index.html#precios">Precios</a></li>
+    <li><a href="index.html">Blog</a></li>
+  </ul>
+  <div class="nav-r">
+    <a href="https://app.miscuentasrd.com" class="btn btn-ghost">Iniciar Sesión</a>
+    <a href="https://app.miscuentasrd.com" class="btn btn-cta">Prueba Gratis</a>
+  </div>
+</nav>
+
+<div class="art-hero">
+  <div class="art-breadcrumb">
+    <a href="../index.html">Inicio</a> › <a href="index.html">Blog</a> › Comparativas
+  </div>
+  <div class="art-tag">Decisión · Comparativa</div>
+  <h1><span>MisCuentas vs Excel:</span><br>cuándo la hoja de cálculo ya no alcanza</h1>
+  <div class="art-meta">
+    <span>📅 9 de junio, 2026</span>
+    <span>⏱ 7 min de lectura</span>
+    <span>✍️ Equipo MisCuentas</span>
+  </div>
+</div>
+
+<div class="art-body">
+
+  <p>
+    Casi todos los negocios en República Dominicana empiezan igual: un cuaderno, luego un Excel, luego un Excel más complicado con fórmulas que solo el dueño entiende. Funciona. Hasta que deja de funcionar.
+  </p>
+  <p>
+    Esta no es una comparativa contra Excel — es un análisis honesto de cuándo Excel se convierte en el mayor punto de riesgo de tu negocio, y qué cambia cuando usas una herramienta diseñada para la realidad fiscal dominicana.
+  </p>
+
+  <div class="story">
+    <div class="story-label">📖 Situación real</div>
+    <p>"Tenía todo en Excel. Facturas, clientes, inventario — cinco hojas distintas. Un día la DGII me pidió el 606 de los últimos 6 meses. Me tomó <strong>tres días</strong> recopilarlo todo, y aun así tuve errores de formato que me rechazaron."</p>
+    <p>— Dueño de ferretería, Santiago de los Caballeros</p>
+  </div>
+
+  <h2>Excel no es el problema. El momento es el problema.</h2>
+  <p>
+    Excel es una herramienta brillante para lo que fue diseñado: análisis de datos, presupuestos, proyecciones. Pero llevar la contabilidad operativa de un negocio con obligaciones fiscales dominicanas en Excel es como usar un martillo para atornillar. Funciona al principio, pero hay un momento en que el costo es mayor que la solución.
+  </p>
+  <p>¿Cuándo llegaste a ese momento? Aquí las señales más claras:</p>
+
+  <div class="moments">
+    <div class="moment">
+      <div class="moment-num">1</div>
+      <div class="moment-body">
+        <strong>El 606/607 te consume más de 2 horas al mes</strong>
+        <p>Si tienes que copiar datos de una hoja a otra, formatear columnas y verificar cada RNC manualmente, el tiempo ya superó el costo de cualquier software.</p>
+      </div>
+    </div>
+    <div class="moment">
+      <div class="moment-num">2</div>
+      <div class="moment-body">
+        <strong>Una fórmula rota arruinó un reporte</strong>
+        <p>Excel no valida. Si alguien escribe un valor donde hay una fórmula, el error se propaga silenciosamente hasta que aparece en el lugar peor posible — frente a la DGII.</p>
+      </div>
+    </div>
+    <div class="moment">
+      <div class="moment-num">3</div>
+      <div class="moment-body">
+        <strong>Tu inventario y tus facturas están desincronizados</strong>
+        <p>Facturas en una hoja, inventario en otra. Cada vez que vendes algo tienes que actualizar dos lugares. Un olvido y el stock dice una cosa, la realidad dice otra.</p>
+      </div>
+    </div>
+    <div class="moment">
+      <div class="moment-num">4</div>
+      <div class="moment-body">
+        <strong>Solo tú sabes cómo funciona el Excel</strong>
+        <p>Si estás de viaje y alguien necesita emitir una factura o revisar cuánto le debe un cliente, nadie puede hacerlo. El conocimiento está atrapado en tu cabeza y en celdas con fórmulas crípticas.</p>
+      </div>
+    </div>
+    <div class="moment">
+      <div class="moment-num">5</div>
+      <div class="moment-body">
+        <strong>Perdiste un archivo o lo sobreescribiste</strong>
+        <p>Sin backup automático, un archivo corrupto o una sobreescritura accidental puede borrarte meses de datos. No es cuestión de si pasa — es cuándo.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>El costo real de seguir en Excel</h2>
+  <p>El Excel "no cuesta nada" es un mito. Aquí el cálculo real para un negocio dominicano promedio:</p>
+
+  <div class="cost-box">
+    <h3>💸 Costo mensual de llevar la contabilidad en Excel</h3>
+    <div class="cost-row">
+      <span class="cost-label">Tiempo preparando 606/607 (4 hrs × RD$400/hr)</span>
+      <span class="cost-val red">RD$1,600</span>
+    </div>
+    <div class="cost-row">
+      <span class="cost-label">Tiempo reconciliando inventario con facturas (3 hrs)</span>
+      <span class="cost-val red">RD$1,200</span>
+    </div>
+    <div class="cost-row">
+      <span class="cost-label">Errores en 606/607 → multa DGII (promedio 1 vez cada 4 meses)</span>
+      <span class="cost-val red">RD$625/mes</span>
+    </div>
+    <div class="cost-row">
+      <span class="cost-label">Contador arreglando errores del Excel (1 hr extra/mes)</span>
+      <span class="cost-val red">RD$500</span>
+    </div>
+    <div class="cost-row" style="background:rgba(239,68,68,.05);border-radius:8px;padding:14px;">
+      <span class="cost-label cost-total" style="color:var(--t);">Total costo mensual oculto</span>
+      <span class="cost-val cost-total red">~RD$3,925</span>
+    </div>
+    <div class="cost-row" style="margin-top:8px;">
+      <span class="cost-label">MisCuentas Plan Básico</span>
+      <span class="cost-val green">RD$990/mes</span>
+    </div>
+    <div class="cost-row">
+      <span class="cost-label" style="color:var(--green);font-weight:600;">Ahorro mensual estimado</span>
+      <span class="cost-val green cost-total">RD$2,935</span>
+    </div>
+  </div>
+
+  <h2>Comparativa directa: tarea por tarea</h2>
+
+  <div class="h2h">
+    <div class="h2h-header">
+      <div class="col-topic">Tarea</div>
+      <div class="col-excel">📊 Excel</div>
+      <div class="col-mc">⚡ MisCuentas</div>
+    </div>
+    <div class="h2h-row">
+      <div class="col-topic">Emitir una factura con NCF</div>
+      <div class="col-excel">Escribir número manualmente, sin validación</div>
+      <div class="col-mc win">NCF asignado automáticamente al tipo correcto</div>
+    </div>
+    <div class="h2h-row">
+      <div class="col-topic">Generar el 606 y 607</div>
+      <div class="col-excel">Formatear y exportar a mano (2-4 hrs)</div>
+      <div class="col-mc win">Descargar archivo TXT listo en segundos</div>
+    </div>
+    <div class="h2h-row">
+      <div class="col-topic">Ver cuánto te deben los clientes</div>
+      <div class="col-excel">Buscar entre hojas y sumar manualmente</div>
+      <div class="col-mc win">Panel CxC en tiempo real, un clic</div>
+    </div>
+    <div class="h2h-row">
+      <div class="col-topic">Saber el stock de un producto</div>
+      <div class="col-excel">Buscar en hoja de inventario (si está actualizado)</div>
+      <div class="col-mc win">Stock actualizado con cada venta automáticamente</div>
+    </div>
+    <div class="h2h-row">
+      <div class="col-topic">Ver si el negocio está ganando</div>
+      <div class="col-excel">Calcular manualmente con fórmulas</div>
+      <div class="col-mc win">Estado de Resultados en tiempo real</div>
+    </div>
+    <div class="h2h-row">
+      <div class="col-topic">Dar acceso a un empleado</div>
+      <div class="col-excel">Compartir archivo (con riesgo de sobreescritura)</div>
+      <div class="col-mc win">Usuarios con roles y permisos separados</div>
+    </div>
+    <div class="h2h-row">
+      <div class="col-topic">Backup de los datos</div>
+      <div class="col-excel">Manual (si recuerdas hacerlo)</div>
+      <div class="col-mc win">Automático en la nube, siempre disponible</div>
+    </div>
+    <div class="h2h-row">
+      <div class="col-topic">Acceso desde el teléfono</div>
+      <div class="col-excel">Limitado (Excel mobile es difícil)</div>
+      <div class="col-mc win">Funciona igual en cualquier dispositivo</div>
+    </div>
+    <div class="h2h-row">
+      <div class="col-topic">Costo mensual directo</div>
+      <div class="col-excel win">RD$0 (incluido en Office)</div>
+      <div class="col-mc">Desde RD$990/mes</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">💡 La única ventaja real de Excel</div>
+    <p>El costo directo es cero si ya tienes Office. Esa es su única ventaja real para este uso. Todo lo demás — velocidad, precisión, cumplimiento fiscal, colaboración — lo pierde frente a una herramienta diseñada para contabilidad.</p>
+  </div>
+
+  <h2>Lo que Excel nunca podrá hacer por ti en RD</h2>
+  <p>Hay tres cosas que ninguna hoja de cálculo puede resolver sin trabajo manual significativo:</p>
+
+  <h3>1. Generación automática del 606/607</h3>
+  <p>
+    La DGII requiere el archivo en un formato TXT específico con codificación exacta, longitudes de campo fijas y validaciones de RNC. Crear ese archivo desde Excel implica macros complejas o trabajo manual de formato. Un solo carácter fuera de lugar y el archivo es rechazado. MisCuentas lo genera directamente desde tus facturas registradas.
+  </p>
+
+  <h3>2. Control de secuencias NCF con alertas</h3>
+  <p>
+    Las secuencias de NCF tienen fechas de vencimiento y límites de uso. Excel no sabe cuántos NCF tienes disponibles ni cuándo vencen. Quedarte sin NCF en medio de una venta o con una secuencia vencida genera problemas fiscales inmediatos.
+  </p>
+
+  <h3>3. Partida doble automática</h3>
+  <p>
+    Cada factura que emites genera múltiples asientos contables: débito a cuentas por cobrar, crédito a ventas, crédito a ITBIS por pagar, débito a costo de ventas, crédito a inventario. En Excel, esto requiere actualizar varias hojas manualmente por cada transacción. MisCuentas lo hace en el momento en que registras la factura.
+  </p>
+
+  <!-- INLINE CTA -->
+  <div class="art-cta">
+    <h3>¿Listo para dejar el Excel?</h3>
+    <p>MisCuentas tiene un plan Free sin límite de tiempo. Registra tus primeras facturas hoy y genera tu primer 606 en segundos — sin tarjeta, sin contrato.</p>
+    <a href="https://app.miscuentasrd.com" class="btn btn-cta">Crear cuenta gratis →</a>
+    <p class="trial-note">Free para siempre · Básico desde RD$990/mes · Cancela cuando quieras</p>
+  </div>
+
+  <h2>¿Cuándo SÍ tiene sentido seguir en Excel?</h2>
+  <p>
+    Siendo honesto: hay casos donde Excel todavía es la respuesta correcta.
+  </p>
+  <ul>
+    <li>Tu negocio emite <strong>menos de 10 facturas al mes</strong> y no tienes inventario</li>
+    <li>Eres un <strong>freelancer</strong> con ingresos simples y gastos ocasionales</li>
+    <li>Estás en <strong>fase de idea</strong> y todavía no tienes RNC activo</li>
+  </ul>
+  <p>
+    En cualquier otro caso — tienes inventario, más de 15 facturas al mes, empleados, o necesitas presentar 606/607 con regularidad — el costo oculto de Excel ya supera el de cualquier software.
+  </p>
+
+  <div class="callout green">
+    <div class="callout-title">✅ El mejor momento para hacer el cambio</div>
+    <p>No esperes a que la DGII te multe o a que pierdas datos importantes. El mejor momento para migrar es <strong>antes</strong> de que pase algo. MisCuentas se configura en menos de 5 minutos y el plan Free te permite probar sin compromiso.</p>
+  </div>
+
+  <h2>Cómo migrar de Excel a MisCuentas en una tarde</h2>
+  <ol>
+    <li><strong>Crea tu cuenta gratis</strong> en app.miscuentasrd.com — tarda 2 minutos</li>
+    <li><strong>Configura tu empresa:</strong> RNC, nombre, dirección, tipo de negocio</li>
+    <li><strong>Agrega tus productos/servicios</strong> con precios (si tienes inventario, agrega el stock inicial)</li>
+    <li><strong>Registra tus clientes principales</strong> con su RNC o cédula</li>
+    <li><strong>Ingresa tu secuencia de NCF</strong> — número inicial y final de tu talonario actual</li>
+    <li><strong>Emite tu primera factura</strong> — el sistema asigna el NCF automáticamente</li>
+  </ol>
+  <p>
+    No necesitas migrar todo el historial de Excel de una vez. Puedes empezar desde hoy hacia adelante y consultar el Excel solo cuando necesites datos históricos.
+  </p>
+
+</div>
+
+<div class="related">
+  <h2>También te puede interesar</h2>
+  <div class="related-grid">
+    <a href="software-contable-republica-dominicana.html" class="related-card">
+      <div class="rc-tag">Software</div>
+      <h3>Software contable para negocios en República Dominicana</h3>
+    </a>
+    <a href="que-es-el-ncf-republica-dominicana.html" class="related-card">
+      <div class="rc-tag">DGII · NCF</div>
+      <h3>¿Qué es el NCF en República Dominicana? Guía Completa 2026</h3>
+    </a>
+    <a href="como-hacer-606-607-dgii.html" class="related-card">
+      <div class="rc-tag">DGII · Reportes</div>
+      <h3>Cómo llenar el 606 y 607 para la DGII paso a paso</h3>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="f-main">
+    <div>
+      <a href="../index.html" class="f-logo">
+        <img src="../logo.png" alt="MisCuentas logo">
+        MisCuentas
+      </a>
+      <p class="f-desc">La plataforma contable diseñada para la realidad empresarial dominicana. NCF, DGII, inventario y más.</p>
+    </div>
+    <div class="f-col">
+      <h4>Producto</h4>
+      <ul>
+        <li><a href="../index.html#features">Características</a></li>
+        <li><a href="../index.html#precios">Precios</a></li>
+        <li><a href="https://app.miscuentasrd.com">Iniciar Sesión</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Blog</h4>
+      <ul>
+        <li><a href="index.html">Todos los artículos</a></li>
+        <li><a href="que-es-el-ncf-republica-dominicana.html">Qué es el NCF</a></li>
+        <li><a href="software-contable-republica-dominicana.html">Software contable RD</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="mailto:info@miscuentasrd.com">info@miscuentasrd.com</a></li>
+        <li><a href="https://wa.me/18294432019">WhatsApp</a></li>
+        <li><a href="https://instagram.com/miscuentasrd">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bot">
+    <span class="f-copy">© 2026 MisCuentas Contable. Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+</body>
+</html>
