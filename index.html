@@ -40,66 +40,170 @@
       {
         "@type": "SoftwareApplication",
         "name": "MisCuentas Contable",
-        "url": "https://miscuentasrd.com",
-        "description": "Plataforma contable para empresas dominicanas. Facturacion NCF automatica, inventario, reportes DGII 606/607/608, gestion de CxC y CxP. Ideal para colmados, ferreterias, restaurantes y pequenos negocios en Republica Dominicana.",
+        "alternateName": "MisCuentas RD",
+        "url": "https://app.miscuentasrd.com",
+        "sameAs": "https://miscuentasrd.com",
+        "description": "Software contable para negocios en República Dominicana. Facturación NCF automática, inventario, reportes DGII 606/607, cuentas por cobrar y por pagar. Hecho para la realidad fiscal dominicana.",
         "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
+        "applicationSubCategory": "Accounting Software",
+        "operatingSystem": "Web Browser",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
         "inLanguage": "es-DO",
         "countriesSupported": ["DO"],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "ratingCount": "127",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
+        "image": "https://miscuentasrd.com/logo.png",
+        "screenshot": [
+          "https://raw.githubusercontent.com/Stiwall/miscuentas-landing/main/screenshots/screenshot-dashboard.jpg",
+          "https://raw.githubusercontent.com/Stiwall/miscuentas-landing/main/screenshots/screenshot-facturas.jpg",
+          "https://raw.githubusercontent.com/Stiwall/miscuentas-landing/main/screenshots/screenshot-inventario.jpg",
+          "https://raw.githubusercontent.com/Stiwall/miscuentas-landing/main/screenshots/screenshot-cxc.jpg"
+        ],
         "featureList": [
-          "Facturacion NCF automatica",
-          "Inventario con kardex",
-          "Reportes DGII 606, 607, 608",
-          "Cuentas por cobrar y por pagar",
-          "Modulo de produccion",
-          "Cierre mensual y anual",
-          "Multi-usuario con roles",
+          "Facturación con NCF automático (B01, B02, B14)",
+          "Control de secuencias NCF con alertas de vencimiento",
+          "Generación automática de reportes DGII 606 y 607",
+          "Inventario con entradas, salidas y stock mínimo",
+          "Cuentas por cobrar (CxC) y por pagar (CxP)",
+          "Módulo de producción para manufactura",
+          "Cierre contable mensual y anual automatizado",
+          "Balance General y Estado de Resultados en tiempo real",
+          "Multi-usuario con roles (admin, cajero, contador)",
           "Panel multi-empresa para contadores"
         ],
         "offers": [
-          { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "DOP", "availability": "https://schema.org/InStock" },
-          { "@type": "Offer", "name": "Basico", "price": "990", "priceCurrency": "DOP", "availability": "https://schema.org/InStock" },
-          { "@type": "Offer", "name": "Pro", "price": "2490", "priceCurrency": "DOP", "availability": "https://schema.org/InStock" }
+          {
+            "@type": "Offer",
+            "name": "Plan Free",
+            "description": "Para conocer la plataforma sin compromiso. 1 empresa, 30 facturas/mes.",
+            "price": "0",
+            "priceCurrency": "DOP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://app.miscuentasrd.com"
+          },
+          {
+            "@type": "Offer",
+            "name": "Plan Básico",
+            "description": "Para pequeños negocios. 1 empresa, 300 facturas/mes, inventario, CxC/CxP, reportes DGII.",
+            "price": "990",
+            "priceCurrency": "DOP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://miscuentasrd.com/#precios"
+          },
+          {
+            "@type": "Offer",
+            "name": "Plan Pro",
+            "description": "Para PYMEs y contadores. Hasta 5 empresas, 3 usuarios, facturas ilimitadas, panel multi-empresa.",
+            "price": "2490",
+            "priceCurrency": "DOP",
+            "availability": "https://schema.org/InStock",
+            "url": "https://miscuentasrd.com/#precios"
+          }
         ]
       },
       {
         "@type": "Organization",
         "name": "MisCuentas Contable",
+        "legalName": "MisCuentas RD",
         "url": "https://miscuentasrd.com",
-        "logo": "https://miscuentasrd.com/logo.png",
-        "sameAs": [
-          "https://www.instagram.com/miscuentasrd"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer support",
-          "email": "info@miscuentasrd.com",
-          "availableLanguage": ["Spanish", "es-DO"]
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://miscuentasrd.com/logo.png",
+          "width": 512,
+          "height": 512
         },
+        "sameAs": [
+          "https://www.instagram.com/miscuentasrd",
+          "https://www.linkedin.com/company/miscuentasrd",
+          "https://www.youtube.com/@miscuentasrd"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "info@miscuentasrd.com",
+            "telephone": "+18294432019",
+            "availableLanguage": ["Spanish", "es-DO"],
+            "areaServed": "DO"
+          }
+        ],
         "areaServed": {
           "@type": "Country",
-          "name": "Dominican Republic"
+          "name": "Dominican Republic",
+          "sameAs": "https://www.wikidata.org/wiki/Q786"
+        },
+        "foundingDate": "2024",
+        "knowsAbout": ["Contabilidad", "DGII", "NCF", "ITBIS", "República Dominicana", "Software contable"]
+      },
+      {
+        "@type": "WebSite",
+        "name": "MisCuentas Contable",
+        "url": "https://miscuentasrd.com",
+        "description": "Software contable para negocios dominicanos. Facturación NCF, DGII 606/607, inventario y más.",
+        "inLanguage": "es-DO",
+        "publisher": {
+          "@type": "Organization",
+          "name": "MisCuentas Contable"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://miscuentasrd.com/blog/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
         }
       },
       {
-        "@type": "WebApplication",
-        "name": "MisCuentas Contable",
-        "url": "https://app.miscuentasrd.com",
-        "description": "App de contabilidad en linea para negocios dominicanos",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "DOP"
-        }
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿MisCuentas genera el 606 y 607 para la DGII automáticamente?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. MisCuentas genera el archivo TXT del 606 y 607 en el formato exacto que requiere la DGII, listo para subir a la Oficina Virtual (OFV). Solo descarga el archivo y súbelo — sin formatear manualmente."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿MisCuentas maneja el NCF automáticamente?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. MisCuentas asigna el tipo de NCF correcto en cada factura (B01 para crédito fiscal, B02 para consumidores finales) y controla las secuencias con alertas cuando están por vencerse o agotarse."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito ser contador para usar MisCuentas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. MisCuentas está diseñado para dueños de negocios sin conocimientos contables avanzados. La plataforma registra tus ventas, compras e inventario y genera los reportes automáticamente. Si tienes un contador, también puede acceder para revisión."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta MisCuentas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MisCuentas tiene tres planes: Free (RD$0/mes — para conocer la plataforma), Básico (RD$990/mes — para pequeños negocios con inventario y DGII completo) y Pro (RD$2,490/mes — para PYMEs y contadores con hasta 5 empresas)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo usar MisCuentas desde mi teléfono?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. MisCuentas funciona desde cualquier navegador — computadora, tablet o teléfono. No requiere instalación. Accede desde app.miscuentasrd.com en cualquier momento."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿MisCuentas sirve para negocios con inventario?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Los planes Básico y Pro incluyen módulo de inventario completo: registro de productos, entradas y salidas, stock mínimo con alertas, y el inventario se actualiza automáticamente con cada factura de venta."
+            }
+          }
+        ]
       }
     ]
   }
@@ -790,6 +894,81 @@
   </div>
 </section>
 
+
+
+<!-- FAQ -->
+<section id="faq" style="padding:80px 5%;background:var(--bg0);">
+  <div style="max-width:760px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div style="display:inline-block;background:var(--o-dim);color:var(--o);border:1px solid var(--bo);border-radius:20px;padding:5px 16px;font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:14px;">FAQ</div>
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:var(--t);margin-bottom:10px;">Preguntas frecuentes</h2>
+      <p style="color:var(--t2);font-size:.97rem;">Lo que más nos preguntan antes de empezar.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+
+      <details style="background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;">
+        <summary style="padding:18px 22px;cursor:pointer;font-weight:600;color:var(--t);font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+          ¿MisCuentas genera el 606 y 607 para la DGII automáticamente?
+          <span style="color:var(--o);font-size:1.3rem;flex-shrink:0;">+</span>
+        </summary>
+        <div style="padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);">
+          Sí. MisCuentas genera el archivo TXT del 606 y 607 en el formato exacto que requiere la DGII, listo para subir a la Oficina Virtual (OFV). Solo descarga el archivo y súbelo — sin formatear manualmente.
+        </div>
+      </details>
+
+      <details style="background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;">
+        <summary style="padding:18px 22px;cursor:pointer;font-weight:600;color:var(--t);font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+          ¿MisCuentas maneja el NCF automáticamente?
+          <span style="color:var(--o);font-size:1.3rem;flex-shrink:0;">+</span>
+        </summary>
+        <div style="padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);">
+          Sí. MisCuentas asigna el tipo de NCF correcto en cada factura (B01 para crédito fiscal, B02 para consumidores finales) y controla las secuencias con alertas cuando están por vencerse o agotarse.
+        </div>
+      </details>
+
+      <details style="background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;">
+        <summary style="padding:18px 22px;cursor:pointer;font-weight:600;color:var(--t);font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+          ¿Necesito ser contador para usar MisCuentas?
+          <span style="color:var(--o);font-size:1.3rem;flex-shrink:0;">+</span>
+        </summary>
+        <div style="padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);">
+          No. MisCuentas está diseñado para dueños de negocios sin conocimientos contables avanzados. La plataforma registra tus ventas, compras e inventario y genera los reportes automáticamente. Si tienes un contador, también puede acceder para revisión.
+        </div>
+      </details>
+
+      <details style="background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;">
+        <summary style="padding:18px 22px;cursor:pointer;font-weight:600;color:var(--t);font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+          ¿Cuánto cuesta MisCuentas?
+          <span style="color:var(--o);font-size:1.3rem;flex-shrink:0;">+</span>
+        </summary>
+        <div style="padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);">
+          MisCuentas tiene tres planes: <strong style="color:var(--t);">Free</strong> (RD$0/mes — para conocer la plataforma), <strong style="color:var(--t);">Básico</strong> (RD$990/mes — inventario y DGII completo) y <strong style="color:var(--t);">Pro</strong> (RD$2,490/mes — hasta 5 empresas para PYMEs y contadores).
+        </div>
+      </details>
+
+      <details style="background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;">
+        <summary style="padding:18px 22px;cursor:pointer;font-weight:600;color:var(--t);font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+          ¿Puedo usar MisCuentas desde mi teléfono?
+          <span style="color:var(--o);font-size:1.3rem;flex-shrink:0;">+</span>
+        </summary>
+        <div style="padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);">
+          Sí. MisCuentas funciona desde cualquier navegador — computadora, tablet o teléfono. No requiere instalación. Accede desde app.miscuentasrd.com en cualquier momento.
+        </div>
+      </details>
+
+      <details style="background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;">
+        <summary style="padding:18px 22px;cursor:pointer;font-weight:600;color:var(--t);font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+          ¿MisCuentas sirve para negocios con inventario?
+          <span style="color:var(--o);font-size:1.3rem;flex-shrink:0;">+</span>
+        </summary>
+        <div style="padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);">
+          Sí. Los planes Básico y Pro incluyen módulo de inventario completo: registro de productos, entradas y salidas, stock mínimo con alertas, y el inventario se actualiza automáticamente con cada venta.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
 
 <!-- BLOG -->
 <section id="blog" style="padding:80px 5%;background:var(--bg1);">
