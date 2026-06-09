@@ -29,6 +29,10 @@ MisCuentas Contable es una plataforma SaaS de contabilidad diseñada específica
 - **Básico**: RD90/mes — para negocios pequeños
 - **Pro**: RD,490/mes — para negocios en crecimiento con inventario
 
+## Demo
+
+- Video demo: https://youtube.com/shorts/FOKCenOfpbo
+
 ## Información de contacto
 
 - Web: https://miscuentasrd.com
@@ -37,4 +41,4 @@ MisCuentas Contable es una plataforma SaaS de contabilidad diseñada específica
 - Instagram: @miscuentasrd
 - País: República Dominicana
 
-## Última actualización: 2026-06-08
+## Última actualización: 2026-06-09
