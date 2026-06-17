@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
+# Bloquear endpoints de API y rutas internas de la app
+Disallow: /api/
+Disallow: /auth-status
+Disallow: /auth/
+Disallow: /login
+Disallow: /dashboard
+Disallow: /mes
+Disallow: /invoice/view/
+
 Sitemap: https://miscuentasrd.com/sitemap.xml
