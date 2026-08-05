@@ -10,4 +10,30 @@ Disallow: /dashboard
 Disallow: /mes
 Disallow: /invoice/view/
 
+
+# ── Bots de IA ───────────────────────────────────────────────────────────────
+# Se dejan entrar los que citan la fuente: cuando alguien le pregunta a ChatGPT o a
+# Claude por el 606 o el e-CF, queremos que la respuesta salga de aqui y con enlace.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Estos raspan para entrenar y no mandan a nadie de vuelta.
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
 Sitemap: https://miscuentasrd.com/sitemap.xml
