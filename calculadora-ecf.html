@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es-DO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Micro, Pequeña o No Clasificado? Calcula tu fecha límite del e-CF | MisCuentas</title>
+<meta name="description" content="Dos datos y sabes en qué categoría te tiene la DGII y cuándo vence tu plazo del e-CF. Umbrales oficiales del Art. 4 de la Ley 187-17 (Resolución 05-2021), con la cifra exacta.">
+<meta name="keywords" content="clasificacion DGII, micro pequeña empresa República Dominicana, fecha límite e-CF, 15 de noviembre 2026, no clasificado DGII, facturación electrónica RD">
+<link rel="canonical" href="https://miscuentasrd.com/calculadora-ecf">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="¿Micro, Pequeña o No Clasificado? Calcula tu fecha límite del e-CF">
+<meta property="og:description" content="Dos datos y sabes en qué categoría te tiene la DGII y cuándo vence tu plazo del e-CF. Con los umbrales oficiales al centavo.">
+<meta property="og:url" content="https://miscuentasrd.com/calculadora-ecf">
+<meta property="og:image" content="https://miscuentasrd.com/screenshots/og.png">
+<meta property="og:locale" content="es_DO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="¿Micro, Pequeña o No Clasificado? Calcula tu fecha límite del e-CF">
+<meta name="twitter:description" content="Dos datos y sabes en qué categoría te tiene la DGII y cuándo vence tu plazo del e-CF.">
+<meta name="twitter:image" content="https://miscuentasrd.com/screenshots/og.png">
+
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de clasificación DGII y fecha límite del e-CF",
+  "url": "https://miscuentasrd.com/calculadora-ecf",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "es-DO",
+  "description": "Calcula en qué categoría te clasifica la DGII (Micro, Pequeña o Mediana) según trabajadores y ventas brutas anuales, y cuál es tu fecha límite para emitir e-CF.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "DOP" },
+  "publisher": { "@type": "Organization", "name": "MisCuentas", "url": "https://miscuentasrd.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo sé si mi negocio es Micro, Pequeña o Mediana empresa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La DGII aplica el Art. 4 de la Ley 187-17, modificado por la Resolución 05-2021, con dos criterios: cantidad de trabajadores y ventas brutas anuales. Microempresa: hasta 10 trabajadores y hasta RD$9,118,990.74. Pequeña empresa: de 11 a 50 trabajadores y hasta RD$61,553,187.51. Mediana empresa: de 51 a 150 trabajadores y hasta RD$230,254,516.23." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es mi fecha límite para emitir e-CF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Micro, Pequeña y No Clasificado: 15 de noviembre de 2026, tras la prórroga que la DGII otorgó el 6 de mayo de 2026. Mediana y Grandes Contribuyentes Locales: venció el 15 de mayo de 2025. Grandes Contribuyentes Nacionales: venció el 15 de mayo de 2024." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué significa ser contribuyente No Clasificado?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Es el estado de los contribuyentes que la DGII todavía no ha ubicado en ninguna de las tres categorías, algo habitual en negocios recién inscritos o sin historial de ventas suficiente. Para el e-CF la fecha límite es la misma que la de Micro y Pequeña: 15 de noviembre de 2026." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si los dos criterios no coinciden?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Puede ocurrir que la cantidad de trabajadores apunte a una categoría y las ventas brutas a otra. En ese caso la que manda es la clasificación que la DGII tiene registrada, que se consulta en la Oficina Virtual con el RNC. Para planificar conviene asumir la categoría con el plazo más exigente." }
+    }
+  ]
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --o:#F97316; --o2:#FB923C;
+  --o-dim:rgba(249,115,22,.10); --o-glow:rgba(249,115,22,.22);
+  --bg0:#04080F; --bg1:#080D18; --bg2:#0C1320;
+  --bcard:#111827; --bcard2:#0E1520;
+  --border:rgba(255,255,255,.06); --border2:rgba(255,255,255,.12);
+  --bo:rgba(249,115,22,.28);
+  --t:#F1F5FF; --t2:#94A3C0; --t3:#4A5872;
+  --green:#10B981; --gdim:rgba(16,185,129,.12);
+  --red:#F43F5E; --rdim:rgba(244,63,94,.12);
+  --r:10px; --rl:16px; --rx:22px;
+  --fd:'Outfit',sans-serif;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--fd); background:var(--bg0); color:var(--t);
+  line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+
+/* la cifra es el contenido: todos los números alineados */
+.num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+
+/* ---------- nav (igual que el resto del sitio) ---------- */
+nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding:16px 24px;
+  background:rgba(4,8,15,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--t);text-decoration:none;letter-spacing:-.02em}
+.logo img{width:30px;height:30px;border-radius:8px}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{color:var(--t2);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--t)}
+.btn-cta{
+  display:inline-block;padding:10px 20px;border-radius:var(--r);
+  background:var(--o);color:#0A0A0A;font-weight:700;font-size:15px;
+  text-decoration:none;transition:transform .18s var(--ease-out),background .18s
+}
+.btn-cta:hover{background:var(--o2)}
+.btn-cta:active{transform:scale(.97)}
+@media(max-width:840px){.nav-links{display:none}}
+
+/* ---------- envoltura ---------- */
+.wrap{max-width:780px;margin:0 auto;padding:0 24px}
+
+/* ---------- cabecera ---------- */
+.head{padding:72px 0 44px}
+.crumb{font-size:14px;color:var(--t3);margin-bottom:22px}
+.crumb a{color:var(--t3);text-decoration:none}
+.crumb a:hover{color:var(--o)}
+.head h1{
+  font-size:clamp(31px,5.2vw,49px);font-weight:800;line-height:1.08;
+  letter-spacing:-.03em;margin-bottom:20px
+}
+.head h1 em{font-style:normal;color:var(--o)}
+.lede{font-size:18px;color:var(--t2);max-width:62ch}
+
+/* ---------- formulario ---------- */
+.form{
+  margin:38px 0 0;padding:30px;
+  background:var(--bcard);border:1px solid var(--border2);border-radius:var(--rx)
+}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:620px){.fields{grid-template-columns:1fr}.form{padding:22px}}
+.field label{display:block;font-size:14px;font-weight:600;color:var(--t2);margin-bottom:8px}
+.hint{display:block;font-size:13px;font-weight:400;color:var(--t3);margin-top:3px}
+.inputwrap{position:relative;display:flex;align-items:center}
+.prefix{
+  position:absolute;left:15px;font-size:16px;font-weight:600;color:var(--t3);
+  pointer-events:none
+}
+.field input{
+  width:100%;padding:14px 15px;border-radius:var(--r);
+  background:var(--bg1);border:1px solid var(--border2);
+  color:var(--t);font-family:var(--fd);font-size:17px;font-weight:600;
+  font-variant-numeric:tabular-nums;
+  transition:border-color .18s,box-shadow .18s
+}
+.field input.pad{padding-left:52px}
+.field input::placeholder{color:var(--t3);font-weight:400}
+.field input:focus{outline:none;border-color:var(--bo);box-shadow:0 0 0 3px var(--o-dim)}
+.field input:focus-visible{outline:2px solid var(--o);outline-offset:1px}
+
+.go{
+  margin-top:22px;width:100%;padding:16px;border:none;border-radius:var(--r);
+  background:var(--o);color:#0A0A0A;font-family:var(--fd);font-size:17px;font-weight:700;
+  cursor:pointer;transition:background .18s,transform .18s var(--ease-out)
+}
+.go:hover{background:var(--o2)}
+.go:active{transform:scale(.985)}
+.go:focus-visible{outline:2px solid var(--t);outline-offset:2px}
+.err{margin-top:14px;font-size:14px;color:var(--red);min-height:0}
+
+/* ---------- veredicto (el elemento firma) ---------- */
+.verdict{margin-top:26px;display:none}
+.verdict.on{display:block;animation:rise .26s var(--ease-out) both}
+@keyframes rise{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+
+.vcard{
+  padding:30px;border-radius:var(--rx);
+  background:linear-gradient(180deg,var(--bcard2),var(--bg1));
+  border:1px solid var(--bo)
+}
+@media(max-width:620px){.vcard{padding:22px}}
+.vtop{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.vtop svg{flex-shrink:0;color:var(--o)}
+.vlabel{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--t3)}
+.vcat{font-size:clamp(27px,4.6vw,37px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:22px}
+
+.vrow{
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  padding:15px 0;border-top:1px solid var(--border)
+}
+.vrow dt{font-size:15px;color:var(--t2)}
+.vrow dd{font-size:19px;font-weight:700;text-align:right}
+.vrow dd.big{font-size:23px}
+.vrow dd.ok{color:var(--green)}
+.vrow dd.late{color:var(--red)}
+/* En movil la fecha se partia en tres lineas peleando con su etiqueta.
+   Es el dato mas importante de la pagina: se apila y se queda en una linea. */
+@media(max-width:620px){
+  .vrow{display:block}
+  .vrow dt{margin-bottom:5px}
+  .vrow dd{text-align:left}
+}
+
+.why{
+  margin-top:20px;padding:17px 19px;border-radius:var(--rl);
+  background:var(--bg2);border:1px solid var(--border);
+  font-size:15px;color:var(--t2)
+}
+.why strong{color:var(--t);font-weight:600}
+.why b{color:var(--o);font-weight:700}
+
+.warn{
+  margin-top:16px;padding:17px 19px;border-radius:var(--rl);
+  background:var(--o-dim);border:1px solid var(--bo);
+  font-size:15px;color:var(--t2)
+}
+.warn strong{color:var(--t);font-weight:700}
+
+.vcta{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
+.vcta a{
+  padding:13px 22px;border-radius:var(--r);font-size:15px;font-weight:700;text-decoration:none;
+  transition:background .18s,transform .18s var(--ease-out)
+}
+.vcta a:active{transform:scale(.97)}
+.vcta .p{background:var(--o);color:#0A0A0A}
+.vcta .p:hover{background:var(--o2)}
+.vcta .s{background:transparent;color:var(--t);border:1px solid var(--border2)}
+.vcta .s:hover{border-color:var(--bo)}
+
+/* ---------- tabla de referencia ---------- */
+.ref{padding:64px 0 20px}
+.ref h2{font-size:clamp(23px,3.4vw,31px);font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+.ref p.sub{font-size:16px;color:var(--t2);margin-bottom:26px;max-width:62ch}
+.ref p.sub a{color:var(--o);text-decoration:none;border-bottom:1px solid var(--bo)}
+.ref p.sub a:hover{color:var(--o2)}
+
+.scale{border-top:1px solid var(--border)}
+.tier{
+  display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;
+  padding:20px 0;border-bottom:1px solid var(--border)
+}
+.tier svg{color:var(--o)}
+.tier .n{font-size:17px;font-weight:700}
+.tier .d{font-size:14px;color:var(--t2);margin-top:3px}
+.tier .lim{font-size:15px;font-weight:700;text-align:right;white-space:nowrap}
+.tier .lim span{display:block;font-size:13px;font-weight:400;color:var(--t3);white-space:normal}
+@media(max-width:620px){
+  .tier{grid-template-columns:auto 1fr;gap:14px}
+  .tier .lim{grid-column:2;text-align:left;margin-top:6px}
+}
+
+/* ---------- cierre ---------- */
+.close{padding:56px 0 80px}
+.close h2{font-size:clamp(23px,3.4vw,31px);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+.close p{font-size:16px;color:var(--t2);max-width:62ch;margin-bottom:14px}
+.close p a{color:var(--o);text-decoration:none;border-bottom:1px solid var(--bo)}
+.close p a:hover{color:var(--o2)}
+.close .btn-cta{margin-top:12px;font-size:16px;padding:14px 26px}
+
+footer{border-top:1px solid var(--border);padding:30px 24px;text-align:center;color:var(--t3);font-size:14px}
+footer a{color:var(--t3);text-decoration:none}
+footer a:hover{color:var(--o)}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .verdict.on{animation:none}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><img src="logo.png" alt="MisCuentas logo">MisCuentas</a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">Características</a></li>
+    <li><a href="index.html#precios">Precios</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+  </ul>
+  <a href="https://app.miscuentasrd.com" class="btn-cta">Entrar</a>
+</nav>
+
+<div class="wrap">
+
+  <header class="head">
+    <div class="crumb"><a href="index.html">Inicio</a> / Calculadora e-CF</div>
+    <h1>La DGII ya te puso una categoría. <em>Esa</em> decide tu fecha límite.</h1>
+    <p class="lede">
+      Casi todo el mundo publica el plazo del e-CF. Casi nadie dice cómo saber si te aplica.
+      Pon dos datos y te digo en qué categoría caes, cuándo vence tu plazo y qué cifra exacta lo decidió.
+    </p>
+
+    <form class="form" id="f" novalidate>
+      <div class="fields">
+        <div class="field">
+          <label for="emp">Trabajadores
+            <span class="hint">Empleados fijos en nómina</span>
+          </label>
+          <div class="inputwrap">
+            <input type="text" inputmode="numeric" id="emp" placeholder="8" autocomplete="off">
+          </div>
+        </div>
+        <div class="field">
+          <label for="ven">Ventas brutas anuales
+            <span class="hint">Facturado en el último año, antes de gastos</span>
+          </label>
+          <div class="inputwrap">
+            <span class="prefix">RD$</span>
+            <input type="text" inputmode="numeric" id="ven" class="pad" placeholder="4,500,000" autocomplete="off">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="go">Ver mi clasificación</button>
+      <p class="err" id="err" role="alert"></p>
+    </form>
+
+    <section class="verdict" id="v" aria-live="polite">
+      <div class="vcard">
+        <div class="vtop">
+          <span id="vicon"></span>
+          <span class="vlabel">Según los umbrales de la DGII</span>
+        </div>
+        <div class="vcat" id="vcat"></div>
+
+        <dl>
+          <div class="vrow">
+            <dt>Fecha límite para emitir e-CF</dt>
+            <dd class="big" id="vfecha"></dd>
+          </div>
+          <div class="vrow">
+            <dt id="vdiaslbl">Tiempo restante</dt>
+            <dd id="vdias"></dd>
+          </div>
+        </dl>
+
+        <p class="why" id="vwhy"></p>
+        <div id="vwarn"></div>
+
+        <div class="vcta">
+          <a class="p" href="https://app.miscuentasrd.com">Empezar en MisCuentas</a>
+          <a class="s" href="blog/guia-ecf-republica-dominicana-2026">Leer la guía del e-CF</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <section class="ref">
+    <h2>Los umbrales, al centavo</h2>
+    <p class="sub">
+      No son cifras redondeadas: salen del <strong>Art. 4 de la Ley 187-17</strong>, modificado por la
+      <strong>Resolución 05-2021</strong>, publicados por la
+      <a href="https://dgii.gov.do/contribuyentesRegistrados/mipymes/Paginas/default.aspx" rel="noopener" target="_blank">DGII</a>.
+      La categoría se fija por dos criterios a la vez: trabajadores y ventas brutas anuales.
+    </p>
+
+    <div class="scale">
+      <div class="tier">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <rect x="3" y="16" width="6" height="7" rx="1.6" fill="currentColor"/>
+        </svg>
+        <div>
+          <div class="n">Microempresa</div>
+          <div class="d">Hasta 10 trabajadores</div>
+        </div>
+        <div class="lim num">RD$9,118,990.74<span>Fecha límite: 15 nov 2026</span></div>
+      </div>
+
+      <div class="tier">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <rect x="3" y="16" width="6" height="7" rx="1.6" fill="currentColor"/>
+          <rect x="11" y="11" width="6" height="12" rx="1.6" fill="currentColor"/>
+        </svg>
+        <div>
+          <div class="n">Pequeña empresa</div>
+          <div class="d">De 11 a 50 trabajadores</div>
+        </div>
+        <div class="lim num">RD$61,553,187.51<span>Fecha límite: 15 nov 2026</span></div>
+      </div>
+
+      <div class="tier">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <rect x="3" y="16" width="6" height="7" rx="1.6" fill="currentColor"/>
+          <rect x="11" y="11" width="6" height="12" rx="1.6" fill="currentColor"/>
+          <rect x="19" y="5" width="6" height="18" rx="1.6" fill="currentColor"/>
+        </svg>
+        <div>
+          <div class="n">Mediana empresa</div>
+          <div class="d">De 51 a 150 trabajadores</div>
+        </div>
+        <div class="lim num">RD$230,254,516.23<span>Venció el 15 may 2025</span></div>
+      </div>
+
+      <div class="tier">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <rect x="3" y="16" width="6" height="7" rx="1.6" fill="currentColor" opacity=".38"/>
+          <rect x="11" y="11" width="6" height="12" rx="1.6" fill="currentColor" opacity=".38"/>
+          <rect x="19" y="5" width="6" height="18" rx="1.6" fill="currentColor" opacity=".38"/>
+          <path d="M4 7.5h9M8.5 3v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="n">No Clasificado</div>
+          <div class="d">La DGII aún no te ha ubicado en ninguna categoría</div>
+        </div>
+        <div class="lim num">Mismo plazo<span>Fecha límite: 15 nov 2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <h2>Ser No Clasificado no es un problema</h2>
+    <p>
+      Es lo normal en negocios recién inscritos, en personas físicas con actividad comercial y en quienes
+      todavía no tienen historial de ventas suficiente. Para el e-CF da igual: tu fecha límite es la misma
+      que la de Micro y Pequeña, el <strong>15 de noviembre de 2026</strong>.
+    </p>
+    <p>
+      Si los dos criterios no te cuadran (pocos empleados pero ventas altas, por ejemplo), no lo deduzcas
+      tú: la que manda es la clasificación que la DGII tiene registrada. La consultas en la Oficina Virtual
+      con tu RNC y tu clave. Para planificar, parte del plazo más exigente de los dos.
+    </p>
+    <p>
+      Todo lo demás (qué es un e-CF, qué necesitas para certificarte, cuánto cuesta y qué pasa si no migras)
+      está en la <a href="blog/guia-ecf-republica-dominicana-2026">guía completa del e-CF</a>.
+    </p>
+    <a href="https://app.miscuentasrd.com" class="btn-cta">Probar MisCuentas gratis</a>
+  </section>
+
+</div>
+
+<footer>
+  <a href="index.html">MisCuentas</a> · <a href="blog/index.html">Blog</a> ·
+  <a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Términos</a>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  // Umbrales oficiales: Art. 4 Ley 187-17, mod. Resolucion 05-2021 (DGII).
+  var TIERS = [
+    { id:'micro',   nombre:'Microempresa',    emp:10,  ven:9118990.74,   fecha:'2026-11-15' },
+    { id:'pequena', nombre:'Pequeña empresa', emp:50,  ven:61553187.51,  fecha:'2026-11-15' },
+    { id:'mediana', nombre:'Mediana empresa', emp:150, ven:230254516.23, fecha:'2025-05-15' }
+  ];
+  // Por encima de Mediana ya es Gran Contribuyente: el plazo venció antes.
+  var GRANDE = { id:'grande', nombre:'Gran Contribuyente', fecha:'2025-05-15' };
+
+  var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio',
+               'agosto','septiembre','octubre','noviembre','diciembre'];
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  function pesos(n, dec){
+    return n.toLocaleString('en-US', {
+      minimumFractionDigits: dec ? 2 : 0,
+      maximumFractionDigits: dec ? 2 : 0
+    });
+  }
+
+  // indice de categoria segun cada criterio por separado
+  function porEmpleados(n){
+    for (var i=0;i<TIERS.length;i++){ if (n <= TIERS[i].emp) return i; }
+    return 3;
+  }
+  function porVentas(v){
+    for (var i=0;i<TIERS.length;i++){ if (v <= TIERS[i].ven) return i; }
+    return 3;
+  }
+
+  function iconoDe(idx){
+    var barras = [
+      '<rect x="3" y="16" width="6" height="7" rx="1.6" fill="currentColor"/>',
+      '<rect x="11" y="11" width="6" height="12" rx="1.6" fill="currentColor"/>',
+      '<rect x="19" y="5" width="6" height="18" rx="1.6" fill="currentColor"/>'
+    ];
+    var n = Math.min(idx + 1, 3);
+    return '<svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">'
+         + barras.slice(0, n).join('') + '</svg>';
+  }
+
+  // Formatear las ventas con separadores mientras se escribe.
+  var ven = $('ven');
+  ven.addEventListener('input', function(){
+    var crudo = ven.value.replace(/[^\d]/g,'');
+    ven.value = crudo ? Number(crudo).toLocaleString('en-US') : '';
+  });
+  $('emp').addEventListener('input', function(e){
+    e.target.value = e.target.value.replace(/[^\d]/g,'');
+  });
+
+  $('f').addEventListener('submit', function(e){
+    e.preventDefault();
+    var err = $('err');
+    err.textContent = '';
+
+    var nEmp = parseInt($('emp').value.replace(/[^\d]/g,''), 10);
+    var nVen = parseInt(ven.value.replace(/[^\d]/g,''), 10);
+
+    if (isNaN(nEmp) || isNaN(nVen)) {
+      err.textContent = 'Faltan datos: pon la cantidad de trabajadores y las ventas del último año.';
+      return;
+    }
+
+    var iE = porEmpleados(nEmp), iV = porVentas(nVen);
+    // Cuando los criterios discrepan, manda el mas exigente: es el plazo mas corto.
+    var idx = Math.max(iE, iV);
+    var tier = idx === 3 ? GRANDE : TIERS[idx];
+
+    $('vicon').innerHTML = iconoDe(idx);
+    $('vcat').textContent = tier.nombre;
+
+    var d = new Date(tier.fecha + 'T00:00:00');
+    $('vfecha').textContent = d.getDate() + ' de ' + MESES[d.getMonth()] + ' de ' + d.getFullYear();
+
+    var hoy = new Date(); hoy.setHours(0,0,0,0);
+    var dias = Math.round((d - hoy) / 86400000);
+    var dd = $('vdias');
+    if (dias > 0) {
+      $('vdiaslbl').textContent = 'Tiempo restante';
+      dd.textContent = dias + (dias === 1 ? ' día' : ' días');
+      dd.className = 'ok num';
+    } else {
+      $('vdiaslbl').textContent = 'Estado';
+      dd.textContent = 'Plazo vencido';
+      dd.className = 'late';
+    }
+
+    // El porque: la cifra concreta que decidio la categoria.
+    var why;
+    if (idx === 3) {
+      why = 'Con <b>' + pesos(nEmp) + '</b> trabajadores y <b>RD$' + pesos(nVen) + '</b> en ventas '
+          + 'quedas por encima del techo de mediana empresa, así que la DGII te trata como '
+          + '<strong>Gran Contribuyente</strong>. Tu plazo del e-CF ya venció.';
+    } else if (iE === iV) {
+      why = 'Tus <b>' + pesos(nEmp) + '</b> trabajadores y tus <b>RD$' + pesos(nVen) + '</b> en ventas '
+          + 'caben los dos dentro de <strong>' + tier.nombre.toLowerCase() + '</strong>: '
+          + 'hasta ' + TIERS[idx].emp + ' trabajadores y hasta RD$' + pesos(TIERS[idx].ven, true) + '.';
+    } else {
+      var manda = iE > iV ? 'la cantidad de trabajadores' : 'el monto de ventas';
+      var otra  = TIERS[Math.min(iE, iV)].nombre.toLowerCase();
+      why = 'Tus dos datos no apuntan al mismo sitio: por un lado darías <strong>' + otra + '</strong>, '
+          + 'pero <strong>' + manda + '</strong> te sube a <strong>' + tier.nombre.toLowerCase() + '</strong>. '
+          + 'Te muestro la categoría con el <b>plazo más corto</b>, que es la que no te deja fuera de tiempo.';
+    }
+    $('vwhy').innerHTML = why;
+
+    var warn = '';
+    if (iE !== iV) {
+      warn = '<div class="warn">Con criterios discrepantes, <strong>no lo decidas tú</strong>. '
+           + 'Consulta tu clasificación real en la Oficina Virtual de la DGII con tu RNC antes de '
+           + 'planificar la migración.</div>';
+    } else if (idx <= 1) {
+      warn = '<div class="warn">Si la DGII te tiene como <strong>No Clasificado</strong>, tu fecha '
+           + 'límite es la misma: 15 de noviembre de 2026. Puedes verificarlo en la Oficina Virtual '
+           + 'con tu RNC.</div>';
+    }
+    $('vwarn').innerHTML = warn;
+
+    var v = $('v');
+    v.classList.add('on');
+    v.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  });
+})();
+</script>
+
+</body>
+</html>
