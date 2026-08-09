@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es-DO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App de contabilidad y facturación para negocios en República Dominicana | MisCuentas</title>
+<meta name="description" content="La app contable que sabe qué es un NCF. Factura, controla inventario y saca el 606 y 607 desde el teléfono. Se instala sin pasar por Play Store. Plan gratis.">
+<meta name="keywords" content="app contabilidad República Dominicana, aplicación contable RD, app facturar desde el celular, app NCF, programa contable pymes dominicanas, app 606 607 DGII">
+<link rel="canonical" href="https://miscuentasrd.com/app-contable">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="La app de contabilidad que sabe qué es un NCF">
+<meta property="og:description" content="Factura con NCF, controla inventario y saca el 606 y 607 desde el teléfono. Se instala sin pasar por Play Store.">
+<meta property="og:url" content="https://miscuentasrd.com/app-contable">
+<meta property="og:image" content="https://miscuentasrd.com/screenshots/og.png">
+<meta property="og:locale" content="es_DO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La app de contabilidad que sabe qué es un NCF">
+<meta name="twitter:description" content="Factura con NCF, controla inventario y saca el 606 y 607 desde el teléfono.">
+<meta name="twitter:image" content="https://miscuentasrd.com/screenshots/og.png">
+
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MisCuentas",
+  "url": "https://miscuentasrd.com/app-contable",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Android, iOS, Windows, macOS — se ejecuta en el navegador",
+  "inLanguage": "es-DO",
+  "description": "Aplicación de contabilidad y facturación para negocios dominicanos: comprobantes NCF y e-CF, reportes 606 y 607 para la DGII, inventario y cuentas por cobrar, desde el teléfono.",
+  "areaServed": { "@type": "Country", "name": "República Dominicana" },
+  "offers": [
+    { "@type": "Offer", "name": "Gratis", "price": "0", "priceCurrency": "DOP" },
+    { "@type": "Offer", "name": "Básico", "price": "990", "priceCurrency": "DOP" },
+    { "@type": "Offer", "name": "Pro", "price": "2490", "priceCurrency": "DOP" }
+  ],
+  "publisher": { "@type": "Organization", "name": "MisCuentas", "url": "https://miscuentasrd.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Hay que descargarla de Play Store o App Store?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. MisCuentas se instala desde el navegador: abres app.miscuentasrd.com y eliges Agregar a la pantalla de inicio. Queda con su icono, se abre a pantalla completa y se actualiza sola, sin esperar a que una tienda apruebe la versión." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sirve para emitir comprobantes NCF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. La app maneja las secuencias de NCF por tipo de comprobante y avisa cuando se están agotando, además de preparar la migración al e-CF, obligatorio para micro, pequeñas y no clasificados desde el 15 de noviembre de 2026." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Genera los reportes 606 y 607 de la DGII?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. El 606 (compras) y el 607 (ventas) salen del movimiento que ya registraste, en el formato que la DGII pide para subirlos a la Oficina Virtual." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta la app de contabilidad?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Hay un plan gratis para empezar. El plan Básico cuesta RD$990 al mes y el Pro RD$2,490 al mes. No hace falta tarjeta para probar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Funciona en iPhone y en Android?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, en los dos, y también en computadora. Como corre en el navegador, los datos son los mismos en todos tus dispositivos: facturas desde el teléfono en el mostrador y revisas los reportes desde la laptop." }
+    }
+  ]
+}
+</script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --o:#F97316; --o2:#FB923C;
+  --o-dim:rgba(249,115,22,.10); --o-glow:rgba(249,115,22,.22);
+  --bg0:#04080F; --bg1:#080D18; --bg2:#0C1320;
+  --bcard:#111827; --bcard2:#0E1520;
+  --border:rgba(255,255,255,.06); --border2:rgba(255,255,255,.12);
+  --bo:rgba(249,115,22,.28);
+  --t:#F1F5FF; --t2:#94A3C0; --t3:#4A5872;
+  --green:#10B981; --gdim:rgba(16,185,129,.12);
+  --r:10px; --rl:16px; --rx:22px;
+  --fd:'Outfit',sans-serif;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--fd);background:var(--bg0);color:var(--t);line-height:1.6;-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums}
+
+nav{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding:16px 24px;background:rgba(4,8,15,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border)
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--t);text-decoration:none;letter-spacing:-.02em}
+.logo img{width:30px;height:30px;border-radius:8px}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{color:var(--t2);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--t)}
+.btn-cta{
+  display:inline-block;padding:10px 20px;border-radius:var(--r);background:var(--o);
+  color:#0A0A0A;font-weight:700;font-size:15px;text-decoration:none;
+  transition:background .18s,transform .18s var(--ease-out)
+}
+.btn-cta:hover{background:var(--o2)}
+.btn-cta:active{transform:scale(.97)}
+@media(max-width:840px){.nav-links{display:none}}
+
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+/* ---------- hero ---------- */
+.hero{padding:76px 0 20px}
+.eyebrow{
+  display:inline-block;padding:6px 13px;border-radius:100px;margin-bottom:22px;
+  background:var(--o-dim);border:1px solid var(--bo);
+  font-size:13px;font-weight:600;letter-spacing:.05em;color:var(--o2)
+}
+.hero h1{font-size:clamp(33px,6vw,58px);font-weight:800;line-height:1.05;letter-spacing:-.035em;margin-bottom:22px;max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--o)}
+.hero .lede{font-size:19px;color:var(--t2);max-width:60ch;margin-bottom:30px}
+.ctas{display:flex;flex-wrap:wrap;gap:13px;align-items:center}
+.ctas .big{padding:15px 28px;font-size:16px}
+.ctas .ghost{
+  padding:15px 26px;border-radius:var(--r);border:1px solid var(--border2);
+  color:var(--t);text-decoration:none;font-weight:600;font-size:16px;transition:border-color .18s
+}
+.ctas .ghost:hover{border-color:var(--bo)}
+.note{margin-top:15px;font-size:14px;color:var(--t3)}
+
+/* ---------- lo que haces ---------- */
+.sec{padding:72px 0 0}
+.sec h2{font-size:clamp(25px,3.8vw,35px);font-weight:800;letter-spacing:-.025em;margin-bottom:12px}
+.sec .sub{font-size:17px;color:var(--t2);max-width:62ch;margin-bottom:32px}
+
+.acts{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:700px){.acts{grid-template-columns:1fr}}
+.act{padding:24px;background:var(--bcard);border:1px solid var(--border);border-radius:var(--rl)}
+.act svg{color:var(--o);margin-bottom:14px;display:block}
+.act h3{font-size:18px;font-weight:700;margin-bottom:7px;letter-spacing:-.01em}
+.act p{font-size:15px;color:var(--t2)}
+
+/* ---------- comparacion (elemento firma) ---------- */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px}
+@media(max-width:700px){.vs{grid-template-columns:1fr}}
+.col{padding:26px;border-radius:var(--rx);border:1px solid var(--border);background:var(--bg1)}
+.col.mine{border-color:var(--bo);background:linear-gradient(180deg,var(--bcard2),var(--bg1))}
+.col .tag{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:16px}
+.col.mine .tag{color:var(--o)}
+.col ol{list-style:none;counter-reset:p}
+.col li{
+  counter-increment:p;position:relative;padding:11px 0 11px 34px;font-size:15px;
+  color:var(--t2);border-top:1px solid var(--border)
+}
+.col li:first-child{border-top:none}
+.col li::before{
+  content:counter(p);position:absolute;left:0;top:11px;
+  width:22px;height:22px;border-radius:6px;
+  background:var(--bg2);color:var(--t3);
+  font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center
+}
+.col.mine li::before{background:var(--o-dim);color:var(--o)}
+.col li b{color:var(--t);font-weight:600}
+.col .end{margin-top:16px;padding-top:15px;border-top:1px solid var(--border);font-size:15px;font-weight:600}
+.col .end.bad{color:var(--t3)}
+.col .end.good{color:var(--green)}
+
+/* ---------- instalar ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:700px){.steps{grid-template-columns:1fr}}
+.step{padding:22px;background:var(--bg1);border:1px solid var(--border);border-radius:var(--rl)}
+.step .n{
+  display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;
+  border-radius:8px;background:var(--o-dim);color:var(--o);
+  font-size:14px;font-weight:800;margin-bottom:13px
+}
+.step h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.step p{font-size:14px;color:var(--t2)}
+
+/* ---------- precio ---------- */
+.price{
+  margin-top:34px;padding:30px;border-radius:var(--rx);
+  background:var(--bcard);border:1px solid var(--border2);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px
+}
+.price .l .n{font-size:15px;color:var(--t2);margin-bottom:6px}
+.price .l .v{font-size:31px;font-weight:800;letter-spacing:-.02em}
+.price .l .v span{font-size:16px;font-weight:500;color:var(--t3)}
+.price .l .m{font-size:14px;color:var(--t3);margin-top:6px}
+.price .l .m a{color:var(--o);text-decoration:none;border-bottom:1px solid var(--bo)}
+
+/* ---------- faq ---------- */
+.faq h3{font-size:18px;font-weight:700;margin:26px 0 7px;letter-spacing:-.01em}
+.faq p{font-size:15.5px;color:var(--t2);max-width:70ch}
+.faq p a{color:var(--o);text-decoration:none;border-bottom:1px solid var(--bo)}
+
+.final{padding:64px 0 84px;text-align:center}
+.final h2{font-size:clamp(25px,3.8vw,35px);font-weight:800;letter-spacing:-.025em;margin-bottom:13px}
+.final p{font-size:17px;color:var(--t2);max-width:52ch;margin:0 auto 24px}
+
+footer{border-top:1px solid var(--border);padding:30px 24px;text-align:center;color:var(--t3);font-size:14px}
+footer a{color:var(--t3);text-decoration:none}
+footer a:hover{color:var(--o)}
+
+a:focus-visible,button:focus-visible{outline:2px solid var(--o);outline-offset:2px}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><img src="logo.png" alt="MisCuentas logo">MisCuentas</a>
+  <ul class="nav-links">
+    <li><a href="index.html#features">Características</a></li>
+    <li><a href="index.html#precios">Precios</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+  </ul>
+  <a href="https://app.miscuentasrd.com" class="btn-cta">Entrar</a>
+</nav>
+
+<div class="wrap">
+
+  <section class="hero">
+    <span class="eyebrow">App contable para República Dominicana</span>
+    <h1>La app de contabilidad que sabe qué es un <em>NCF</em>.</h1>
+    <p class="lede">
+      Las apps de gastos apuntan lo que entra y lo que sale. Ninguna sabe qué hacer con una
+      secuencia B01, ni cómo se arma el 606. MisCuentas se hizo para negocios dominicanos:
+      facturas desde el teléfono y los reportes de la DGII salen solos.
+    </p>
+    <div class="ctas">
+      <a href="https://app.miscuentasrd.com" class="btn-cta big">Empezar gratis</a>
+      <a href="#instalar" class="ghost">Cómo se instala</a>
+    </div>
+    <p class="note">Sin tarjeta para probar. Funciona en Android, iPhone y computadora.</p>
+  </section>
+
+  <section class="sec">
+    <h2>Lo que resuelves desde el teléfono</h2>
+    <p class="sub">
+      En el mostrador, en la ruta o en casa de un cliente. Sin esperar a llegar a la computadora
+      para cuadrar el día.
+    </p>
+
+    <div class="acts">
+      <div class="act">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <rect x="4.5" y="2.5" width="17" height="21" rx="2.6" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M8.5 8h9M8.5 12h9M8.5 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <h3>Facturar con NCF</h3>
+        <p>Emite el comprobante con su secuencia correcta y controla cuántos te quedan por tipo, antes de que se acaben en plena venta.</p>
+      </div>
+
+      <div class="act">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <rect x="3" y="15" width="5" height="8" rx="1.4" fill="currentColor"/>
+          <rect x="10.5" y="9" width="5" height="14" rx="1.4" fill="currentColor"/>
+          <rect x="18" y="4" width="5" height="19" rx="1.4" fill="currentColor"/>
+        </svg>
+        <h3>Sacar el 606 y el 607</h3>
+        <p>Salen del movimiento que ya registraste, en el formato que la DGII pide para subirlos a la Oficina Virtual.</p>
+      </div>
+
+      <div class="act">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <path d="M13 3l9 4.6v10.8L13 23l-9-4.6V7.6L13 3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M4 7.6l9 4.6 9-4.6M13 12.2V23" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+        <h3>Ver qué te queda en inventario</h3>
+        <p>Consulta existencias y costos en el momento, sin llamar al almacén ni abrir una hoja de cálculo.</p>
+      </div>
+
+      <div class="act">
+        <svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M13 7.5v6l4 2.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Saber quién te debe</h3>
+        <p>Las cuentas por cobrar con su antigüedad, para llamar al que lleva 60 días y no al que facturaste ayer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Una app genérica contra una app dominicana</h2>
+    <p class="sub">
+      La diferencia no se ve en la lista de funciones. Se ve el día que haces una venta a
+      crédito a un cliente con RNC.
+    </p>
+
+    <div class="vs">
+      <div class="col">
+        <div class="tag">App de gastos genérica</div>
+        <ol>
+          <li>Anotas <b>la venta</b> como un ingreso más</li>
+          <li>El NCF lo escribes a mano en una nota, si te acuerdas</li>
+          <li>El RNC del cliente no tiene dónde ir</li>
+          <li>A fin de mes <b>rehaces el 607 en Excel</b>, factura por factura</li>
+          <li>Si el formato cambió, te enteras cuando la DGII lo rechaza</li>
+        </ol>
+        <div class="end bad">Terminas llevando dos contabilidades.</div>
+      </div>
+
+      <div class="col mine">
+        <div class="tag">MisCuentas</div>
+        <ol>
+          <li>Emites <b>la factura con su NCF</b> y la secuencia avanza sola</li>
+          <li>El RNC queda en el comprobante, donde la DGII lo espera</li>
+          <li>La venta a crédito entra en cuentas por cobrar sin apuntarla aparte</li>
+          <li>El <b>607 ya está armado</b> cuando llegas a fin de mes</li>
+          <li>El formato lo mantenemos nosotros al día, no tú</li>
+        </ol>
+        <div class="end good">Cierras el mes con lo que ya facturaste.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="instalar">
+    <h2>Se instala como una app, sin pasar por Play Store</h2>
+    <p class="sub">
+      No hay descarga que ocupe espacio ni actualización que esperar. Se agrega desde el
+      navegador y queda con su icono en la pantalla de inicio, a pantalla completa.
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <span class="n">1</span>
+        <h3>Abre la app en el navegador</h3>
+        <p>Entra a <strong>app.miscuentasrd.com</strong> desde el teléfono, con Chrome o Safari.</p>
+      </div>
+      <div class="step">
+        <span class="n">2</span>
+        <h3>Agregar a pantalla de inicio</h3>
+        <p>En el menú del navegador elige <strong>Agregar a la pantalla de inicio</strong> (en iPhone está dentro de Compartir).</p>
+      </div>
+      <div class="step">
+        <span class="n">3</span>
+        <h3>Ábrela por su icono</h3>
+        <p>Queda como cualquier otra app y se actualiza sola: siempre tienes la última versión.</p>
+      </div>
+    </div>
+
+    <div class="price">
+      <div class="l">
+        <div class="n">Empieza sin pagar</div>
+        <div class="v">RD$0 <span>para arrancar</span></div>
+        <div class="m">Básico RD$990/mes · Pro RD$2,490/mes — <a href="index.html#precios">ver qué incluye cada plan</a></div>
+      </div>
+      <a href="https://app.miscuentasrd.com" class="btn-cta big">Crear mi cuenta</a>
+    </div>
+  </section>
+
+  <section class="sec faq">
+    <h2>Preguntas frecuentes</h2>
+
+    <h3>¿Hay que descargarla de Play Store o App Store?</h3>
+    <p>No. Se instala desde el navegador: abres <strong>app.miscuentasrd.com</strong> y eliges «Agregar a la pantalla de inicio». Queda con su icono, se abre a pantalla completa y se actualiza sola, sin esperar a que una tienda apruebe la versión.</p>
+
+    <h3>¿Sirve para emitir comprobantes NCF?</h3>
+    <p>Sí. Maneja las secuencias por tipo de comprobante y avisa cuando se están agotando. También prepara la migración al <a href="blog/guia-ecf-republica-dominicana-2026">e-CF</a>, obligatorio para micro, pequeñas y no clasificados desde el 15 de noviembre de 2026. Si no sabes en qué categoría te tiene la DGII, <a href="calculadora-ecf">calcúlalo aquí</a>.</p>
+
+    <h3>¿Genera los reportes 606 y 607 de la DGII?</h3>
+    <p>Sí. El 606 (compras) y el 607 (ventas) salen del movimiento que ya registraste, en el formato que la DGII pide para subirlos a la Oficina Virtual.</p>
+
+    <h3>¿Cuánto cuesta?</h3>
+    <p>Hay un plan gratis para empezar. El Básico cuesta RD$990 al mes y el Pro RD$2,490 al mes. No hace falta tarjeta para probar. <a href="index.html#precios">Ver los planes completos</a>.</p>
+
+    <h3>¿Funciona en iPhone y en Android?</h3>
+    <p>En los dos, y también en computadora. Como corre en el navegador, los datos son los mismos en todos tus dispositivos: facturas desde el teléfono en el mostrador y revisas los reportes desde la laptop.</p>
+  </section>
+
+  <section class="final">
+    <h2>Pruébala con las ventas de esta semana</h2>
+    <p>Registra unos días de movimiento y mira cómo queda tu 607. Es la forma más rápida de saber si te sirve.</p>
+    <a href="https://app.miscuentasrd.com" class="btn-cta big">Empezar gratis</a>
+  </section>
+
+</div>
+
+<footer>
+  <a href="index.html">MisCuentas</a> · <a href="blog/index.html">Blog</a> ·
+  <a href="calculadora-ecf">Calculadora e-CF</a> ·
+  <a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Términos</a>
+</footer>
+
+</body>
+</html>
