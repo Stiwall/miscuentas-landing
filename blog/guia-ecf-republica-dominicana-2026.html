@@ -23,6 +23,11 @@
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "¿Cómo sé si mi negocio es Micro, Pequeño o No Clasificado?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La DGII clasifica según el Art. 4 de la Ley 187-17, modificado por la Resolución 05-2021, usando dos criterios: cantidad de trabajadores y ventas brutas anuales. Microempresa: hasta 10 trabajadores y hasta RD$9,118,990.74. Pequeña empresa: de 11 a 50 trabajadores y hasta RD$61,553,187.51. Micro, Pequeña y No Clasificado comparten la misma fecha límite de e-CF: 15 de noviembre de 2026." }
+      },
+      {
+        "@type": "Question",
         "name": "¿Qué es el e-CF en República Dominicana?",
         "acceptedAnswer": { "@type": "Answer", "text": "El e-CF (Comprobante Fiscal Electrónico) es un archivo XML firmado digitalmente que reemplaza al NCF tradicional. Bajo la Ley 32-23, los contribuyentes deben generar, firmar y transmitir cada factura a la DGII en tiempo real a través de un webservice." }
       },
@@ -68,7 +73,7 @@
       "logo": { "@type": "ImageObject", "url": "https://miscuentasrd.com/logo.png" }
     },
     "datePublished": "2026-06-18",
-    "dateModified": "2026-06-18",
+    "dateModified": "2026-08-09",
     "url": "https://miscuentasrd.com/blog/guia-ecf-republica-dominicana-2026",
     "mainEntityOfPage": "https://miscuentasrd.com/blog/guia-ecf-republica-dominicana-2026",
     "image": "https://miscuentasrd.com/screenshots/screenshot-facturas.jpg",
@@ -487,9 +492,36 @@
     </tbody>
   </table>
 
+  <h2>¿Mi negocio es Micro, Pequeño o No Clasificado?</h2>
   <p>
-    Si no sabes en qué segmento estás clasificado, puedes consultarlo en la Oficina Virtual de la DGII con tu RNC y clave de acceso. La gran mayoría de las PYMES dominicanas caen en <strong>Pequeños</strong> o <strong>Micros</strong>.
+    Esta es la pregunta que decide tu fecha límite, y casi nadie la responde con números. La DGII no clasifica por el tamaño que tú creas tener: aplica el <strong>Art. 4 de la Ley 187-17</strong>, modificado por la <strong>Resolución 05-2021</strong>, que fija dos criterios — <strong>cantidad de trabajadores</strong> y <strong>ventas brutas anuales</strong>.
   </p>
+
+  <table class="ncf-table">
+    <thead>
+      <tr>
+        <th>Clasificación</th>
+        <th>Trabajadores</th>
+        <th>Ventas brutas anuales</th>
+        <th>Fecha límite e-CF</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Microempresa</strong></td><td>Hasta 10</td><td>Hasta RD$9,118,990.74</td><td>15 de noviembre de 2026</td></tr>
+      <tr><td><strong>Pequeña empresa</strong></td><td>De 11 a 50</td><td>Hasta RD$61,553,187.51</td><td>15 de noviembre de 2026</td></tr>
+      <tr><td><strong>Mediana empresa</strong></td><td>De 51 a 150</td><td>Hasta RD$230,254,516.23</td><td>15 de mayo de 2025 <span class="ncf-code">Obligatorio</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>¿Y si soy «No Clasificado»?</h3>
+  <p>
+    No Clasificado no es un castigo ni un error en tu RNC: es el estado de los contribuyentes que la DGII todavía no ha encasillado en ninguna de las tres categorías. Es habitual en <strong>negocios recién inscritos</strong>, en personas físicas con actividad comercial y en quienes aún no tienen historial de ventas suficiente. Para el e-CF da lo mismo: <strong>tu fecha límite es la misma, 15 de noviembre de 2026</strong>.
+  </p>
+
+  <div class="callout">
+    <div class="callout-title">⚠️ Manda la clasificación de la DGII, no tu cálculo</div>
+    <p>Los dos criterios pueden no coincidir en tu caso: 8 empleados pero RD$40 millones en ventas, por ejemplo. Cuando eso pasa, <strong>no lo deduzcas tú</strong> — la categoría que te aplica es la que la DGII tiene registrada. Consúltala en la <strong>Oficina Virtual</strong> con tu RNC y clave de acceso, y planifica la migración a partir de ese dato, no de una estimación.</p>
+  </div>
 
   <h2>Tipos de e-CF según la DGII</h2>
   <p>
@@ -683,6 +715,9 @@
   </ul>
 
   <h2>Preguntas frecuentes sobre el e-CF</h2>
+
+  <h3>¿Cómo sé si mi negocio es Micro, Pequeño o No Clasificado?</h3>
+  <p>La DGII lo determina por dos criterios (Art. 4 de la Ley 187-17, modificado por la Resolución 05-2021): microempresa, hasta 10 trabajadores y ventas brutas anuales de hasta RD$9,118,990.74; pequeña empresa, de 11 a 50 trabajadores y hasta RD$61,553,187.51. Las tres categorías con plazo pendiente —Micro, Pequeña y No Clasificado— comparten la misma fecha límite: <strong>15 de noviembre de 2026</strong>. Tu clasificación oficial la consultas en la Oficina Virtual de la DGII con tu RNC.</p>
 
   <h3>¿Puedo usar NCF tradicional y e-CF al mismo tiempo?</h3>
   <p>Sí, durante el periodo de transición. Pero una vez que comiences a emitir e-CF para un tipo (por ejemplo E31), la DGII espera que dejes de emitir NCF tradicionales del tipo equivalente (B01). En la práctica conviene migrar todo el flujo a la vez.</p>
