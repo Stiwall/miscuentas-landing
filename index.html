@@ -506,7 +506,7 @@
     .f-bot{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:2rem;border-top:1px solid var(--border)}
     .f-copy{color:var(--t3);font-size:.8rem}
     .f-leg{display:flex;gap:1.5rem}
-    .f-leg a{color:var(--t3);font-size:.8rem;text-decoration:none;transition:color .2s}
+    .f-leg>*{color:var(--t3);font-size:.8rem;text-decoration:none;transition:color .2s}
     .f-leg a:hover{color:var(--o)}
 
     /* DIVIDER */
@@ -605,7 +605,7 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="logo">
+  <a href="/" class="logo">
     <div class="logo-img"><img src="logo.png" alt="MisCuentas Contable" /></div>
     MisCuentas
   </a>
@@ -1155,7 +1155,7 @@ async function submitLM(e) {
 <footer>
   <div class="f-main">
     <div>
-      <a href="#" class="f-logo">
+      <a href="/" class="f-logo">
         <div class="logo-img" style="width:28px;height:28px"><img src="logo.png" alt="MisCuentas Contable" /></div>
         MisCuentas
       </a>
@@ -1189,7 +1189,7 @@ async function submitLM(e) {
   </div>
   <div class="f-bot">
     <span class="f-copy">© 2026 MisCuentas Contable. Todos los derechos reservados.</span>
-    <div class="f-leg"><a href="#">Hecho en República Dominicana 🇩🇴</a></div>
+    <div class="f-leg"><span>Hecho en República Dominicana 🇩🇴</span></div>
   </div>
 </footer>
 
