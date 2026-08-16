@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 420" width="1400" height="420"
+     role="img" aria-labelledby="flowTitle flowDesc">
+  <title id="flowTitle">De la factura al reporte DGII</title>
+  <desc id="flowDesc">Una factura emitida en MisCuentas descuenta el inventario, crea la cuenta por
+    cobrar, genera el asiento contable y alimenta los reportes 606, 607 y 608 de la DGII.</desc>
+
+  <style>
+    .paso   { fill:#0C1320; stroke:rgba(249,115,22,.28); stroke-width:1.5 }
+    .icono  { fill:none; stroke:#F97316; stroke-width:2; stroke-linecap:round; stroke-linejoin:round }
+    .titulo { fill:#F1F5FF; font-family:Outfit,system-ui,sans-serif; font-size:19px; font-weight:700 }
+    .pie    { fill:#94A3C0; font-family:Outfit,system-ui,sans-serif; font-size:13.5px }
+    .linea  { stroke:rgba(249,115,22,.30); stroke-width:1.5 }
+    /* Pulso discreto: un guion corto que recorre la linea. El diagrama se
+       entiende igual parado, que es lo que pide la ficha. */
+    .pulso  { stroke:#F97316; stroke-width:2.5; stroke-linecap:round;
+              stroke-dasharray:14 106; animation:correr 3.2s linear infinite }
+    @keyframes correr { to { stroke-dashoffset:-120 } }
+    @media (prefers-reduced-motion:reduce) { .pulso { animation:none; opacity:0 } }
+  </style>
+
+  <rect width="1400" height="420" fill="#04080F"/>
+
+  <!-- conexiones -->
+  <g>
+    <line class="linea" x1="246" y1="176" x2="326" y2="176"/>
+    <line class="pulso" x1="246" y1="176" x2="326" y2="176"/>
+    <line class="linea" x1="522" y1="176" x2="602" y2="176"/>
+    <line class="pulso" x1="522" y1="176" x2="602" y2="176" style="animation-delay:0.35s"/>
+    <line class="linea" x1="798" y1="176" x2="878" y2="176"/>
+    <line class="pulso" x1="798" y1="176" x2="878" y2="176" style="animation-delay:0.70s"/>
+    <line class="linea" x1="1074" y1="176" x2="1154" y2="176"/>
+    <line class="pulso" x1="1074" y1="176" x2="1154" y2="176" style="animation-delay:1.05s"/>
+  </g>
+
+  <!-- 1. Factura -->
+  <g transform="translate(60,96)">
+    <rect class="paso" x="0" y="0" width="176" height="160" rx="14"/>
+    <g class="icono" transform="translate(24,26)">
+      <path d="M2 2h18l6 6v22H2z"/><path d="M20 2v6h6"/>
+      <path d="M8 16h12M8 22h8"/>
+    </g>
+    <text class="titulo" x="24" y="102">Factura</text>
+    <text class="pie" x="24" y="126">Con su NCF</text>
+  </g>
+
+  <!-- 2. Inventario -->
+  <g transform="translate(336,96)">
+    <rect class="paso" x="0" y="0" width="176" height="160" rx="14"/>
+    <g class="icono" transform="translate(24,26)">
+      <path d="M2 9l13-7 13 7v14l-13 7-13-7z"/><path d="M2 9l13 7 13-7M15 16v14"/>
+    </g>
+    <text class="titulo" x="24" y="102">Inventario</text>
+    <text class="pie" x="24" y="126">Descuenta el stock</text>
+  </g>
+
+  <!-- 3. Cuenta por cobrar -->
+  <g transform="translate(612,96)">
+    <rect class="paso" x="0" y="0" width="176" height="160" rx="14"/>
+    <g class="icono" transform="translate(24,26)">
+      <rect x="2" y="6" width="28" height="20" rx="3"/><path d="M2 13h28M7 20h6"/>
+    </g>
+    <text class="titulo" x="24" y="102">Por cobrar</text>
+    <text class="pie" x="24" y="126">Con su vencimiento</text>
+  </g>
+
+  <!-- 4. Contabilidad -->
+  <g transform="translate(888,96)">
+    <rect class="paso" x="0" y="0" width="176" height="160" rx="14"/>
+    <g class="icono" transform="translate(24,26)">
+      <path d="M4 2h20a2 2 0 012 2v24a2 2 0 01-2 2H4z"/><path d="M9 2v28"/>
+      <path d="M14 10h8M14 16h8M14 22h5"/>
+    </g>
+    <text class="titulo" x="24" y="102">Contabilidad</text>
+    <text class="pie" x="24" y="126">Asiento automático</text>
+  </g>
+
+  <!-- 5. DGII -->
+  <g transform="translate(1164,96)">
+    <rect class="paso" x="0" y="0" width="176" height="160" rx="14"/>
+    <g class="icono" transform="translate(24,26)">
+      <path d="M2 12L16 4l14 8"/><path d="M5 12v16M27 12v16M11 28V18h10v10"/><path d="M2 30h28"/>
+    </g>
+    <text class="titulo" x="24" y="102">DGII</text>
+    <text class="pie" x="24" y="126">606 · 607 · 608</text>
+  </g>
+
+  <text class="pie" x="60" y="340">Una sola vez. Lo demás lo mueve MisCuentas.</text>
+</svg>
