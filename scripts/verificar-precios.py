@@ -18,6 +18,22 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # El precio publico. Si cambia, se cambia AQUI y el script dira que paginas quedaron atras.
 PRECIOS = {"Básico": "US$19", "Pro": "US$49"}
 
+# Lo mismo pero como lo escribe el JSON-LD: sin simbolo, y el 0 del plan Free.
+MONEDA = "USD"
+PRECIOS_SCHEMA = {"0"} | {v.removeprefix("US$") for v in PRECIOS.values()}
+
+
+def ofertas_de(nodo):
+    """Todas las Offer del documento, esten sueltas, en lista o dentro de @graph."""
+    if isinstance(nodo, dict):
+        if nodo.get("@type") == "Offer":
+            yield nodo
+        for valor in nodo.values():
+            yield from ofertas_de(valor)
+    elif isinstance(nodo, list):
+        for elemento in nodo:
+            yield from ofertas_de(elemento)
+
 # Lo que no puede aparecer: precios viejos y argumentos que ya no son ciertos.
 PROHIBIDO = [
     ("RD$990", "precio viejo en pesos del plan Basico"),
@@ -56,9 +72,25 @@ for ruta in htmls():
     # el marcado JSON-LD tiene que ser valido y no contradecir a la pagina
     for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', t, re.S):
         try:
-            json.loads(m.group(1))
+            datos = json.loads(m.group(1))
         except json.JSONDecodeError as e:
             fallos.append(f"{rel}: JSON-LD invalido ({e})")
+            continue
+
+        # Que PARSEE no basta: hasta el 16-ago-2026 el schema publicaba 990 y 2490 en DOP
+        # mientras la pagina cobraba US$19 y US$49, y este script daba verde. Google lee el
+        # schema, no el texto: una oferta que contradice a la pagina es precio falso.
+        for oferta in ofertas_de(datos):
+            precio = str(oferta.get("price", "")).strip()
+            moneda = str(oferta.get("priceCurrency", "")).strip()
+            nombre = oferta.get("name") or "sin nombre"
+            if moneda and moneda != MONEDA:
+                fallos.append(
+                    f"{rel}: JSON-LD oferta {nombre!r} en {moneda} — solo se cobra en {MONEDA}")
+            if precio and precio not in PRECIOS_SCHEMA:
+                fallos.append(
+                    f"{rel}: JSON-LD oferta {nombre!r} con price={precio!r} — "
+                    f"los precios reales son {sorted(PRECIOS_SCHEMA)}")
 
     # una MENSUALIDAD en dolares que no sea una de las nuestras. Se exige el "/mes" a
     # proposito: el sitio menciona cifras en dolares que no son precios (tasas, multas),
