@@ -371,6 +371,15 @@
     .pc2 figcaption strong{display:block;font-size:1.05rem;font-weight:700;color:var(--t);margin-bottom:.4rem}
     .pg-nota{text-align:center;color:var(--t3);font-size:.8rem;margin-top:1.4rem}
     @media(max-width:820px){.pg{grid-template-columns:1fr}}
+    .flujo-w{max-width:1100px;margin:0 auto;padding:0 clamp(0px,2vw,20px)}
+    .flujo-w img{display:block;width:100%;height:auto}
+    /* El diagrama mide 1400 de ancho. Encogido a 340px en un movil las etiquetas
+       no se leen, asi que por debajo de 900px se desplaza dentro de su caja en
+       vez de reducirse. El resto de la pagina no se mueve. */
+    @media(max-width:900px){
+      .flujo-w{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:0 16px 10px}
+      .flujo-w img{width:auto;min-width:860px;height:auto}
+    }
     .fh{text-align:center;margin-bottom:4rem;max-width:1100px;margin-left:auto;margin-right:auto}
     .fh .ssub{margin:0 auto}
     /* HOW IT WORKS */
@@ -716,6 +725,20 @@
 <div class="hr"></div>
 
 <!-- HOW IT WORKS -->
+<!-- H02 de la guia visual: como se conecta una cosa con la siguiente -->
+<section id="flujo">
+  <div class="fh">
+    <h2 class="stitle rv">Lo escribes una vez</h2>
+    <p class="ssub rv d1">Emites la factura y el resto se mueve solo: el stock baja, la deuda
+       queda anotada, el asiento se crea y el reporte de la DGII se llena.</p>
+  </div>
+  <div class="flujo-w rv d2">
+    <img src="screenshots/home-flow-invoice-to-dgii.svg" width="1400" height="420"
+         loading="lazy" decoding="async"
+         alt="De la factura al reporte DGII: la factura con su NCF descuenta el inventario, crea la cuenta por cobrar, genera el asiento contable y alimenta los reportes 606, 607 y 608.">
+  </div>
+</section>
+
 <section id="como">
   <div class="como-in">
     <div class="como-h">
