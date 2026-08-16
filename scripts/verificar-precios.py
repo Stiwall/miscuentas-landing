@@ -56,6 +56,24 @@ PROHIBIDO_REGEX = [
 ]
 
 
+DOMINIO = "https://miscuentasrd.com"
+# href/src/content que apuntan a un fichero nuestro. Se ignoran anclas, mailto,
+# tel, data: y todo lo que viva en otro dominio.
+REF_ASSET = re.compile(r'(?:href|src|content)="([^"]+\.(?:png|jpg|jpeg|webp|avif|svg|ico|css|js|pdf))"', re.I)
+
+
+def referencias_locales(texto):
+    for ref in REF_ASSET.findall(texto):
+        if ref.startswith(DOMINIO):
+            ref = ref[len(DOMINIO):]
+        elif "//" in ref or ref.startswith(("data:", "mailto:", "tel:", "#")):
+            continue
+        # /cdn-cgi/ lo inyecta y lo sirve Cloudflare, no vive en el repo.
+        if ref.startswith("/cdn-cgi/"):
+            continue
+        yield ref
+
+
 def htmls():
     for raiz, dirs, ficheros in os.walk(RAIZ):
         dirs[:] = [d for d in dirs if d not in (".git", "node_modules", "graphify-out")]
@@ -78,6 +96,16 @@ for ruta in htmls():
     for patron, motivo in PROHIBIDO_REGEX:
         for m in re.finditer(patron, t, re.I):
             fallos.append(f"{rel}: aparece {m.group(0)!r} — {motivo}")
+
+    # Que el fichero que la pagina promete exista de verdad. Hasta el 16-ago-2026
+    # dos paginas anunciaban /screenshots/og.png y 13 pedian /favicon.ico: los dos
+    # devolvian 404. Una imagen social rota no se ve al mirar la pagina, solo al
+    # compartirla, asi que nadie lo nota.
+    for ref in referencias_locales(t):
+        destino = os.path.join(RAIZ, ref.lstrip("/")) if ref.startswith("/") \
+            else os.path.normpath(os.path.join(os.path.dirname(ruta), ref))
+        if not os.path.exists(destino):
+            fallos.append(f"{rel}: apunta a {ref} y ese fichero no existe")
 
     if any(v in t for v in PRECIOS.values()):
         paginas_con_precio += 1
