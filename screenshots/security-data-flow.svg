@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380"
+     role="img" aria-labelledby="secTitle secDesc">
+  <title id="secTitle">Recorrido de los datos en MisCuentas</title>
+  <desc id="secDesc">El navegador se conecta cifrado por HTTPS con HSTS. La aplicacion comprueba
+    sesion y permisos en cada operacion. La base de datos vive en red privada, sin puerto abierto
+    a internet. Cada madrugada sale un respaldo cifrado con AES-256 hacia una segunda copia fuera
+    del servidor.</desc>
+
+  <style>
+    .caja  { fill:#0C1320; stroke:rgba(249,115,22,.28); stroke-width:1.5 }
+    .ico   { fill:none; stroke:#F97316; stroke-width:2; stroke-linecap:round; stroke-linejoin:round }
+    .tit   { fill:#F1F5FF; font-family:Outfit,system-ui,sans-serif; font-size:17px; font-weight:700 }
+    .pie   { fill:#94A3C0; font-family:Outfit,system-ui,sans-serif; font-size:12.5px }
+    .cand  { fill:#10B981; font-family:Outfit,system-ui,sans-serif; font-size:12px; font-weight:600 }
+    .linea { stroke:rgba(249,115,22,.32); stroke-width:1.5 }
+    .disc  { stroke:rgba(16,185,129,.45); stroke-width:1.5; stroke-dasharray:5 5; fill:none }
+  </style>
+
+  <rect width="1200" height="380" fill="#04080F"/>
+
+  <!-- Etiquetas de la conexion ARRIBA de las tarjetas: en el hueco de 60px no
+       caben y se montaban encima de las cajas. -->
+  <text class="cand" x="410" y="72" text-anchor="middle">HTTPS · HSTS</text>
+  <text class="cand" x="790" y="72" text-anchor="middle">red privada</text>
+  <line class="linea" x1="380" y1="170" x2="440" y2="170"/>
+  <line class="linea" x1="760" y1="170" x2="820" y2="170"/>
+
+  <!-- respaldo: baja desde la base de datos -->
+  <path class="disc" d="M980 240 L980 306 L760 306"/>
+
+  <!-- 1. navegador -->
+  <g transform="translate(60,100)">
+    <rect class="caja" x="0" y="0" width="320" height="140" rx="14"/>
+    <g class="ico" transform="translate(24,26)">
+      <rect x="1" y="2" width="26" height="19" rx="2"/><path d="M1 8h26M10 25h8"/>
+    </g>
+    <text class="tit" x="24" y="92">Tu navegador</text>
+    <text class="pie" x="24" y="114">Sesión con caducidad</text>
+  </g>
+
+  <!-- 2. aplicacion -->
+  <g transform="translate(440,100)">
+    <rect class="caja" x="0" y="0" width="320" height="140" rx="14"/>
+    <g class="ico" transform="translate(24,26)">
+      <path d="M14 1l12 5v8c0 7-5 11-12 13C7 25 2 21 2 14V6z"/><path d="M10 14l3 3 6-6"/>
+    </g>
+    <text class="tit" x="24" y="92">La aplicación</text>
+    <text class="pie" x="24" y="114">Comprueba sesión y rol · Candado de origen</text>
+  </g>
+
+  <!-- 3. base de datos -->
+  <g transform="translate(820,100)">
+    <rect class="caja" x="0" y="0" width="320" height="140" rx="14"/>
+    <g class="ico" transform="translate(24,26)">
+      <ellipse cx="14" cy="6" rx="12" ry="5"/><path d="M2 6v14c0 2.8 5.4 5 12 5s12-2.2 12-5V6"/>
+      <path d="M2 13c0 2.8 5.4 5 12 5s12-2.2 12-5"/>
+    </g>
+    <text class="tit" x="24" y="92">Base de datos</text>
+    <text class="pie" x="24" y="114">Sin puerto abierto a internet</text>
+  </g>
+
+  <!-- 4. respaldo -->
+  <g transform="translate(440,276)">
+    <rect class="caja" x="0" y="0" width="320" height="62" rx="12"/>
+    <g class="ico" transform="translate(24,20)">
+      <path d="M2 8a12 12 0 0122-6"/><path d="M24 2v6h-6"/>
+    </g>
+    <text class="tit" x="64" y="27" style="font-size:15px">Respaldo cifrado, cada día</text>
+    <text class="pie" x="64" y="46">AES-256 · segunda copia fuera del servidor</text>
+  </g>
+
+  <text class="pie" x="60" y="366">Solo aparece lo que está montado hoy y se puede comprobar.</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320"
+     role="img" aria-labelledby="migTitle migDesc">
+  <title id="migTitle">Los cuatro pasos para traer tus datos</title>
+  <desc id="migDesc">Descargas la plantilla, rellenas tus datos, MisCuentas te muestra una
+    previsualizacion con los errores fila por fila, y solo entonces se importa.</desc>
+
+  <style>
+    .caja  { fill:#0C1320; stroke:rgba(249,115,22,.28); stroke-width:1.5 }
+    .num   { fill:#F97316; font-family:Outfit,system-ui,sans-serif; font-size:13px; font-weight:800 }
+    .aro   { fill:rgba(249,115,22,.10); stroke:rgba(249,115,22,.38); stroke-width:1.5 }
+    .tit   { fill:#F1F5FF; font-family:Outfit,system-ui,sans-serif; font-size:16.5px; font-weight:700 }
+    .pie   { fill:#94A3C0; font-family:Outfit,system-ui,sans-serif; font-size:12.5px }
+    .linea { stroke:rgba(249,115,22,.32); stroke-width:1.5 }
+  </style>
+
+  <rect width="1200" height="320" fill="#04080F"/>
+
+  <line class="linea" x1="330" y1="150" x2="370" y2="150"/>
+  <line class="linea" x1="600" y1="150" x2="640" y2="150"/>
+  <line class="linea" x1="870" y1="150" x2="910" y2="150"/>
+
+  <g transform="translate(60,80)">
+    <rect class="caja" x="0" y="0" width="270" height="140" rx="14"/>
+    <circle class="aro" cx="46" cy="42" r="19"/>
+    <text class="num" x="46" y="47" text-anchor="middle">1</text>
+    <text class="tit" x="24" y="98">Descargas la plantilla</text>
+    <text class="pie" x="24" y="120">Clientes, productos, proveedores,</text>
+    <text class="pie" x="24" y="137">gastos o facturas</text>
+  </g>
+
+  <g transform="translate(370,80)">
+    <rect class="caja" x="0" y="0" width="230" height="140" rx="14"/>
+    <circle class="aro" cx="46" cy="42" r="19"/>
+    <text class="num" x="46" y="47" text-anchor="middle">2</text>
+    <text class="tit" x="24" y="98">Pones tus datos</text>
+    <text class="pie" x="24" y="120">Viene con las columnas</text>
+    <text class="pie" x="24" y="137">y una fila de ejemplo</text>
+  </g>
+
+  <g transform="translate(640,80)">
+    <rect class="caja" x="0" y="0" width="230" height="140" rx="14"/>
+    <circle class="aro" cx="46" cy="42" r="19"/>
+    <text class="num" x="46" y="47" text-anchor="middle">3</text>
+    <text class="tit" x="24" y="98">Te enseña qué entra</text>
+    <text class="pie" x="24" y="120">Y qué filas fallan,</text>
+    <text class="pie" x="24" y="137">antes de tocar nada</text>
+  </g>
+
+  <g transform="translate(910,80)">
+    <rect class="caja" x="0" y="0" width="230" height="140" rx="14"/>
+    <circle class="aro" cx="46" cy="42" r="19"/>
+    <text class="num" x="46" y="47" text-anchor="middle">4</text>
+    <text class="tit" x="24" y="98">Importas</text>
+    <text class="pie" x="24" y="120">Y lo revisas ya dentro</text>
+    <text class="pie" x="24" y="137">de la aplicación</text>
+  </g>
+
+  <text class="pie" x="60" y="288">Los cuatro pasos son los del importador que hay hoy, no una promesa.</text>
+</svg>
