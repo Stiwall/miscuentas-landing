@@ -328,6 +328,8 @@
     /* HERO */
     #hero{position:relative;z-index:1;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px clamp(16px,4vw,52px) 80px;overflow:hidden}
     .hero-in{max-width:960px;margin:0 auto;position:relative;z-index:2}
+    .h-shot{margin-top:clamp(2rem,5vw,3.5rem)}
+    .h-shot img{display:block;width:100%;height:auto;border-radius:14px}
 
     .h-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:560px;border-radius:50%;border:1px solid rgba(249,115,22,.07);animation:rp 4s ease-in-out infinite;pointer-events:none;z-index:0}
     .h-ring::before{content:'';position:absolute;inset:-70px;border-radius:50%;border:1px solid rgba(249,115,22,.04);animation:rp 4s ease-in-out 1.2s infinite}
@@ -644,6 +646,27 @@
       <div class="hstat"><span class="hstat-n">5 min</span><span class="hstat-l">Para configurar</span></div>
       <div class="hstat"><span class="hstat-n">NCF</span><span class="hstat-l">Automático DGII</span></div>
       <div class="hstat"><span class="hstat-n">RD</span><span class="hstat-l">Hecho en RD 🇩🇴</span></div>
+    </div>
+
+    <!-- H01 de la guia visual: captura real compuesta (dashboard + tarjeta de
+         utilidad + panel de cobros + stock bajo). Va DESPUES de los CTA para que
+         la accion siga entrando sin desplazarse. -->
+    <div class="h-shot rv d4">
+      <picture>
+        <!-- En vertical la composicion de 1600px queda al 24% y no se lee una
+             cifra. Movil recibe las mismas piezas apiladas y grandes. -->
+        <source type="image/webp" media="(max-width: 760px)"
+          srcset="screenshots/home-hero-dashboard-movil.webp">
+        <source type="image/webp"
+          srcset="screenshots/home-hero-dashboard-480w.webp 480w,
+                  screenshots/home-hero-dashboard-800w.webp 800w,
+                  screenshots/home-hero-dashboard-1200w.webp 1200w,
+                  screenshots/home-hero-dashboard-1600w.webp 1600w"
+          sizes="(max-width: 900px) 92vw, 960px">
+        <img src="screenshots/home-hero-dashboard-1200w.webp"
+             width="1600" height="1100" decoding="async" fetchpriority="high"
+             alt="Dashboard de MisCuentas con ventas, gastos, utilidad y cuentas por cobrar del mes.">
+      </picture>
     </div>
   </div>
 </section>
