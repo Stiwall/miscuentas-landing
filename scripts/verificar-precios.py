@@ -46,6 +46,15 @@ PROHIBIDO = [
     ("Usuarios ilimitados", "Pro tiene max_users: 3 en planPermissions.js"),
 ]
 
+# Lo mismo, pero cuando la frase se puede escribir de diez maneras. La lista de arriba
+# tenia "cobra en pesos dominicanos" exacto y el articulo de la comparativa decia "cobre
+# en pesos": se colo por una conjugacion y estuvo meses atacando a Alegra por cobrar en
+# dolares, que es justo lo que hacemos nosotros.
+PROHIBIDO_REGEX = [
+    (r"cobr\w*\s+(?:\w+\s+){0,3}?en\s+pesos", "argumento de moneda: solo se cobra en USD"),
+    (r"precios?\s+(?:reales?|fijos?)\s+en\s+pesos", "argumento de moneda: solo se cobra en USD"),
+]
+
 
 def htmls():
     for raiz, dirs, ficheros in os.walk(RAIZ):
@@ -65,6 +74,10 @@ for ruta in htmls():
     for texto, motivo in PROHIBIDO:
         if texto in t:
             fallos.append(f"{rel}: aparece {texto!r} — {motivo}")
+
+    for patron, motivo in PROHIBIDO_REGEX:
+        for m in re.finditer(patron, t, re.I):
+            fallos.append(f"{rel}: aparece {m.group(0)!r} — {motivo}")
 
     if any(v in t for v in PRECIOS.values()):
         paginas_con_precio += 1
