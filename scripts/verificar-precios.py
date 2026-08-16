@@ -62,8 +62,17 @@ DOMINIO = "https://miscuentasrd.com"
 REF_ASSET = re.compile(r'(?:href|src|content)="([^"]+\.(?:png|jpg|jpeg|webp|avif|svg|ico|css|js|pdf))"', re.I)
 
 
+# El JSON-LD referencia imagenes sin href/src/content ("screenshot": [...], "image": ...)
+# y ahi vivia la mitad de los assets del sitio, sin comprobar. Hasta el 16-ago-2026
+# apuntaban a raw.githubusercontent.com, que depende de que el repo siga publico.
+REF_JSONLD = re.compile(r'"(?:https?://[^"]+\.(?:png|jpg|jpeg|webp|avif|svg|ico))"', re.I)
+
+
 def referencias_locales(texto):
-    for ref in REF_ASSET.findall(texto):
+    candidatas = REF_ASSET.findall(texto) + [
+        u.strip('"') for u in REF_JSONLD.findall(texto)
+    ]
+    for ref in candidatas:
         if ref.startswith(DOMINIO):
             ref = ref[len(DOMINIO):]
         elif "//" in ref or ref.startswith(("data:", "mailto:", "tel:", "#")):
