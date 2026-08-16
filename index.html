@@ -454,6 +454,9 @@
     .pfeats{list-style:none;margin-bottom:2rem}
     .pfeats li{display:flex;align-items:flex-start;gap:10px;font-size:.85rem;color:var(--t2);padding:7px 0;border-bottom:1px solid var(--border)}
     .pfeats li::before{content:'✓';color:var(--o);font-weight:700;font-size:.72rem;flex-shrink:0;margin-top:3px}
+    /* Lo que un plan NO trae. Decirlo aqui evita la sorpresa al mes de pagar. */
+    .pfeats li.no{color:var(--t3)}
+    .pfeats li.no::before{content:'—';color:var(--t3)}
 
     /* CONTACT */
     #contacto{background:var(--bg0)}
@@ -815,8 +818,8 @@
         <div class="cnt-feat">Hasta 3 usuarios</div>
         <div class="cnt-feat">Panel multi-empresa</div>
         <div class="cnt-feat">Inventario completo</div>
-        <div class="cnt-feat">Todos los reportes DGII</div>
-        <div class="cnt-feat">Reconciliación bancaria</div>
+        <div class="cnt-feat">Estado de Resultados y balanza</div>
+        <div class="cnt-feat">Exportar todo a CSV</div>
         <div class="cnt-feat">Cierre mensual/anual</div>
         <div class="cnt-feat">Soporte prioritario</div>
       </div>
@@ -847,6 +850,7 @@
         <li>30 facturas/mes</li>
         <li>Ingresos y gastos básicos</li>
         <li>10 clientes</li>
+        <li>Reportes DGII: 606, 607 y 608</li>
       </ul>
       <a href="https://app.miscuentasrd.com/?registro=1" class="btn btn-ghost btn-full">Empezar gratis</a>
     </div>
@@ -862,6 +866,7 @@
         <li>Cuentas por cobrar/pagar</li>
         <li>Clientes y proveedores ilimitados</li>
         <li>Reportes DGII: 606, 607, 608</li>
+        <li class="no">Estado de Resultados, cierres y exportar a CSV: en Pro</li>
       </ul>
       <a href="https://wa.me/18294432019?text=Hola%2C%20quiero%20adquirir%20el%20plan%20B%C3%A1sico%20de%20MisCuentas" class="btn btn-ghost btn-full" target="_blank" rel="noopener">Adquirir por WhatsApp</a>
     </div>
@@ -876,8 +881,9 @@
         <li>Hasta 3 usuarios</li>
         <li>Facturas ilimitadas</li>
         <li>Panel multi-empresa</li>
-        <li>Todos los reportes DGII</li>
-        <li>Reconciliación bancaria</li>
+        <li>Estado de Resultados y balanza</li>
+        <li>Cierres mensuales y anuales</li>
+        <li>Exportar todo a CSV</li>
         <li>Soporte prioritario</li>
       </ul>
       <a href="https://wa.me/18294432019?text=Hola%2C%20quiero%20adquirir%20el%20plan%20Pro%20de%20MisCuentas" class="btn btn-cta btn-full" target="_blank" rel="noopener">Adquirir por WhatsApp</a>

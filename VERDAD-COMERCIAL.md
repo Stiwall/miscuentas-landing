@@ -98,14 +98,19 @@ funcionan **en todos los planes, Free incluido**.
 
 ---
 
-## Discrepancias abiertas con la web
+## Discrepancias con la web — corregidas el 16-ago-2026
 
-Pendientes de decisión, no corregidas todavía:
+1. **"Reconciliación bancaria" figuraba como función de Pro** sin estar cerrada en el
+   código. Se **quitó de la lista de Pro**, no se cerró por plan: cerrarla habría quitado
+   a los usuarios Free y Básico actuales una función que ya usan, y eso es una regresión
+   para clientes reales. Si algún día se quiere cerrar, es decisión de producto y toca
+   avisar antes a quien la esté usando.
+2. **Pro decía "Todos los reportes DGII"** frente al "606, 607, 608" de Básico, como si
+   trajera más. Sustituido por el diferenciador real: Estado de Resultados, cierres y
+   exportar a CSV.
+3. **Básico no avisaba de que no lleva Estado de Resultados ni exportaciones.** Ahora
+   aparece explícito en su lista, marcado como no incluido.
+4. **Free no mencionaba que genera 606/607/608.** Añadido.
 
-1. **"Reconciliación bancaria" figura como función de Pro** y no está cerrada en el código.
-   O se quita de la lista de Pro, o se cierra por plan. Es decisión de producto.
-2. **Pro dice "Todos los reportes DGII"** frente al "606, 607, 608" de Básico, sugiriendo
-   que Pro trae más. No trae más.
-3. **Básico no avisa de que no lleva Estado de Resultados ni exportaciones.** Es la
-   sorpresa más cara que puede llevarse quien paga.
-4. **Free no menciona que genera 606/607/608**, que sí los genera. Se infravende.
+`scripts/verificar-precios.py` prohíbe ya las cadenas "Todos los reportes DGII" y
+"Reconciliación bancaria" para que no vuelvan a colarse.

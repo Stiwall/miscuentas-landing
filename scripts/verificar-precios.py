@@ -44,6 +44,8 @@ PROHIBIDO = [
     ("sin variaciones por el tipo de cambio", "argumento de moneda: ya se cobra en dolares"),
     ("add-on RD$300", "el 606/607 no esta cerrado por plan: /api/dgii/* no lo cobra"),
     ("Usuarios ilimitados", "Pro tiene max_users: 3 en planPermissions.js"),
+    ("Todos los reportes DGII", "606/607/608 no estan cerrados por plan: son iguales en Free, Basico y Pro"),
+    ("Reconciliación bancaria", "/api/conciliacion* solo lleva authMiddleware: la tienen todos los planes"),
 ]
 
 # Lo mismo, pero cuando la frase se puede escribir de diez maneras. La lista de arriba
