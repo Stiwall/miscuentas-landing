@@ -58,6 +58,61 @@ PROHIBIDO_REGEX = [
 ]
 
 
+# Credenciales oficiales que NO tenemos. El producto no emite e-CF: no firma XML, no
+# transmite al webservice y no esta autorizado por la DGII (routes/accounting.js:1701 de
+# la app lo dice: la serie E se admite solo para REGISTRAR lo que el cliente ya emitio con
+# un sistema certificado). El 16-ago-2026 el blog afirmaba lo contrario en 3 paginas:
+# "software autorizado por la DGII", "carga de tu certificado INDOTEL" y "acompanamiento
+# en el set de pruebas". Inventarse un sello de un organismo publico es de lo peor que
+# puede decir el sitio.
+#
+# No se pueden prohibir a secas: el sitio EXPLICA el proceso de la DGII y ahi las mismas
+# frases son ciertas ("elige tu software autorizado por la DGII"). Lo que no vale es
+# decirlas de NOSOTROS, asi que solo saltan si "MisCuentas" esta cerca.
+# Grupo 1: frases que SOLO se pueden estar diciendo de nosotros. El articulo explica el
+# proceso hablandole al lector de "un certificado", nunca de "carga directa de TU
+# certificado"; describe el webservice con el verbo ("transmitirlo al webservice"), no con
+# nuestro sustantivo de folleto. Por eso basta con que "MisCuentas" ande cerca.
+VENTANA_MISCUENTAS = 400
+PROHIBIDO_CERCA_DE_MISCUENTAS = [
+    (r"emisi[oó]n\s+autom[aá]tica\s+de\s+e-?CF", "no emitimos e-CF, solo registramos los ajenos"),
+    (r"(?:carga|subida)\s+(?:directa\s+)?de\s+tu\s+certificado", "no existe la carga de certificado INDOTEL"),
+    (r"set\s+de\s+pruebas\s+de\s+certificaci[oó]n", "no acompanamos el set de pruebas"),
+    (r"transmisi[oó]n\s+al\s+webservice", "no transmitimos nada a la DGII"),
+    (r"firma\s+digital\s+y\s+transmisi[oó]n", "no firmamos ni transmitimos nada"),
+]
+
+# Grupo 2: las mismas palabras son CIERTAS explicando el proceso ("elige tu software
+# autorizado por la DGII"), asi que aqui la ventana de 400 daba 6 falsos positivos: cazaba
+# el texto educativo y, peor, cazaba nuestras propias negaciones ("MisCuentas NO es un
+# software autorizado por la DGII"). Un guardian que grita en la frase honesta acaba
+# desactivado. Se exige que "MisCuentas" este en la MISMA frase y que esa frase no la
+# niegue.
+PROHIBIDO_AFIRMADO_DE_MISCUENTAS = [
+    (r"autorizad[oa]\s+por\s+la\s+DGII", "credencial que no tenemos: la DGII no nos autorizo"),
+    (r"homologad[oa]", "credencial que no tenemos"),
+    (r"certificad[oa]s?\s+para\s+emitir", "credencial que no tenemos"),
+    (r"(?:preparado|listo)s?\s+para\s+(?:la\s+emisi[oó]n\s+de\s+)?el?\s*e-?CF", "insinua una capacidad que no existe"),
+]
+NEGACION = re.compile(r"\b(?:no|nunca|todav[ií]a\s+no|a[uú]n\s+no|sin)\b", re.I)
+
+
+def frase_de(texto, ini, fin):
+    """El trozo de texto alrededor de la coincidencia, sin marcado y sin cruzar puntos.
+
+    Los limites son el punto, los signos de cierre y las etiquetas de bloque: un <li> es
+    una frase aunque no lleve punto final.
+    """
+    izq = max(
+        (texto.rfind(c, 0, ini) for c in (". ", "! ", "? ", "<li", "<p", "<h", "<td", "<tr")),
+        default=-1)
+    der = min(
+        (p for p in (texto.find(c, fin) for c in (". ", "! ", "? ", "</li", "</p", "</h", "</td"))
+         if p != -1),
+        default=len(texto))
+    return re.sub(r"<[^>]+>", " ", texto[izq + 1:der])
+
+
 DOMINIO = "https://miscuentasrd.com"
 # href/src/content que apuntan a un fichero nuestro. Se ignoran anclas, mailto,
 # tel, data: y todo lo que viva en otro dominio.
@@ -107,6 +162,18 @@ for ruta in htmls():
     for patron, motivo in PROHIBIDO_REGEX:
         for m in re.finditer(patron, t, re.I):
             fallos.append(f"{rel}: aparece {m.group(0)!r} — {motivo}")
+
+    for patron, motivo in PROHIBIDO_CERCA_DE_MISCUENTAS:
+        for m in re.finditer(patron, t, re.I):
+            ventana = t[max(0, m.start() - VENTANA_MISCUENTAS):m.end() + VENTANA_MISCUENTAS]
+            if "MisCuentas" in ventana:
+                fallos.append(f"{rel}: {m.group(0)!r} dicho de MisCuentas — {motivo}")
+
+    for patron, motivo in PROHIBIDO_AFIRMADO_DE_MISCUENTAS:
+        for m in re.finditer(patron, t, re.I):
+            frase = frase_de(t, m.start(), m.end())
+            if "MisCuentas" in frase and not NEGACION.search(frase):
+                fallos.append(f"{rel}: {m.group(0)!r} afirmado de MisCuentas — {motivo}")
 
     # Que el fichero que la pagina promete exista de verdad. Hasta el 16-ago-2026
     # dos paginas anunciaban /screenshots/og.png y 13 pedian /favicon.ico: los dos

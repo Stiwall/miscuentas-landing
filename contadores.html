@@ -88,6 +88,14 @@
   .card h3{font-size:1.02rem;font-weight:700;margin-bottom:8px}
   .card p{color:var(--t2);font-size:.92rem}
 
+  .flujo-caja{max-width:1000px;margin:0 auto}
+  .flujo-caja img{display:block;width:100%;height:auto}
+  /* El diagrama mide 1400 de ancho; encogido a 350px no se lee, asi que en
+     movil se desplaza dentro de su caja en vez de reducirse. */
+  @media(max-width:900px){
+    .flujo-caja{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:10px}
+    .flujo-caja img{width:auto;min-width:900px}
+  }
   .limites{background:var(--bg1);border:1px solid var(--bo);border-radius:var(--rl);padding:clamp(24px,4vw,36px)}
   .limites table{width:100%;border-collapse:collapse;font-size:.94rem}
   .limites th,.limites td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--border)}
@@ -186,6 +194,20 @@
            Si mañana te vas, te llevas tus datos.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="colaboracion">
+  <div class="wrap">
+    <h2>Quién hace qué</h2>
+    <p class="ssub">El negocio no aprende contabilidad y tú no registras sus facturas.
+       Cada uno hace lo suyo sobre los mismos datos.</p>
+    <!-- C02 de la guia visual -->
+    <figure class="flujo-caja">
+      <img src="screenshots/accountants-collaboration-flow.svg" width="1400" height="600"
+           loading="lazy" decoding="async"
+           alt="Flujo de colaboración entre la empresa, MisCuentas y su contador: el negocio registra el día, MisCuentas lo conecta con inventario, cobros y contabilidad, y el contador revisa y cierra desde su panel.">
+    </figure>
   </div>
 </section>
 
