@@ -298,8 +298,12 @@
     .logo-img{width:32px;height:32px;border-radius:8px;overflow:hidden;flex-shrink:0}
     .logo-img img{width:100%;height:100%;object-fit:cover}
 
-    .nav-links{display:flex;gap:2.5rem;list-style:none}
-    .nav-links a{color:var(--t2);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s;position:relative}
+    /* El hueco era fijo de 2.5rem: con 8 enlaces no cabian en 1280 y las
+       etiquetas de dos palabras se partian en dos lineas, empujando "Blog"
+       contra el boton de sesion. Ahora el hueco cede con el ancho y ninguna
+       etiqueta se parte por dentro. */
+    .nav-links{display:flex;gap:clamp(1.1rem,2.2vw,2.5rem);list-style:none;align-items:center}
+    .nav-links a{color:var(--t2);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s;position:relative;white-space:nowrap}
     .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--o);transform:scaleX(0);transform-origin:left;transition:transform .25s}
     .nav-links a:hover{color:var(--t)}
     .nav-links a:hover::after{transform:scaleX(1)}
@@ -352,14 +356,22 @@
     .h-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:4rem;max-width:600px;margin-left:auto;margin-right:auto}
     .hstat{text-align:center;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--r);padding:.75rem .5rem}
     .hstat-n{font-family:var(--fd);font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:800;color:var(--o);display:block}
-    .hstat-l{font-size:.65rem;color:var(--t3);text-transform:uppercase;letter-spacing:1px;margin-top:3px;display:block;line-height:1.3}
+    /* Era .65rem = 10.4px reales. En un movil no se lee, y en escritorio
+       tampoco aporta nada estar por debajo de 12px. Se sube a 12 y se
+       compensa con menos espaciado entre letras para que ocupe parecido. */
+    .hstat-l{font-size:.75rem;color:var(--t3);text-transform:uppercase;letter-spacing:.5px;margin-top:3px;display:block;line-height:1.3}
 
     .scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--t3);font-size:.68rem;letter-spacing:2px;text-transform:uppercase;animation:fd 2s ease-in-out infinite}
     @keyframes fd{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
 
     /* SECTIONS */
     section{position:relative;z-index:1;padding:100px clamp(20px,4vw,52px)}
-    .slabel{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--o);margin-bottom:1rem}
+    .slabel{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2.2px;color:var(--o);margin-bottom:1rem}
+    /* Safari ignora list-style:none en summary y pinta su triangulo igual.
+       Sin esto, dos de las ocho preguntas salian con el triangulo del
+       navegador en vez del + naranja. */
+    summary::-webkit-details-marker{display:none}
+    summary::marker{content:''}
     .stitle{font-family:var(--fd);font-size:clamp(1.85rem,4vw,2.75rem);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:1rem}
     .ssub{color:var(--t2);font-size:1rem;line-height:1.72;max-width:500px}
 
@@ -533,6 +545,17 @@
       .tg{max-width:100%}
       .con-cards{flex-direction:column}
       .con-c{min-width:unset}
+      /* Los enlaces del pie median 18px de alto: con el dedo se falla y se
+         pulsa el de al lado. 44px es el minimo de Apple y Google. El hueco
+         de la lista pasa a 0 porque ahora lo pone el propio enlace. */
+      .f-col ul{gap:0}
+      .f-col ul a{display:flex;align-items:center;min-height:44px}
+      .f-bot a{display:inline-flex;align-items:center;min-height:44px}
+      /* Suelo de 12px en las etiquetas pequenas. En escritorio una pildora
+         de 10.9px se lee de cerca; en un movil en la calle, no. */
+      .ptag,.cnt-tag{font-size:.75rem;letter-spacing:.5px}
+      .clbl{font-size:.75rem;letter-spacing:.5px}
+      .logo,.f-logo{min-height:44px}
     }
     @media(max-width:600px){
       section{padding:56px 16px}
@@ -881,7 +904,7 @@
       <a href="https://wa.me/18294432019?text=Hola%2C%20soy%20contador%20y%20me%20interesa%20el%20plan%20Pro%20de%20MisCuentas" class="btn btn-cta btn-full" target="_blank" rel="noopener">
         Hablar con ventas →
       </a>
-      <p style="font-size:.72rem;color:var(--t3);text-align:center;margin-top:.75rem">Activación manual por WhatsApp · Sin contrato</p>
+      <p style="font-size:.78rem;color:var(--t3);text-align:center;margin-top:.75rem">Activación manual por WhatsApp · Sin contrato</p>
     </div>
   </div>
 </section>
@@ -1000,16 +1023,22 @@
     <div style="display:flex;flex-direction:column;gap:12px;">
 
       <details style="background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;">
-        <summary style="padding:18px 22px;cursor:pointer;font-weight:700;color:var(--t);font-size:.95rem;">¿Qué pasa cuando terminan los 14 días gratis?</summary>
-        <p style="padding:0 22px 18px;color:var(--t2);font-size:.92rem;line-height:1.7;">
+        <summary style="padding:18px 22px;cursor:pointer;font-weight:600;color:var(--t);font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+          ¿Qué pasa cuando terminan los 14 días gratis?
+          <span style="color:var(--o);font-size:1.3rem;flex-shrink:0;">+</span>
+        </summary>
+        <div style="padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);">
           Tu cuenta pasa automáticamente al plan Free, gratis para siempre: 30 facturas al mes con NCF, hasta 10 clientes e ingresos y gastos básicos. No se borra nada de lo que registraste. Si necesitas más, eliges Básico o Pro cuando quieras.
-        </p>
+        </div>
       </details>
       <details style="background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;">
-        <summary style="padding:18px 22px;cursor:pointer;font-weight:700;color:var(--t);font-size:.95rem;">¿Qué soporte tengo si me tranco?</summary>
-        <p style="padding:0 22px 18px;color:var(--t2);font-size:.92rem;line-height:1.7;">
+        <summary style="padding:18px 22px;cursor:pointer;font-weight:600;color:var(--t);font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+          ¿Qué soporte tengo si me tranco?
+          <span style="color:var(--o);font-size:1.3rem;flex-shrink:0;">+</span>
+        </summary>
+        <div style="padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);">
           Dentro de la app hay un asistente de soporte disponible 24/7 que te explica paso a paso cualquier proceso: facturar, montar inventario, sacar el 606/607 y más. Si tu caso necesita algo más, una persona del equipo lo toma y te acompaña hasta resolverlo.
-        </p>
+        </div>
       </details>
       <details style="background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;">
         <summary style="padding:18px 22px;cursor:pointer;font-weight:600;color:var(--t);font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;">
