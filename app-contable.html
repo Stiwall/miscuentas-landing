@@ -222,6 +222,15 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--o);outline-offset:2
     transition-duration:.01ms!important
   }
 }
+
+  /* Movil: los enlaces del pie median 18px de alto y con el dedo se falla.
+     Los enlaces dentro de un parrafo se dejan como estan: agrandarlos
+     rompe el renglon. */
+  @media (max-width:768px){
+    footer a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+    .logo{min-height:44px;min-width:44px}
+    .crumb a{display:inline-block;padding:13px 0}
+  }
 </style>
 </head>
 <body>

@@ -119,11 +119,18 @@
     nav .btn{padding:9px 13px;font-size:.82rem;white-space:nowrap}
     .logo span{display:none}
   }
+  /* Movil: enlaces del pie a 44px de alto (median 16 y con el dedo se falla),
+     y suelo de 12px en las celdas de la tabla comparativa. */
+  @media (max-width:768px){
+    footer a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+    .logo{min-height:44px;min-width:44px}
+    .limites th{font-size:.8rem;letter-spacing:.3px}
+  }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
 <nav>
-  <a href="index.html" class="logo"><img src="logo.png" alt="MisCuentas Contable">MisCuentas</a>
+  <a href="index.html" class="logo"><img src="logo.png" alt="MisCuentas Contable"><span>MisCuentas</span></a>
   <div style="display:flex;gap:10px;align-items:center">
     <a href="index.html#precios" class="btn btn-ghost">Ver planes</a>
     <a href="https://app.miscuentasrd.com/?registro=1" class="btn btn-cta">Probar gratis</a>

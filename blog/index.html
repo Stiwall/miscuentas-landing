@@ -71,6 +71,14 @@
     footer{background:var(--bg1);border-top:1px solid rgba(255,255,255,.06);padding:40px 5% 20px;text-align:center;}
     .f-copy{color:var(--t3);font-size:.82rem;}
   .ic{width:1em;height:1em;flex:none;vertical-align:-.13em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+  /* Movil: los enlaces del pie median 18px de alto y con el dedo se falla.
+     Los enlaces dentro de un parrafo se dejan como estan: agrandarlos
+     rompe el renglon. */
+  @media (max-width:768px){
+    footer a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+    .logo{min-height:44px;min-width:44px}
+  }
 </style>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={token: 01b92af6cc3c467bba28d2d54362541c}></script>
 </head>
