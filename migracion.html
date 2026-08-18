@@ -67,6 +67,12 @@
 
   figure{margin:clamp(28px,5vw,44px) 0}
   figure img{display:block;width:100%;height:auto;border-radius:var(--rl)}
+  /* Mismo marco de captura que el hero de la home (paquete del 18-ago): la
+     caja lleva el borde y la sombra, la imagen solo el radio interior. */
+  .shot{padding:12px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+        border:1px solid rgba(255,255,255,.1);border-radius:22px;
+        box-shadow:0 35px 90px rgba(0,0,0,.45),0 0 65px rgba(249,115,22,.08)}
+  .shot img{border-radius:13px}
   figcaption{color:var(--t3);font-size:.8rem;text-align:center;margin-top:12px}
   .ancho{max-width:1000px;margin-inline:auto}
   @media(max-width:820px){
@@ -114,7 +120,7 @@
 
 <div class="wrap">
   <!-- M01 de la guia visual -->
-  <figure>
+  <figure class="shot">
     <picture>
       <source type="image/webp"
         srcset="screenshots/migration-before-after-480w.webp 480w,

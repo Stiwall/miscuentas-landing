@@ -74,9 +74,13 @@
   .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
   .micro{color:var(--t3);font-size:.82rem;margin-top:16px}
 
-  .shot{margin:clamp(32px,6vw,56px) auto 0;max-width:1000px}
-  .shot img{display:block;width:100%;height:auto;border-radius:var(--rl);
-            border:1px solid var(--bo);box-shadow:0 24px 70px rgba(0,0,0,.55)}
+  /* Mismo marco de captura que el hero de la home (paquete del 18-ago): la
+     caja lleva el borde y la sombra, la imagen solo el radio interior. */
+  .shot{margin:clamp(32px,6vw,56px) auto 0;max-width:1000px;padding:12px;
+        background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+        border:1px solid rgba(255,255,255,.1);border-radius:22px;
+        box-shadow:0 35px 90px rgba(0,0,0,.45),0 0 65px rgba(249,115,22,.08)}
+  .shot img{display:block;width:100%;height:auto;border-radius:13px}
   .shot figcaption{color:var(--t3);font-size:.8rem;text-align:center;margin-top:12px}
 
   section{padding:clamp(44px,7vw,76px) 0}

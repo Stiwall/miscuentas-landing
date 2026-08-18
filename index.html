@@ -328,8 +328,11 @@
     /* HERO */
     #hero{position:relative;z-index:1;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px clamp(16px,4vw,52px) 80px;overflow:hidden}
     .hero-in{max-width:960px;margin:0 auto;position:relative;z-index:2}
-    .h-shot{margin-top:clamp(2rem,5vw,3.5rem)}
-    .h-shot img{display:block;width:100%;height:auto;border-radius:14px}
+    /* Marco de captura de producto (paquete del 18-ago). La captura deja de
+       flotar suelta: va dentro de una caja con borde, sombra y un brillo naranja
+       muy tenue, para que se lea como pantalla del producto y no como imagen. */
+    .h-shot{margin-top:clamp(2rem,5vw,3.5rem);padding:12px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025));border:1px solid rgba(255,255,255,.1);border-radius:22px;box-shadow:0 35px 90px rgba(0,0,0,.45),0 0 65px rgba(249,115,22,.08)}
+    .h-shot img{display:block;width:100%;height:auto;border-radius:13px}
 
     .h-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:560px;border-radius:50%;border:1px solid rgba(249,115,22,.07);animation:rp 4s ease-in-out infinite;pointer-events:none;z-index:0}
     .h-ring::before{content:'';position:absolute;inset:-70px;border-radius:50%;border:1px solid rgba(249,115,22,.04);animation:rp 4s ease-in-out 1.2s infinite}
@@ -365,8 +368,15 @@
     /* H03: cuatro pruebas de producto. Dos columnas para que la captura se vea
        a un tamano en el que las cifras aun se leen; a tres no se leia nada. */
     .pg{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:1100px;margin:0 auto}
-    .pc2{background:var(--bcard2);border:1px solid var(--border);border-radius:var(--rx);overflow:hidden}
-    .pc2 img{display:block;width:100%;height:auto;border-bottom:1px solid var(--border)}
+    .pc2{background:var(--bcard2);border:1px solid var(--border);border-radius:var(--rx);overflow:hidden;transition:border-color .25s var(--ease-out),box-shadow .25s var(--ease-out)}
+    .pc2:hover{border-color:var(--bo);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+    /* La caja recorta el zoom del hover para que la imagen no invada el pie.
+       aspect-ratio 4/3 = la proporcion exacta de las capturas (960x720), asi
+       que "cover" no corta nada. A 16/10 se comia la grafica de ventas. */
+    .pc2-media{aspect-ratio:4/3;overflow:hidden;border-bottom:1px solid var(--border);background:var(--bg0)}
+    .pc2 img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .35s var(--ease-out)}
+    .pc2:hover img{transform:scale(1.02)}
+    @media(prefers-reduced-motion:reduce){.pc2 img{transition:none}.pc2:hover img{transform:none}}
     .pc2 figcaption{padding:1.4rem 1.6rem 1.6rem;color:var(--t2);font-size:.9rem;line-height:1.65}
     .pc2 figcaption strong{display:block;font-size:1.05rem;font-weight:700;color:var(--t);margin-bottom:.4rem}
     .pg-nota{text-align:center;color:var(--t3);font-size:.8rem;margin-top:1.4rem}
@@ -685,36 +695,36 @@
          esta en el dashboard" sin ensenar el dashboard. -->
     <div class="pg">
       <figure class="pc2 rv">
-        <img src="screenshots/home-proof-profit.webp" width="960" height="720"
+        <div class="pc2-media"><img src="screenshots/home-proof-profit.webp" width="960" height="720"
              loading="lazy" decoding="async"
-             alt="Dashboard de MisCuentas con ingresos, costo de ventas, utilidad neta del mes y las ventas de los ultimos seis meses.">
+             alt="Dashboard de MisCuentas con ingresos, costo de ventas, utilidad neta del mes y las ventas de los ultimos seis meses."></div>
         <figcaption>
           <strong>¿Cuánto gané?</strong>
           Ingresos, costos, utilidad y margen del mes, calculados de tus facturas.
         </figcaption>
       </figure>
       <figure class="pc2 rv d1">
-        <img src="screenshots/home-proof-cxc.webp" width="960" height="720"
+        <div class="pc2-media"><img src="screenshots/home-proof-cxc.webp" width="960" height="720"
              loading="lazy" decoding="async"
-             alt="Pantalla de cuentas por cobrar de MisCuentas con clientes, fecha de vencimiento y monto pendiente.">
+             alt="Pantalla de cuentas por cobrar de MisCuentas con clientes, fecha de vencimiento y monto pendiente."></div>
         <figcaption>
           <strong>¿Quién me debe?</strong>
           Cada cliente con su factura, su vencimiento y lo que falta por cobrar.
         </figcaption>
       </figure>
       <figure class="pc2 rv">
-        <img src="screenshots/home-proof-inventory.webp" width="960" height="720"
+        <div class="pc2-media"><img src="screenshots/home-proof-inventory.webp" width="960" height="720"
              loading="lazy" decoding="async"
-             alt="Inventario de MisCuentas por categoria, con stock actual, minimo y los productos marcados como bajo.">
+             alt="Inventario de MisCuentas por categoria, con stock actual, minimo y los productos marcados como bajo."></div>
         <figcaption>
           <strong>¿Qué debo reponer?</strong>
           Stock contra mínimo, producto por producto, con lo que está bajo marcado.
         </figcaption>
       </figure>
       <figure class="pc2 rv d1">
-        <img src="screenshots/home-proof-dgii.webp" width="960" height="720"
+        <div class="pc2-media"><img src="screenshots/home-proof-dgii.webp" width="960" height="720"
              loading="lazy" decoding="async"
-             alt="Reporte DGII 607 de MisCuentas con el resumen de ITBIS del mes y el detalle de ventas por NCF.">
+             alt="Reporte DGII 607 de MisCuentas con el resumen de ITBIS del mes y el detalle de ventas por NCF."></div>
         <figcaption>
           <strong>¿Qué falta para DGII?</strong>
           606, 607 y 608 desde tus facturas, con el ITBIS del mes y su archivo TXT.
@@ -1086,6 +1096,12 @@
         <div style="font-size:.85rem;color:var(--t2);margin-bottom:14px;">Qué datos incluir, fechas límite y los 6 errores más comunes al preparar estos reportes.</div>
         <div style="font-size:.78rem;color:var(--t3);">📅 Jun 2026 · 8 min</div>
       </a>
+      <a href="ecf.html" style="background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:24px;text-decoration:none;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;" onmouseover="this.style.borderColor='rgba(249,115,22,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,.07)';this.style.transform='translateY(0)'">
+        <div style="font-size:.75rem;color:var(--o);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">DGII · e-CF</div>
+        <div style="font-size:1.05rem;font-weight:700;color:var(--t);line-height:1.4;margin-bottom:10px;flex:1;">e-CF en República Dominicana: cuál es tu plazo</div>
+        <div style="font-size:.85rem;color:var(--t2);margin-bottom:14px;">El calendario por clasificación de contribuyente y los requisitos que pide la DGII para emitir.</div>
+        <div style="font-size:.78rem;color:var(--t3);">📅 Ago 2026 · 4 min</div>
+      </a>
       <a href="/blog/" style="background:linear-gradient(135deg,rgba(249,115,22,.08) 0%,rgba(249,115,22,.03) 100%);border:1px dashed var(--bo);border-radius:16px;padding:24px;text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:border-color .2s,transform .2s;min-height:180px;" onmouseover="this.style.borderColor='var(--o)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--bo)';this.style.transform='translateY(0)'">
         <div style="font-size:2rem;margin-bottom:12px;">📚</div>
         <div style="font-size:1rem;font-weight:700;color:var(--t);margin-bottom:8px;">Ver todos los artículos</div>
@@ -1168,6 +1184,7 @@ async function submitLM(e) {
         <li><a href="contadores.html">Para contadores</a></li>
         <li><a href="seguridad.html">Seguridad</a></li>
         <li><a href="migracion.html">Migración</a></li>
+        <li><a href="ecf.html">e-CF: fechas y requisitos</a></li>
         <li><a href="#precios">Precios</a></li>
         <li><a href="https://app.miscuentasrd.com">Iniciar Sesión</a></li>
         <li><a href="https://app.miscuentasrd.com">Registrarse gratis</a></li>
