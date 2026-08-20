@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>¿Micro, Pequeña o No Clasificado? Calcula tu fecha límite del e-CF | MisCuentas</title>
-<meta name="description" content="Dos datos y sabes en qué categoría te tiene la DGII y cuándo vence tu plazo del e-CF. Umbrales oficiales del Art. 4 de la Ley 187-17 (Resolución 05-2021), con la cifra exacta.">
+<meta name="description" content="Con dos datos estimas en qué categoría caes y cuándo vence tu plazo del e-CF. Umbrales oficiales del Art. 4 de la Ley 187-17 (Resolución 05-2021), con la cifra exacta. La clasificación que manda es la registrada en la DGII.">
   <meta name="robots" content="index, follow">
 <meta name="keywords" content="clasificacion DGII, micro pequeña empresa República Dominicana, fecha límite e-CF, 15 de noviembre 2026, no clasificado DGII, facturación electrónica RD">
 <link rel="canonical" href="https://miscuentasrd.com/calculadora-ecf">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="¿Micro, Pequeña o No Clasificado? Calcula tu fecha límite del e-CF">
-<meta property="og:description" content="Dos datos y sabes en qué categoría te tiene la DGII y cuándo vence tu plazo del e-CF. Con los umbrales oficiales al centavo.">
+<meta property="og:description" content="Con dos datos estimas en qué categoría caes y cuándo vence tu plazo del e-CF. Con los umbrales oficiales al centavo.">
 <meta property="og:url" content="https://miscuentasrd.com/calculadora-ecf">
 <meta property="og:image" content="https://miscuentasrd.com/screenshots/og.png">
 <meta property="og:locale" content="es_DO">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="¿Micro, Pequeña o No Clasificado? Calcula tu fecha límite del e-CF">
-<meta name="twitter:description" content="Dos datos y sabes en qué categoría te tiene la DGII y cuándo vence tu plazo del e-CF.">
+<meta name="twitter:description" content="Con dos datos estimas en qué categoría caes y cuándo vence tu plazo del e-CF.">
 <meta name="twitter:image" content="https://miscuentasrd.com/screenshots/og.png">
 
 <link rel="icon" href="icon.png">
@@ -34,7 +34,7 @@
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web",
   "inLanguage": "es-DO",
-  "description": "Calcula en qué categoría te clasifica la DGII (Micro, Pequeña o Mediana) según trabajadores y ventas brutas anuales, y cuál es tu fecha límite para emitir e-CF.",
+  "description": "Estima en qué categoría MiPyME caes (Micro, Pequeña o Mediana) según los umbrales oficiales de trabajadores y ventas brutas anuales, y cuál sería tu fecha límite para emitir e-CF. La clasificación definitiva es la que la DGII tenga registrada.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "publisher": { "@type": "Organization", "name": "MisCuentas", "url": "https://miscuentasrd.com" }
 }
@@ -299,7 +299,7 @@ footer a:hover{color:var(--o)}
     <h1>La DGII ya te puso una categoría. <em>Esa</em> decide tu fecha límite.</h1>
     <p class="lede">
       Casi todo el mundo publica el plazo del e-CF. Casi nadie dice cómo saber si te aplica.
-      Pon dos datos y te digo en qué categoría caes, cuándo vence tu plazo y qué cifra exacta lo decidió.
+      Pon dos datos y te digo en qué categoría caes según los umbrales oficiales, cuándo vencería tu plazo y qué cifra exacta lo decidió. Es una estimación: la que manda es la clasificación registrada en la DGII.
     </p>
 
     <form class="form" id="f" novalidate>
@@ -330,7 +330,7 @@ footer a:hover{color:var(--o)}
       <div class="vcard">
         <div class="vtop">
           <span id="vicon"></span>
-          <span class="vlabel">Según los umbrales de la DGII</span>
+          <span class="vlabel">Estimación según los umbrales de la DGII</span>
         </div>
         <div class="vcat" id="vcat"></div>
 
@@ -541,8 +541,9 @@ footer a:hover{color:var(--o)}
     var why;
     if (idx === 3) {
       why = 'Con <b>' + pesos(nEmp) + '</b> trabajadores y <b>RD$' + pesos(nVen) + '</b> en ventas '
-          + 'quedas por encima del techo de mediana empresa, así que la DGII te trata como '
-          + '<strong>Gran Contribuyente</strong>. Tu plazo del e-CF ya venció.';
+          + 'quedas <strong>por encima del techo de mediana empresa</strong>, así que ya no entras '
+          + 'en la clasificación MiPyME. Ese tramo tenía plazo hasta el 15 de noviembre de 2025, '
+          + 'o antes. Confirma tu clasificación exacta en la Oficina Virtual de la DGII con tu RNC.';
     } else if (iE === iV) {
       why = 'Tus <b>' + pesos(nEmp) + '</b> trabajadores y tus <b>RD$' + pesos(nVen) + '</b> en ventas '
           + 'caben los dos dentro de <strong>' + tier.nombre.toLowerCase() + '</strong>: '
