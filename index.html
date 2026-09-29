@@ -459,6 +459,15 @@
        que inventaba cifras (RD$284K) y clientes y se anunciaba como "En vivo". */
     .app-shot{display:block;width:100%;height:auto}
 
+    /* Tutoriales en video: grabados en la app real (staging, cuenta demo). preload=none: no pesan hasta darle play. */
+    .tuto-w{grid-template-columns:1fr;gap:2.5rem}
+    .tutos{display:grid;grid-template-columns:repeat(3,minmax(0,300px));justify-content:center;gap:28px}
+    .tuto{margin:0;min-width:0}
+    .tuto video{display:block;width:100%;height:auto;aspect-ratio:9/16;border-radius:var(--rx);border:1px solid var(--border);background:var(--bg0)}
+    .tuto figcaption{margin-top:.9rem;color:var(--t2);font-size:.9rem;line-height:1.6}
+    .tuto figcaption strong{display:block;color:var(--t);font-size:1rem;font-weight:700;margin-bottom:.2rem}
+    @media(max-width:820px){.tutos{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72vw;justify-content:start;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin:0 -4px}.tuto{scroll-snap-align:center}}
+
     /* TESTIMONIALS */
     #testi{background:var(--bg0)}
     .testi-h{text-align:center;margin-bottom:4rem}
@@ -709,16 +718,16 @@
         <!-- En vertical la composicion de 1600px queda al 24% y no se lee una
              cifra. Movil recibe las mismas piezas apiladas y grandes. -->
         <source type="image/webp" media="(max-width: 760px)"
-          srcset="screenshots/home-hero-dashboard-movil.webp">
+          srcset="screenshots/home-hero-movil-v2.webp">
         <source type="image/webp"
-          srcset="screenshots/home-hero-dashboard-480w.webp 480w,
-                  screenshots/home-hero-dashboard-800w.webp 800w,
-                  screenshots/home-hero-dashboard-1200w.webp 1200w,
-                  screenshots/home-hero-dashboard-1600w.webp 1600w"
+          srcset="screenshots/home-hero-devices-480w.webp 480w,
+                  screenshots/home-hero-devices-800w.webp 800w,
+                  screenshots/home-hero-devices-1200w.webp 1200w,
+                  screenshots/home-hero-devices-1600w.webp 1600w"
           sizes="(max-width: 900px) 92vw, 960px">
-        <img src="screenshots/home-hero-dashboard-1200w.webp"
+        <img src="screenshots/home-hero-devices-1200w.webp"
              width="1600" height="1100" decoding="async" fetchpriority="high"
-             alt="Dashboard de MisCuentas con ventas, gastos, utilidad y cuentas por cobrar del mes.">
+             alt="MisCuentas en laptop y en teléfono: reporte del mes con ventas, costo de lo vendido, margen y utilidad neta.">
       </picture>
     </div>
   </div>
@@ -736,36 +745,36 @@
          esta en el dashboard" sin ensenar el dashboard. -->
     <div class="pg">
       <figure class="pc2 rv">
-        <div class="pc2-media"><img src="screenshots/home-proof-profit.webp" width="960" height="720"
+        <div class="pc2-media"><img src="screenshots/home-proof-profit-v2.webp" width="960" height="720"
              loading="lazy" decoding="async"
-             alt="Dashboard de MisCuentas con ingresos, costo de ventas, utilidad neta del mes y las ventas de los ultimos seis meses."></div>
+             alt="Reporte de MisCuentas en el teléfono: ventas, costo de lo vendido, margen bruto y utilidad neta del mes."></div>
         <figcaption>
           <strong>¿Cuánto gané?</strong>
           Ingresos, costos, utilidad y margen del mes, calculados de tus facturas.
         </figcaption>
       </figure>
       <figure class="pc2 rv d1">
-        <div class="pc2-media"><img src="screenshots/home-proof-cxc.webp" width="960" height="720"
+        <div class="pc2-media"><img src="screenshots/home-proof-cxc-v2.webp" width="960" height="720"
              loading="lazy" decoding="async"
-             alt="Pantalla de cuentas por cobrar de MisCuentas con clientes, fecha de vencimiento y monto pendiente."></div>
+             alt="Cuentas por cobrar en el teléfono: total pendiente y cada factura con lo pagado y lo que falta."></div>
         <figcaption>
           <strong>¿Quién me debe?</strong>
           Cada cliente con su factura, su vencimiento y lo que falta por cobrar.
         </figcaption>
       </figure>
       <figure class="pc2 rv">
-        <div class="pc2-media"><img src="screenshots/home-proof-inventory.webp" width="960" height="720"
+        <div class="pc2-media"><img src="screenshots/home-proof-inventory-v2.webp" width="960" height="720"
              loading="lazy" decoding="async"
-             alt="Inventario de MisCuentas por categoria, con stock actual, minimo y los productos marcados como bajo."></div>
+             alt="Stock en el teléfono: valor del inventario, productos en catálogo y cuántos están bajo el mínimo."></div>
         <figcaption>
           <strong>¿Qué debo reponer?</strong>
           Stock contra mínimo, producto por producto, con lo que está bajo marcado.
         </figcaption>
       </figure>
       <figure class="pc2 rv d1">
-        <div class="pc2-media"><img src="screenshots/home-proof-dgii.webp" width="960" height="720"
+        <div class="pc2-media"><img src="screenshots/home-proof-dgii-v2.webp" width="960" height="720"
              loading="lazy" decoding="async"
-             alt="Reporte DGII 607 de MisCuentas con el resumen de ITBIS del mes y el detalle de ventas por NCF."></div>
+             alt="DGII en el teléfono: ITBIS cobrado, ITBIS pagado, retenido y saldo a pagar del mes."></div>
         <figcaption>
           <strong>¿Qué falta para DGII?</strong>
           606, 607 y 608 desde tus facturas, con el ITBIS del mes y su archivo TXT.
@@ -856,23 +865,36 @@
 </section>
 
 <section id="demo">
-  <div class="demo-w">
+  <div class="demo-w tuto-w">
     <div>
       <h2 class="stitle rv">Mira cómo funciona</h2>
-      <p class="ssub rv d2" style="margin-bottom:2rem">Una interfaz limpia pensada para empresarios, no solo contadores. Accede desde cualquier dispositivo.</p>
+      <p class="ssub rv d2" style="margin-bottom:2rem">Tres tareas de todos los días, grabadas en la app real y explicadas paso a paso.</p>
       <a href="https://app.miscuentasrd.com" class="btn btn-cta rv d3">
         Ver el dashboard →
       </a>
     </div>
-    <div class="browser rv d2">
-      <div class="b-top">
-        <div class="dots"><span></span><span></span><span></span></div>
-        <div class="urlbar"><span class="lk">🔒</span>app.miscuentasrd.com/dashboard</div>
-        <div class="live-badge"><span class="ldot"></span>Cuenta demo</div>
-      </div>
-      <img class="app-shot" src="screenshots/screenshot-dashboard.jpg"
-           width="1600" height="1138" loading="lazy" decoding="async"
-           alt="Dashboard de MisCuentas: ingresos, costo de ventas, utilidad neta y cuentas por cobrar del mes, con vencimientos y ventas de los últimos seis meses.">
+    <div class="tutos rv d2">
+      <figure class="tuto">
+        <video controls playsinline preload="none" width="540" height="960"
+               poster="videos/tutorial-factura-portada.webp" aria-label="Tutorial: Emitir una factura">
+          <source src="videos/tutorial-factura.mp4" type="video/mp4">
+        </video>
+        <figcaption><strong>Emitir una factura</strong>Del cliente al NCF en menos de un minuto.</figcaption>
+      </figure>
+      <figure class="tuto">
+        <video controls playsinline preload="none" width="540" height="960"
+               poster="videos/tutorial-cobro-portada.webp" aria-label="Tutorial: Registrar un cobro">
+          <source src="videos/tutorial-cobro.mp4" type="video/mp4">
+        </video>
+        <figcaption><strong>Registrar un cobro</strong>Un pago en efectivo y la factura queda en parcial.</figcaption>
+      </figure>
+      <figure class="tuto">
+        <video controls playsinline preload="none" width="540" height="960"
+               poster="videos/tutorial-importar-portada.webp" aria-label="Tutorial: Importar tus clientes">
+          <source src="videos/tutorial-importar.mp4" type="video/mp4">
+        </video>
+        <figcaption><strong>Importar tus clientes</strong>Tu lista de Excel dentro de la app, sin copiar uno por uno.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
