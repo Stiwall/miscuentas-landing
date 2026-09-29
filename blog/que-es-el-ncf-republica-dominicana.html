@@ -18,67 +18,74 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Qué es un NCF en República Dominicana?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Un NCF (Número de Comprobante Fiscal) es el código único que identifica cada factura, nota de crédito o documento fiscal emitido por una empresa en República Dominicana. Sin un NCF válido, la factura no tiene fuerza fiscal: no genera crédito de ITBIS ni puede deducirse como gasto." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuál es la diferencia entre NCF y e-CF?",
-        "acceptedAnswer": { "@type": "Answer", "text": "El NCF tradicional es el comprobante en papel preimpreso o PDF. El e-CF (Comprobante Fiscal Electrónico) es un archivo XML firmado digitalmente y transmitido en tiempo real a la DGII bajo la Ley 32-23. El e-CF reemplaza progresivamente al NCF tradicional según el calendario oficial de la DGII." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuándo es obligatorio el e-CF en República Dominicana?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Grandes Contribuyentes Nacionales desde el 15 de mayo de 2024. Grandes Locales y Medianos desde el 15 de noviembre de 2025. Pequeños, Micros y No Clasificados hasta el 15 de noviembre de 2026 (prórroga oficial de la DGII anunciada en mayo 2026)." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuántos tipos de NCF y e-CF existen?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Los más usados son: B01/E31 (Crédito Fiscal), B02/E32 (Consumo), B03/E33 (Nota de Débito), B04/E34 (Nota de Crédito), B11/E43 (Gastos Menores), B14 (Regímenes Especiales), B15/E45 (Gubernamental), E46 (Exportaciones), E47 (Pagos al Exterior)." }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué necesito para migrar al e-CF?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Necesitas: RNC activo sin incumplimientos, certificado digital emitido por entidad acreditada por INDOTEL (RD$3,000-7,000 anuales), software o ERP autorizado por la DGII, completar el set de pruebas y certificación ante la DGII, y obtener secuencias autorizadas de producción." }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Puedo reutilizar un NCF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Cada NCF es de uso único. Una vez emitido en una factura, ese número queda registrado en la DGII y no puede usarse de nuevo."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué hago si emití una factura con error?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Debes emitir una Nota de Crédito (B04/E34) para anular el efecto de la factura original, y luego emitir la factura correcta con un NCF nuevo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El NCF tiene fecha de vencimiento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La DGII asigna una fecha límite de uso para cada secuencia de NCF. Pasada esa fecha, los comprobantes no tienen validez fiscal aunque no hayas usado todos los números."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es diferente el NCF del RNC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El RNC (Registro Nacional del Contribuyente) es el número que identifica a tu empresa. El NCF identifica cada factura individual que emites. Son complementarios: el NCF siempre va acompañado del RNC del emisor."
+      }
+    }
+  ]
+}
+</script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "¿Qué es el NCF en República Dominicana? Guía Completa 2026",
-    "description": "Todo lo que necesitas saber sobre el Número de Comprobante Fiscal (NCF) en República Dominicana: tipos, cómo obtenerlo, quién está obligado y cómo usarlo correctamente.",
-    "author": {
-      "@type": "Organization",
-      "name": "MisCuentas Contable",
-      "url": "https://miscuentasrd.com"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "MisCuentas Contable",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://miscuentasrd.com/logo.png"
-      }
-    },
-    "datePublished": "2026-06-09",
-    "dateModified": "2026-08-20",
-    "url": "https://miscuentasrd.com/blog/que-es-el-ncf-republica-dominicana",
-    "mainEntityOfPage": "https://miscuentasrd.com/blog/que-es-el-ncf-republica-dominicana",
-    "image": "https://miscuentasrd.com/screenshots/screenshot-facturas.jpg",
-    "inLanguage": "es-DO",
-    "keywords": "NCF, Número de Comprobante Fiscal, DGII, República Dominicana, factura NCF"
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Qué es el NCF en República Dominicana? Guía Completa 2026",
+  "description": "Todo lo que necesitas saber sobre el Número de Comprobante Fiscal (NCF) en República Dominicana: tipos, cómo obtenerlo, quién está obligado y cómo usarlo correctamente.",
+  "author": {
+    "@type": "Organization",
+    "name": "MisCuentas Contable",
+    "url": "https://miscuentasrd.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MisCuentas Contable",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://miscuentasrd.com/logo.png"
+    }
+  },
+  "datePublished": "2026-06-09",
+  "dateModified": "2026-08-20",
+  "url": "https://miscuentasrd.com/blog/que-es-el-ncf-republica-dominicana",
+  "mainEntityOfPage": "https://miscuentasrd.com/blog/que-es-el-ncf-republica-dominicana",
+  "image": "https://miscuentasrd.com/screenshots/screenshot-facturas.jpg",
+  "inLanguage": "es-DO",
+  "keywords": "NCF, Número de Comprobante Fiscal, DGII, República Dominicana, factura NCF"
+}
+</script>
 
   <style>
     :root {
