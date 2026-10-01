@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+  <title id="title">Diferencia entre el 606 y el 607</title>
+  <desc id="desc">Las facturas recibidas de proveedores alimentan el 606 de compras. Las facturas emitidas a clientes alimentan el 607 de ventas.</desc>
+  <rect width="720" height="420" rx="22" fill="#0f1a18"/>
+  <text x="36" y="55" fill="#e9f1ed" font-family="Arial,sans-serif" font-size="25" font-weight="700">Mira de qué lado está la factura</text>
+  <rect x="35" y="92" width="650" height="126" rx="15" fill="#1d302b"/>
+  <text x="55" y="141" fill="#ff9b59" font-family="Arial,sans-serif" font-size="28" font-weight="700">606</text>
+  <text x="155" y="140" fill="#e9f1ed" font-family="Arial,sans-serif" font-size="22" font-weight="700">Compras</text>
+  <text x="155" y="174" fill="#c9d9d3" font-family="Arial,sans-serif" font-size="19">Facturas que te entregaron proveedores.</text>
+  <rect x="35" y="237" width="650" height="126" rx="15" fill="#1d302b"/>
+  <text x="55" y="286" fill="#ff9b59" font-family="Arial,sans-serif" font-size="28" font-weight="700">607</text>
+  <text x="155" y="285" fill="#e9f1ed" font-family="Arial,sans-serif" font-size="22" font-weight="700">Ventas</text>
+  <text x="155" y="319" fill="#c9d9d3" font-family="Arial,sans-serif" font-size="19">Facturas que entregaste a clientes.</text>
+</svg>

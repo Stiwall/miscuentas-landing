@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" role="img" aria-labelledby="title desc">
+  <title id="title">Flujo para preparar y enviar 606 y 607</title>
+  <desc id="desc">Reunir facturas del período, separar compras y ventas, validar los formatos y remitirlos por la Oficina Virtual de la DGII.</desc>
+  <rect width="720" height="450" rx="22" fill="#0f1a18"/>
+  <text x="36" y="55" fill="#e9f1ed" font-family="Arial,sans-serif" font-size="25" font-weight="700">Del comprobante a la DGII</text>
+  <path d="M73 102v291" stroke="#ff7c2a" stroke-width="4"/>
+  <circle cx="73" cy="128" r="17" fill="#ff7c2a"/><text x="66" y="135" fill="#0f1a18" font-family="Arial,sans-serif" font-size="21" font-weight="700">1</text>
+  <text x="117" y="137" fill="#e9f1ed" font-family="Arial,sans-serif" font-size="22" font-weight="700">Reúne las facturas del mes</text>
+  <circle cx="73" cy="212" r="17" fill="#ff7c2a"/><text x="66" y="219" fill="#0f1a18" font-family="Arial,sans-serif" font-size="21" font-weight="700">2</text>
+  <text x="117" y="221" fill="#e9f1ed" font-family="Arial,sans-serif" font-size="22" font-weight="700">Separa compras y ventas</text>
+  <circle cx="73" cy="296" r="17" fill="#ff7c2a"/><text x="66" y="303" fill="#0f1a18" font-family="Arial,sans-serif" font-size="21" font-weight="700">3</text>
+  <text x="117" y="305" fill="#e9f1ed" font-family="Arial,sans-serif" font-size="22" font-weight="700">Prevalida los archivos</text>
+  <circle cx="73" cy="380" r="17" fill="#ff7c2a"/><text x="66" y="387" fill="#0f1a18" font-family="Arial,sans-serif" font-size="21" font-weight="700">4</text>
+  <text x="117" y="389" fill="#e9f1ed" font-family="Arial,sans-serif" font-size="22" font-weight="700">Envía por la Oficina Virtual</text>
+</svg>
