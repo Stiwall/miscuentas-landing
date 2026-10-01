@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-labelledby="title desc">
+  <title id="title">Cuándo usar B01 y B02</title>
+  <desc id="desc">B01 es para crédito fiscal del comprador contribuyente. B02 es factura de consumo para consumidor final.</desc>
+  <rect width="720" height="440" rx="22" fill="#0f1a18"/>
+  <text x="36" y="56" fill="#e9f1ed" font-family="Arial,sans-serif" font-size="25" font-weight="700">El comprador define el tipo de factura</text>
+  <rect x="35" y="92" width="650" height="132" rx="15" fill="#1d302b"/>
+  <rect x="54" y="112" width="90" height="90" rx="12" fill="#ff7c2a"/>
+  <text x="65" y="169" fill="#0f1a18" font-family="Arial,sans-serif" font-size="28" font-weight="700">B01</text>
+  <text x="165" y="146" fill="#e9f1ed" font-family="Arial,sans-serif" font-size="23" font-weight="700">Crédito fiscal</text>
+  <text x="165" y="180" fill="#c9d9d3" font-family="Arial,sans-serif" font-size="19">El comprador necesita sustentar gasto o ITBIS.</text>
+  <rect x="35" y="242" width="650" height="132" rx="15" fill="#1d302b"/>
+  <rect x="54" y="262" width="90" height="90" rx="12" fill="#dfebdf"/>
+  <text x="65" y="319" fill="#0f1a18" font-family="Arial,sans-serif" font-size="28" font-weight="700">B02</text>
+  <text x="165" y="296" fill="#e9f1ed" font-family="Arial,sans-serif" font-size="23" font-weight="700">Consumo final</text>
+  <text x="165" y="330" fill="#c9d9d3" font-family="Arial,sans-serif" font-size="19">El comprador no usará crédito fiscal.</text>
+</svg>
