@@ -78,27 +78,36 @@
         {
           "@type": "Offer",
           "name": "Plan Free",
-          "description": "Para conocer la plataforma sin compromiso. 1 empresa, 30 facturas/mes.",
+          "description": "Gratis para siempre, para empezar. 1 empresa, hasta 50 transacciones/mes, ingresos y gastos, inventario.",
           "price": "0",
-          "priceCurrency": "USD",
+          "priceCurrency": "DOP",
           "availability": "https://schema.org/InStock",
           "url": "https://app.miscuentasrd.com"
         },
         {
           "@type": "Offer",
-          "name": "Plan Básico",
-          "description": "Para pequeños negocios. 1 empresa, 300 facturas/mes, inventario, CxC/CxP, reportes DGII.",
-          "price": "19",
-          "priceCurrency": "USD",
+          "name": "Plan Starter",
+          "description": "Para micro-negocios y emprendedores. 1 empresa, transacciones ilimitadas, ingresos, gastos y caja, reportes básicos, inventario.",
+          "price": "299",
+          "priceCurrency": "DOP",
           "availability": "https://schema.org/InStock",
           "url": "https://miscuentasrd.com/#precios"
         },
         {
           "@type": "Offer",
-          "name": "Plan Pro",
-          "description": "Para PYMEs y contadores. Hasta 5 empresas, 3 usuarios, facturas ilimitadas, panel multi-empresa.",
-          "price": "49",
-          "priceCurrency": "USD",
+          "name": "Plan Negocio",
+          "description": "Para PYMEs con inventario y equipo. 1 empresa, inventario completo con kardex, hasta 3 usuarios, reportes avanzados.",
+          "price": "600",
+          "priceCurrency": "DOP",
+          "availability": "https://schema.org/InStock",
+          "url": "https://miscuentasrd.com/#precios"
+        },
+        {
+          "@type": "Offer",
+          "name": "Plan Contador",
+          "description": "Para contadores con múltiples clientes. Hasta 10 empresas, panel multi-empresa unificado, usuarios ilimitados, reportes avanzados.",
+          "price": "1200",
+          "priceCurrency": "DOP",
           "availability": "https://schema.org/InStock",
           "url": "https://miscuentasrd.com/#precios"
         }
@@ -175,7 +184,7 @@
           "name": "¿Qué pasa cuando terminan los 14 días gratis?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tu cuenta pasa automáticamente al plan Free, gratis para siempre: 30 facturas al mes con NCF, hasta 10 clientes e ingresos y gastos básicos. No se borra nada de lo que registraste. Si necesitas más, eliges Básico o Pro cuando quieras."
+            "text": "Tu cuenta pasa automáticamente al plan Free, gratis para siempre: hasta 50 transacciones al mes, 1 empresa, ingresos y gastos, inventario y reportes avanzados. No se borra nada de lo que registraste. Si necesitas más, eliges Starter, Negocio o Contador cuando quieras."
           }
         },
         {
@@ -215,7 +224,7 @@
           "name": "¿Cuánto cuesta MisCuentas?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "MisCuentas tiene tres planes: Free (RD$0/mes, para conocer la plataforma), Básico (US$19/mes, inventario y DGII completo) y Pro (US$49/mes, hasta 5 empresas para PYMEs y contadores)."
+            "text": "MisCuentas tiene cuatro planes: Free (RD$0/mes, gratis para siempre), Starter (RD$299/mes, para micro-negocios), Negocio (RD$600/mes, para PYMEs) y Contador (RD$1,200/mes, hasta 10 empresas para contadores)."
           }
         },
         {
@@ -231,7 +240,7 @@
           "name": "¿MisCuentas sirve para negocios con inventario?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Los planes Básico y Pro incluyen módulo de inventario completo: registro de productos, entradas y salidas, stock mínimo con alertas, y el inventario se actualiza automáticamente con cada venta."
+            "text": "Sí. Todos los planes incluyen inventario: registro de productos, entradas y salidas, stock mínimo con alertas, y el inventario se actualiza automáticamente con cada venta. Negocio y Contador incluyen inventario completo con kardex."
           }
         }
       ]
@@ -492,7 +501,7 @@
     .ph{text-align:center;margin-bottom:4rem}
     .ph .ssub{margin:0 auto}
 
-    .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1000px;margin:0 auto;align-items:start}
+    .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:1180px;margin:0 auto;align-items:start}
     .pc{background:var(--bcard2);border:1px solid var(--border);border-radius:var(--rx);padding:2.5rem;transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}
     .pc:hover{box-shadow:0 24px 48px rgba(0,0,0,.35)}
     .pc.feat{border-color:var(--o);background:linear-gradient(145deg,#121B2E,#1A2540);transform:translateY(-8px);box-shadow:0 0 60px rgba(249,115,22,.14),0 0 0 1px rgba(249,115,22,.28);position:relative;overflow:hidden}
@@ -559,6 +568,7 @@
       .tg{grid-template-columns:1fr;max-width:480px;margin:0 auto}
       .steps{grid-template-columns:1fr;gap:3rem}
       .steps::before{display:none}
+      .pgrid{grid-template-columns:repeat(2,1fr);max-width:640px}
     }
     @media(max-width:768px){
       nav{padding:0 16px}
@@ -695,7 +705,7 @@
       Sabe si tu negocio<br><em>gana o pierde</em>,<br>sin contador y sin Excel.
     </h1>
     <p class="h-sub rv d2">
-      Software contable para PYMEs en República Dominicana: NCF automático, reportes DGII en un clic y soporte 24/7 dentro de la app.
+      Software contable para PYMEs en República Dominicana: NCF automático, reportes DGII en un clic y soporte 24/7 dentro de la app. Contabilidad y reportes DGII: el e-CF lo emites con el Facturador Gratuito de la DGII.
     </p>
     <div class="h-ctas rv d3">
       <a href="https://app.miscuentasrd.com/?registro=1" class="btn btn-cta btn-lg">
@@ -737,7 +747,7 @@
 <!-- FEATURES / PAIN POINTS -->
 <section id="features">
   <div class="fh">
-    <span class="slabel rv">Por qué MisCuentas</span>
+    <span class="slabel rv">Por qué MisCuentas es el software contable de las PYMEs dominicanas</span>
     <h2 class="stitle rv d1">Los dolores que te quitamos</h2>
     <p class="ssub rv d2">Cada pregunta que te quita el sueño tiene una respuesta en el dashboard.</p>
   </div>
@@ -855,9 +865,10 @@
       <h3 style="font-size:1.35rem;font-weight:800;margin-bottom:10px;color:var(--t);">Sigues en Free, para siempre</h3>
       <p style="color:var(--t2);font-size:.95rem;line-height:1.65;margin-bottom:14px;">Si no eliges un plan, tu cuenta pasa a Free y conservas lo esencial:</p>
       <ul class="pfeats" style="margin:0;">
-        <li>30 facturas al mes con NCF</li>
-        <li>Hasta 10 clientes</li>
-        <li>Ingresos y gastos básicos</li>
+        <li>Hasta 50 transacciones al mes</li>
+        <li>1 empresa</li>
+        <li>Ingresos y gastos</li>
+        <li>Inventario y reportes avanzados</li>
         <li>Tus datos intactos, sin borrar nada</li>
       </ul>
     </div>
@@ -907,8 +918,8 @@
   <div class="cnt-w">
     <div>
       <span class="slabel rv">Para contadores</span>
-      <h2 class="stitle rv d1">Plan Pro: todas tus empresas</h2>
-      <p class="ssub rv d2">Maneja hasta 5 empresas desde el mismo panel sin cerrar y abrir sesión. Genera reportes de cada cliente en segundos.</p>
+      <h2 class="stitle rv d1">Plan Contador: todas tus empresas</h2>
+      <p class="ssub rv d2">Maneja hasta 10 empresas desde el mismo panel sin cerrar y abrir sesión. Genera reportes de cada cliente en segundos.</p>
       <div class="cnt-grid rv d3">
         <div class="cnt-card">
           <div class="cnt-card-n">Panel multi-empresa</div>
@@ -919,30 +930,32 @@
           <div class="cnt-card-d">Balance, resultados y libro diario de cada empresa en PDF con un clic.</div>
         </div>
         <div class="cnt-card">
-          <div class="cnt-card-n">Hasta 3 usuarios</div>
-          <div class="cnt-card-d">Suma a tu asistente o al dueño del negocio, sin pagar por cada uno.</div>
+          <div class="cnt-card-n">Usuarios ilimitados</div>
+          <div class="cnt-card-d">Suma a tu equipo o al dueño del negocio, sin pagar por cada uno.</div>
         </div>
         <div class="cnt-card">
-          <div class="cnt-card-n">DGII 606/607</div>
-          <div class="cnt-card-d">Genera los reportes fiscales de cada empresa en segundos.</div>
+          <div class="cnt-card-n">DGII 606/607 (add-on)</div>
+          <div class="cnt-card-d">Reporte DGII 606/607 disponible como módulo adicional en el plan Contador.</div>
         </div>
       </div>
     </div>
     <div class="cnt-right rv d2">
-      <div class="cnt-tag">Plan Pro</div>
-      <div class="cnt-price-big">US$49</div>
-      <div class="cnt-price-sub">/mes · hasta 5 empresas</div>
+      <div class="cnt-tag">Plan Contador</div>
+      <div class="cnt-price-big">RD$1,200</div>
+      <div class="cnt-price-sub">/mes · hasta 10 empresas</div>
       <div class="cnt-feats">
-        <div class="cnt-feat">Hasta 5 empresas</div>
-        <div class="cnt-feat">Hasta 3 usuarios</div>
+        <div class="cnt-feat">Hasta 10 empresas</div>
+        <div class="cnt-feat">Usuarios ilimitados</div>
         <div class="cnt-feat">Panel multi-empresa</div>
-        <div class="cnt-feat">Inventario completo</div>
+        <div class="cnt-feat">Inventario completo con kardex</div>
+        <div class="cnt-feat">Reportes avanzados</div>
         <div class="cnt-feat">Estado de Resultados y balanza</div>
-        <div class="cnt-feat">Exportar todo a CSV</div>
+        <div class="cnt-feat">Backup + exportación (add-on)</div>
+        <div class="cnt-feat">Módulo DGII 606/607 (add-on)</div>
         <div class="cnt-feat">Cierre mensual/anual</div>
         <div class="cnt-feat">Soporte prioritario</div>
       </div>
-      <a href="https://wa.me/18294432019?text=Hola%2C%20soy%20contador%20y%20me%20interesa%20el%20plan%20Pro%20de%20MisCuentas" class="btn btn-cta btn-full" target="_blank" rel="noopener">
+      <a href="https://wa.me/18294432019?text=Hola%2C%20soy%20contador%20y%20me%20interesa%20el%20plan%20Contador%20de%20MisCuentas" class="btn btn-cta btn-full" target="_blank" rel="noopener">
         Hablar con ventas →
       </a>
       <p style="font-size:.78rem;color:var(--t3);text-align:center;margin-top:.75rem">Activación manual por WhatsApp · Sin contrato</p>
@@ -958,54 +971,74 @@
     <h2 class="stitle rv">Simple y transparente</h2>
     <p class="ssub rv d2">Toda cuenta nueva arranca con <strong style="color:#ff7c2a">14 días de acceso completo gratis</strong>. Al terminar, sigues en Free para siempre o eliges tu plan.</p>
   </div>
-  <div class="pgrid" style="max-width:860px">
+  <div class="pgrid" style="max-width:1180px">
     <div class="pc rv">
       <div class="pname">Free</div>
       <div class="pamount">RD$0</div>
       <div class="pper">/mes, para siempre</div>
-      <div class="pdesc">Tu plan al terminar la prueba. Gratis para siempre.</div>
+      <div class="pdesc">Gratis para siempre — para empezar.</div>
       <ul class="pfeats">
-        <li>1 empresa · 1 usuario</li>
-        <li>30 facturas/mes</li>
-        <li>Ingresos y gastos básicos</li>
-        <li>10 clientes</li>
-        <li>Reportes DGII: 606, 607 y 608</li>
+        <li>1 empresa</li>
+        <li>Hasta 50 transacciones/mes</li>
+        <li>Ingresos y gastos</li>
+        <li>Inventario</li>
+        <li>Reportes avanzados</li>
+        <li>Múltiples usuarios</li>
       </ul>
       <a href="https://app.miscuentasrd.com/?registro=1" class="btn btn-ghost btn-full">Empezar gratis</a>
     </div>
     <div class="pc rv d1">
-      <div class="pname">Básico</div>
-      <div class="pamount">US$19</div>
+      <div class="pname">Starter</div>
+      <div class="pamount">RD$299</div>
       <div class="pper">/mes por empresa</div>
-      <div class="pdesc">Para pequeños negocios y emprendedores.</div>
+      <div class="pdesc">Para micro-negocios y emprendedores.</div>
       <ul class="pfeats">
-        <li>1 empresa · 1 usuario</li>
-        <li>300 facturas/mes</li>
-        <li>Inventario completo</li>
+        <li>1 empresa</li>
+        <li>Transacciones ilimitadas</li>
+        <li>Ingresos, gastos y caja</li>
+        <li>Reportes básicos</li>
+        <li>Inventario</li>
         <li>Cuentas por cobrar/pagar</li>
         <li>Clientes y proveedores ilimitados</li>
-        <li>Reportes DGII: 606, 607, 608</li>
-        <li class="no">Estado de Resultados, cierres y exportar a CSV: en Pro</li>
+        <li>Múltiples usuarios</li>
       </ul>
-      <a href="https://wa.me/18294432019?text=Hola%2C%20quiero%20adquirir%20el%20plan%20B%C3%A1sico%20de%20MisCuentas" class="btn btn-ghost btn-full" target="_blank" rel="noopener">Adquirir por WhatsApp</a>
+      <a href="https://wa.me/18294432019?text=Hola%2C%20quiero%20adquirir%20el%20plan%20Starter%20de%20MisCuentas" class="btn btn-ghost btn-full" target="_blank" rel="noopener">Adquirir por WhatsApp</a>
     </div>
     <div class="pc feat rv d2">
-      <div class="ptag">Para contadores</div>
-      <div class="pname">Pro</div>
-      <div class="pamount">US$49</div>
-      <div class="pper">/mes · hasta 5 empresas</div>
-      <div class="pdesc">Para PYMEs y contadores con varios clientes.</div>
+      <div class="ptag">Más popular</div>
+      <div class="pname">Negocio</div>
+      <div class="pamount">RD$600</div>
+      <div class="pper">/mes por empresa</div>
+      <div class="pdesc">Para PYMEs con inventario y equipo.</div>
       <ul class="pfeats">
-        <li>Hasta 5 empresas</li>
+        <li>1 empresa</li>
+        <li>Inventario completo con kardex</li>
         <li>Hasta 3 usuarios</li>
+        <li>Reportes avanzados</li>
+        <li>Módulos add-on disponibles</li>
+        <li>Módulo DGII 606/607 (add-on RD$300/mes)</li>
+      </ul>
+      <a href="https://wa.me/18294432019?text=Hola%2C%20quiero%20adquirir%20el%20plan%20Negocio%20de%20MisCuentas" class="btn btn-cta btn-full" target="_blank" rel="noopener">Adquirir por WhatsApp</a>
+    </div>
+    <div class="pc rv d3">
+      <div class="ptag">Para contadores</div>
+      <div class="pname">Contador</div>
+      <div class="pamount">RD$1,200</div>
+      <div class="pper">/mes · hasta 10 empresas</div>
+      <div class="pdesc">Para contadores con múltiples clientes.</div>
+      <ul class="pfeats">
+        <li>Hasta 10 empresas</li>
+        <li>Panel multi-empresa unificado</li>
+        <li>Usuarios ilimitados</li>
         <li>Facturas ilimitadas</li>
-        <li>Panel multi-empresa</li>
         <li>Estado de Resultados y balanza</li>
         <li>Cierres mensuales y anuales</li>
-        <li>Exportar todo a CSV</li>
+        <li>Reportes avanzados</li>
         <li>Soporte prioritario</li>
+        <li>Módulos add-on disponibles</li>
+        <li>Módulo DGII 606/607 (add-on RD$300/mes)</li>
       </ul>
-      <a href="https://wa.me/18294432019?text=Hola%2C%20quiero%20adquirir%20el%20plan%20Pro%20de%20MisCuentas" class="btn btn-cta btn-full" target="_blank" rel="noopener">Adquirir por WhatsApp</a>
+      <a href="https://wa.me/18294432019?text=Hola%2C%20quiero%20adquirir%20el%20plan%20Contador%20de%20MisCuentas" class="btn btn-cta btn-full" target="_blank" rel="noopener">Adquirir por WhatsApp</a>
     </div>
   </div>
   <p style="text-align:center;color:var(--t3);font-size:.8rem;margin-top:2rem">Todos los planes incluyen: 14 días de prueba gratis con acceso completo · Sin tarjeta de crédito</p>
@@ -1069,7 +1102,7 @@
           <span style="color:var(--o);font-size:1.3rem;flex-shrink:0;">+</span>
         </summary>
         <div style="padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);">
-          Tu cuenta pasa automáticamente al plan Free, gratis para siempre: 30 facturas al mes con NCF, hasta 10 clientes e ingresos y gastos básicos. No se borra nada de lo que registraste. Si necesitas más, eliges Básico o Pro cuando quieras.
+          Tu cuenta pasa automáticamente al plan Free, gratis para siempre: hasta 50 transacciones al mes, 1 empresa, ingresos y gastos, inventario y reportes avanzados. No se borra nada de lo que registraste. Si necesitas más, eliges Starter, Negocio o Contador cuando quieras.
         </div>
       </details>
       <details style="background:var(--bcard);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden;">
@@ -1117,7 +1150,7 @@
           <span style="color:var(--o);font-size:1.3rem;flex-shrink:0;">+</span>
         </summary>
         <div style="padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);">
-          MisCuentas tiene tres planes: <strong style="color:var(--t);">Free</strong> (RD$0/mes, para conocer la plataforma), <strong style="color:var(--t);">Básico</strong> (US$19/mes, inventario y DGII completo) y <strong style="color:var(--t);">Pro</strong> (US$49/mes, hasta 5 empresas para PYMEs y contadores).
+          MisCuentas tiene cuatro planes: <strong style="color:var(--t);">Free</strong> (RD$0/mes, gratis para siempre), <strong style="color:var(--t);">Starter</strong> (RD$299/mes, para micro-negocios), <strong style="color:var(--t);">Negocio</strong> (RD$600/mes, para PYMEs) y <strong style="color:var(--t);">Contador</strong> (RD$1,200/mes, hasta 10 empresas para contadores).
         </div>
       </details>
 
@@ -1137,7 +1170,7 @@
           <span style="color:var(--o);font-size:1.3rem;flex-shrink:0;">+</span>
         </summary>
         <div style="padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid rgba(255,255,255,.06);">
-          Sí. Los planes Básico y Pro incluyen módulo de inventario completo: registro de productos, entradas y salidas, stock mínimo con alertas, y el inventario se actualiza automáticamente con cada venta.
+          Sí. Todos los planes incluyen inventario: registro de productos, entradas y salidas, stock mínimo con alertas, y el inventario se actualiza automáticamente con cada venta. Negocio y Contador incluyen inventario completo con kardex.
         </div>
       </details>
 
