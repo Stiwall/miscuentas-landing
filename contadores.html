@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MisCuentas para contadores | Todos tus clientes desde una sola cuenta</title>
-<meta name="description" content="Panel multiempresa para contadores dominicanos: hasta 5 empresas y 3 usuarios en el plan Pro, roles por persona, cierres, Estado de Resultados y reportes DGII 606/607/608.">
+<meta name="description" content="Panel multiempresa para contadores dominicanos: hasta 10 empresas en el plan Contador, roles por persona, cierres, Estado de Resultados y reportes DGII 606/607/608.">
 <meta name="robots" content="index, follow">
 <meta name="keywords" content="software contable para contadores República Dominicana, panel multiempresa contador, llevar varias empresas contabilidad RD, software contador DGII 606 607">
 
 <meta property="og:title" content="Todos tus clientes contables desde una sola cuenta">
-<meta property="og:description" content="Panel multiempresa para contadores dominicanos. Hasta 5 empresas y 3 usuarios en el plan Pro, con cierres y reportes DGII.">
+<meta property="og:description" content="Panel multiempresa para contadores dominicanos. Hasta 10 empresas en el plan Contador, con cierres y reportes DGII.">
 <meta property="og:url" content="https://miscuentasrd.com/contadores">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://miscuentasrd.com/screenshots/og-accountants.png">
@@ -27,7 +27,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "MisCuentas para contadores",
-  "description": "Panel multiempresa para contadores en República Dominicana: hasta 5 empresas y 3 usuarios en el plan Pro.",
+  "description": "Panel multiempresa para contadores en República Dominicana: hasta 10 empresas en el plan Contador.",
   "url": "https://miscuentasrd.com/contadores",
   "inLanguage": "es-DO",
   "primaryImageOfPage": {
@@ -37,6 +37,45 @@
     "height": 1000
   },
   "isPartOf": { "@type": "WebSite", "name": "MisCuentas", "url": "https://miscuentasrd.com" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuántas empresas puedo llevar con MisCuentas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El plan Contador incluye hasta 10 empresas por RD$1,200 al mes, todas en un solo panel con usuarios ilimitados. Si necesitas más de 10, escríbenos antes de contratar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿MisCuentas genera el 606, 607 y 608?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Los tres formatos salen de las facturas ya registradas, con su NCF, y se exportan en CSV y en el TXT que pide la DGII. El módulo DGII 606/607 es un add-on de RD$300 al mes en el plan Contador." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Mi cliente registra y yo solo reviso?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Exacto. Das acceso por persona con tres roles: administrador, contador y cajero. El negocio registra su día a día y tú revisas y cierras desde tu panel." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta el plan para contadores?",
+      "acceptedAnswer": { "@type": "Answer", "text": "RD$1,200 al mes, con hasta 10 empresas, usuarios ilimitados, facturas ilimitadas, Estado de Resultados, balanza y cierres mensuales y anuales. El módulo DGII 606/607 cuesta RD$300 adicionales al mes." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo migrar a mis clientes desde otro sistema?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Clientes, productos, proveedores y facturas se cargan desde una plantilla, así el cliente nuevo no empieza de cero." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa con los datos si un cliente se va?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Todo sale en CSV: cuentas, clientes, proveedores, cobros, pagos, diario y transacciones. Si mañana un cliente se va, se lleva sus datos." }
+    }
+  ]
 }
 </script>
 
@@ -111,6 +150,11 @@
   .limites tr:last-child td{border-bottom:none}
   .nota{color:var(--t3);font-size:.84rem;margin-top:16px}
 
+  .faq details{background:var(--bcard);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px}
+  .faq summary{padding:18px 22px;cursor:pointer;font-weight:600;color:var(--t);font-size:.97rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary span{color:var(--o);font-size:1.3rem;flex-shrink:0}
+  .faq details div{padding:0 22px 18px;color:var(--t2);font-size:.93rem;line-height:1.6;border-top:1px solid var(--border)}
   .cierre{text-align:center;border-top:1px solid var(--border);padding-top:clamp(40px,6vw,64px)}
   footer{border-top:1px solid var(--border);padding:32px 0;color:var(--t3);font-size:.84rem;text-align:center}
   footer a{color:var(--t2);text-decoration:none}
@@ -248,25 +292,56 @@
 <section id="limites">
   <div class="wrap">
     <h2>Precio y límites, sin letra pequeña</h2>
-    <p class="ssub">El panel multiempresa es del plan Pro. Estos son los números exactos,
+    <p class="ssub">El panel multiempresa es del plan Contador. Estos son los números exactos,
        no "ilimitado".</p>
     <div class="limites">
       <table>
-        <caption class="sr-only">Límites del plan Pro de MisCuentas</caption>
+        <caption class="sr-only">Límites del plan Contador de MisCuentas</caption>
         <tbody>
-          <tr><th scope="row">Precio</th><td>US$49 / mes</td></tr>
-          <tr><th scope="row">Empresas</th><td>Hasta 5</td></tr>
-          <tr><th scope="row">Usuarios</th><td>Hasta 3</td></tr>
+          <tr><th scope="row">Precio</th><td>RD$1,200 / mes</td></tr>
+          <tr><th scope="row">Empresas</th><td>Hasta 10</td></tr>
+          <tr><th scope="row">Usuarios</th><td>Ilimitados</td></tr>
           <tr><th scope="row">Facturas</th><td>Sin límite</td></tr>
           <tr><th scope="row">Clientes y proveedores</th><td>Sin límite</td></tr>
           <tr><th scope="row">Prueba</th><td>14 días con todo, sin tarjeta</td></tr>
         </tbody>
       </table>
       <p class="nota">
-        Si necesitas más de 5 empresas o más de 3 usuarios, escríbenos antes de
+        Si necesitas más de 10 empresas, escríbenos antes de
         contratar: preferimos decírtelo ahora y no cuando ya estés dentro.
       </p>
     </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap" style="max-width:760px">
+    <h2>Preguntas frecuentes de contadores</h2>
+    <p class="ssub">Lo que más preguntan las firmas antes de traer a sus clientes.</p>
+    <details>
+      <summary>¿Cuántas empresas puedo llevar con MisCuentas? <span>+</span></summary>
+      <div>El plan Contador incluye hasta 10 empresas por RD$1,200 al mes, todas en un solo panel con usuarios ilimitados. Si necesitas más de 10, escríbenos antes de contratar y lo resolvemos.</div>
+    </details>
+    <details>
+      <summary>¿MisCuentas genera el 606, 607 y 608? <span>+</span></summary>
+      <div>Sí. Los tres formatos salen de las facturas ya registradas, con su NCF, y se exportan en CSV y en el TXT que pide la DGII. El módulo DGII 606/607 es un add-on de RD$300 al mes en el plan Contador.</div>
+    </details>
+    <details>
+      <summary>¿Mi cliente registra y yo solo reviso? <span>+</span></summary>
+      <div>Exacto. Das acceso por persona con tres roles: administrador, contador y cajero. El negocio registra su día a día, el cajero factura, y tú revisas y cierras desde tu panel sin tocar sus registros.</div>
+    </details>
+    <details>
+      <summary>¿Cuánto cuesta el plan para contadores? <span>+</span></summary>
+      <div>RD$1,200 al mes, con hasta 10 empresas, usuarios ilimitados, facturas ilimitadas, Estado de Resultados, balanza y cierres mensuales y anuales. El módulo DGII 606/607 cuesta RD$300 adicionales al mes.</div>
+    </details>
+    <details>
+      <summary>¿Puedo migrar a mis clientes desde otro sistema? <span>+</span></summary>
+      <div>Sí. Clientes, productos, proveedores y facturas se cargan desde una plantilla, así el cliente nuevo no empieza de cero. El detalle del proceso está en <a href="/migracion">Migración</a>.</div>
+    </details>
+    <details>
+      <summary>¿Qué pasa con los datos si un cliente se va? <span>+</span></summary>
+      <div>Todo sale en CSV: cuentas, clientes, proveedores, cobros, pagos, diario y transacciones. Si mañana un cliente se va, se lleva sus datos.</div>
+    </details>
   </div>
 </section>
 

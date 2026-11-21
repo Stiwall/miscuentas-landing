@@ -3,15 +3,22 @@
 
   <url>
     <loc>https://miscuentasrd.com/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://miscuentasrd.com/blog/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://miscuentasrd.com/precios</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
@@ -110,7 +117,7 @@
   </url>
   <url>
     <loc>https://miscuentasrd.com/contadores</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -128,7 +135,7 @@
   </url>
   <url>
     <loc>https://miscuentasrd.com/ecf</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -193,6 +200,34 @@
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://miscuentasrd.com/blog/nomina-dominicana-tss-regalia-pascual</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://miscuentasrd.com/blog/formato-608-dgii</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://miscuentasrd.com/blog/ir-2-declaracion-jurada-anual-sociedades</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://miscuentasrd.com/blog/ir-17-que-es-quien-lo-presenta</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
