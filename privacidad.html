@@ -12,6 +12,24 @@
     .footer { margin-top: 48px; font-size: 13px; color: #888; border-top: 1px solid #eee; padding-top: 16px; }
   </style>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={token: 01b92af6cc3c467bba28d2d54362541c}></script>
+<!-- Google tag (gtag.js) - GA4 MisCuentas -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FD6BFT38R9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag(js, new Date());
+  gtag(config,  + MID + );
+  gtag(event, landing_view, {source_page:  + page + });
+  document.addEventListener(click, function(e){
+    var a = e.target.closest ? e.target.closest(a[href*=app.miscuentasrd.com]) : null;
+    if(!a) return;
+    var loc = inline;
+    if(a.closest(footer)) loc = footer;
+    else if(a.closest(#precios)) loc = pricing;
+    else if(a.closest(header)) loc = hero;
+    gtag(event, cta_register_click, {source_page:  + page + , cta_location: loc, plan_intent: unknown});
+  });
+</script>
 </head>
 <body>
   <h1>Política de Privacidad</h1>
