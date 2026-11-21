@@ -24,17 +24,17 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag(js, new Date());
-  gtag(config,  + MID + );
-  gtag(event, landing_view, {source_page:  + page + });
-  document.addEventListener(click, function(e){
-    var a = e.target.closest ? e.target.closest(a[href*=app.miscuentasrd.com]) : null;
+  gtag('js', new Date());
+  gtag('config', 'G-FD6BFT38R9');
+  gtag('event', 'landing_view', {source_page: 'ecf'});
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href*="app.miscuentasrd.com"]') : null;
     if(!a) return;
-    var loc = inline;
-    if(a.closest(footer)) loc = footer;
-    else if(a.closest(#precios)) loc = pricing;
-    else if(a.closest(header)) loc = hero;
-    gtag(event, cta_register_click, {source_page:  + page + , cta_location: loc, plan_intent: unknown});
+    var loc = 'inline';
+    if(a.closest('footer')) loc = 'footer';
+    else if(a.closest('#precios')) loc = 'pricing';
+    else if(a.closest('header')) loc = 'hero';
+    gtag('event', 'cta_register_click', {source_page: 'ecf', cta_location: loc, plan_intent: 'unknown'});
   });
 </script>
 </head><body><nav class="nav"><a class="brand" href="/"><img src="/logo.png" alt="MisCuentas"><span>MisCuentas</span></a><div class="navlinks"><a class="hide-sm" href="/contadores.html">Contadores</a><a class="hide-sm" href="/seguridad.html">Seguridad</a><a class="hide-sm" href="/migracion.html">Migración</a><a class="hide-sm" href="/ecf.html">e-CF</a><a class="btn primary" href="https://app.miscuentasrd.com/?registro=1">Probar gratis</a></div></nav>

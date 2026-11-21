@@ -274,17 +274,17 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--o);outline-offset:2
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag(js, new Date());
-  gtag(config,  + MID + );
-  gtag(event, landing_view, {source_page:  + page + });
-  document.addEventListener(click, function(e){
-    var a = e.target.closest ? e.target.closest(a[href*=app.miscuentasrd.com]) : null;
+  gtag('js', new Date());
+  gtag('config', 'G-FD6BFT38R9');
+  gtag('event', 'landing_view', {source_page: 'app-contable'});
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href*="app.miscuentasrd.com"]') : null;
     if(!a) return;
-    var loc = inline;
-    if(a.closest(footer)) loc = footer;
-    else if(a.closest(#precios)) loc = pricing;
-    else if(a.closest(header)) loc = hero;
-    gtag(event, cta_register_click, {source_page:  + page + , cta_location: loc, plan_intent: unknown});
+    var loc = 'inline';
+    if(a.closest('footer')) loc = 'footer';
+    else if(a.closest('#precios')) loc = 'pricing';
+    else if(a.closest('header')) loc = 'hero';
+    gtag('event', 'cta_register_click', {source_page: 'app-contable', cta_location: loc, plan_intent: 'unknown'});
   });
 </script>
 </head>
