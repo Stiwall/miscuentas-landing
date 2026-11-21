@@ -20,3 +20,15 @@ class ComparativaActual(ServidorSEO):
  def test_guias_conectan_producto(self):
   for slug,target in [('como-hacer-606-607-dgii','/app-contable'),('software-contable-republica-dominicana','/contadores')]:
    self.assertTrue(self.html('/blog/'+slug).select('a[href="'+target+'"]'))
+
+class CanalesDePrecios(ServidorSEO):
+ def test_los_precios_de_la_app_llevan_a_la_tabla_del_canal_correcto(self):
+  app = self.html('/app-contable')
+  self.assertTrue(app.select_one('a[href="/precios#planes-en-linea"]'))
+  precios = self.html('/precios')
+  online = precios.select_one('#planes-en-linea')
+  self.assertIn('Básico US$19/mes', online.get_text(' ', strip=True))
+  self.assertIn('Pro US$49/mes', online.get_text(' ', strip=True))
+  self.assertEqual([p.get_text(strip=True) for p in precios.select('.pamount')],
+                   ['RD$0', 'RD$299', 'RD$600', 'RD$1,200'])
+  self.assertEqual(len(precios.select('#planes a[href^="https://wa.me/"]')), 3)

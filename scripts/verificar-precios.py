@@ -15,12 +15,19 @@ import sys
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# El precio publico. Si cambia, se cambia AQUI y el script dira que paginas quedaron atras.
-PRECIOS = {"Básico": "US$19", "Pro": "US$49"}
-
-# Lo mismo pero como lo escribe el JSON-LD: sin simbolo, y el 0 del plan Free.
-MONEDA = "USD"
-PRECIOS_SCHEMA = {"0"} | {v.removeprefix("US$") for v in PRECIOS.values()}
+# /upgrade publica los planes por WhatsApp; Polar cobra los planes en línea.
+OFERTAS = {
+    "Free": {("DOP", "0"), ("USD", "0")},
+    "Gratis": {("USD", "0")},
+    "Starter": {("DOP", "299")},
+    "Negocio": {("DOP", "600")},
+    "Contador": {("DOP", "1200")},
+    "Básico": {("USD", "19")},
+    "Pro": {("USD", "49")},
+}
+PRECIOS_VISIBLES = {"RD$299", "RD$600", "RD$1,200", "US$19", "US$49"}
+MENSUALIDADES_USD = {precio for ofertas in OFERTAS.values()
+                     for moneda, precio in ofertas if moneda == "USD"}
 
 
 def ofertas_de(nodo):
@@ -38,12 +45,10 @@ def ofertas_de(nodo):
 PROHIBIDO = [
     ("RD$990", "precio viejo en pesos del plan Basico"),
     ("RD$2,490", "precio viejo en pesos del plan Pro"),
-    ("precio fijo en DOP", "argumento de moneda: ya se cobra en dolares"),
-    ("cobra en pesos dominicanos", "argumento de moneda: ya se cobra en dolares"),
-    ("Precio en pesos dominicanos", "argumento de moneda: ya se cobra en dolares"),
-    ("sin variaciones por el tipo de cambio", "argumento de moneda: ya se cobra en dolares"),
-    ("add-on RD$300", "el 606/607 no esta cerrado por plan: /api/dgii/* no lo cobra"),
-    ("Usuarios ilimitados", "Pro tiene max_users: 3 en planPermissions.js"),
+    ("precio fijo en DOP", "no todos los planes se cobran en pesos"),
+    ("cobra en pesos dominicanos", "no todos los planes se cobran en pesos"),
+    ("Precio en pesos dominicanos", "no todos los planes se cobran en pesos"),
+    ("sin variaciones por el tipo de cambio", "no todos los planes se cobran en pesos"),
     ("Todos los reportes DGII", "606/607/608 no estan cerrados por plan: son iguales en Free, Basico y Pro"),
     ("Reconciliación bancaria", "/api/conciliacion* solo lleva authMiddleware: la tienen todos los planes"),
 ]
@@ -53,8 +58,8 @@ PROHIBIDO = [
 # en pesos": se colo por una conjugacion y estuvo meses atacando a Alegra por cobrar en
 # dolares, que es justo lo que hacemos nosotros.
 PROHIBIDO_REGEX = [
-    (r"cobr\w*\s+(?:\w+\s+){0,3}?en\s+pesos", "argumento de moneda: solo se cobra en USD"),
-    (r"precios?\s+(?:reales?|fijos?)\s+en\s+pesos", "argumento de moneda: solo se cobra en USD"),
+    (r"cobr\w*\s+(?:\w+\s+){0,3}?en\s+pesos", "distinguir pago por WhatsApp y en línea"),
+    (r"precios?\s+(?:reales?|fijos?)\s+en\s+pesos", "distinguir pago por WhatsApp y en línea"),
 ]
 
 
@@ -185,7 +190,7 @@ for ruta in htmls():
         if not os.path.exists(destino):
             fallos.append(f"{rel}: apunta a {ref} y ese fichero no existe")
 
-    if any(v in t for v in PRECIOS.values()):
+    if any(v in t for v in PRECIOS_VISIBLES):
         paginas_con_precio += 1
 
     # el marcado JSON-LD tiene que ser valido y no contradecir a la pagina
@@ -202,20 +207,20 @@ for ruta in htmls():
         for oferta in ofertas_de(datos):
             precio = str(oferta.get("price", "")).strip()
             moneda = str(oferta.get("priceCurrency", "")).strip()
-            nombre = oferta.get("name") or "sin nombre"
-            if moneda and moneda != MONEDA:
+            nombre = (oferta.get("name") or "").removeprefix("Plan ")
+            validas = OFERTAS.get(nombre, set())
+            if not nombre and rel == "calculadora-ecf.html":
+                validas = {("USD", "0")}
+            if (moneda, precio) not in validas:
                 fallos.append(
-                    f"{rel}: JSON-LD oferta {nombre!r} en {moneda} — solo se cobra en {MONEDA}")
-            if precio and precio not in PRECIOS_SCHEMA:
-                fallos.append(
-                    f"{rel}: JSON-LD oferta {nombre!r} con price={precio!r} — "
-                    f"los precios reales son {sorted(PRECIOS_SCHEMA)}")
+                    f"{rel}: JSON-LD oferta {nombre or 'sin nombre'!r} con precio "
+                    f"{moneda} {precio} — se esperaba {sorted(validas)}")
 
     # una MENSUALIDAD en dolares que no sea una de las nuestras. Se exige el "/mes" a
     # proposito: el sitio menciona cifras en dolares que no son precios (tasas, multas),
     # y marcarlas seria ruido. Los precios de competidores van como USD$29, no US$29.
     for m in re.finditer(r"US\$(\d+)\s*/\s*mes", t):
-        if f"US${m.group(1)}" not in PRECIOS.values():
+        if m.group(1) not in MENSUALIDADES_USD:
             ctx = re.sub(r"\s+", " ", t[max(0, m.start() - 70):m.start() + 40])
             fallos.append(f"{rel}: mensualidad US${m.group(1)}/mes desconocida — ...{ctx.strip()}...")
 
@@ -228,5 +233,4 @@ if fallos:
         print(f"   - {f}")
     sys.exit(1)
 
-print(f"✓ precio coherente en las {paginas_con_precio} paginas que lo publican "
-       f"({' · '.join(f'{k} {v}' for k, v in PRECIOS.items())})")
+print(f"✓ precios verificados en {paginas_con_precio} páginas (planes en DOP y USD)")

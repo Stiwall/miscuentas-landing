@@ -17,22 +17,19 @@ la parte de precios y moneda.
 
 ## Precios
 
-| Plan | Precio | Moneda |
-|---|---|---|
-| Free | 0 | USD |
-| Básico | 19 / mes | USD |
-| Pro | 49 / mes | USD |
+| Plan | Precio mensual | Canal |
+|---|---:|---|
+| Free | 0 | Registro gratuito |
+| Starter | RD$299 | WhatsApp |
+| Negocio | RD$600 | WhatsApp |
+| Contador | RD$1,200 | WhatsApp |
+| Básico | US$19 | Pago en línea con Polar |
+| Pro | US$49 | Pago en línea con Polar |
 
-**Solo se cobra en dólares.** `lib/plans.js` conserva un campo `price` con 990 y 2490 en
-pesos, pero **ningún camino de cobro lo usa**: el único checkout self-service es
-`routes/polarCheckout.js`, que llama a `usdPriceFor()` y cobra en USD. El valor en pesos
-solo alimenta el cálculo de MRR en `routes/cron.js:324` y una suma del panel admin.
-
-> ⚠️ **Sin verificar:** si `cron.js:324` suma `price` en pesos mientras los clientes pagan
-> en dólares, el MRR reportado está mal. Está el camino de código, falta la reproducción.
-
-**Descuento por volumen** (`usdPriceFor`): se factura 1, 3 o 12 meses. A 12 meses se cobran
-**10** (dos gratis). A 1 y 3 meses no hay descuento.
+La ruta pública `/upgrade` de la app ofrece los planes en pesos con enlaces a WhatsApp.
+`routes/polarCheckout.js` admite Básico y Pro en USD mediante `usdPriceFor()`.
+El pago en línea admite 1, 3 o 12 meses. Al elegir 12 meses se pagan 10.
+Los dos canales se explican en `/precios`.
 
 ---
 
